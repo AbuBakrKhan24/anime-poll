@@ -1,16 +1,18 @@
 <template>
 
 
-  <div class="display text-center">
-    <div class="details">
-      <img
+  <div class="row display text-center">
+      <div class="col-lg-12">
+        <img
         class="profilepicture mt-5"
         alt="profilepicture"
         :src="user.avatar"
       />
+      </div>
+      <div class="col-lg-12">
       <h4 class="user mt-3 text-light">{{ user.username }}</h4>
       <p class="email mt-2 text-light">{{ user.email }}</p>
-    </div>
+</div>
   </div>
   <div class="topbar">
       <button
@@ -88,11 +90,7 @@
   </div>
 
   <div class="row about_container">
-    <div class="col-lg-6 col-md-4 info p-4">
-      <h4 class="">Bio</h4>
-      <div class="row about  align-items-center">
-        
-      <div class="col-lg-12 details">
+      <div class="col-lg-6 details">
         <div class="card">
   <div class="card-header">
     Your About
@@ -104,34 +102,11 @@
     </blockquote>
   </div>
 </div>
-     
         </div>
-      </div>
-      <div class="location  align-items-center">
-        <div class="card mt-3">
-  <div class="card-header">
-    Your Location: {{ user.location }}
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.1583091352!2d-74.11976373946234!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i76
-        8!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sza!4v1658088112460!5m2!1sen!2sza" 
-        width="200" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      
-    </blockquote>
-  </div>
-</div>
-      </div>
-        
-      
-        
-      
-    </div>
     <!-- READINGLIST -->
     <div class="col-lg-6 col-md-4 row">
       <div class="container row">
-        <h4 class="head">YOUR READING LIST</h4>
+        <h4 class="head">YOUR Votes</h4>
         
         <ReadingBookCard
           v-for="book in readingList"
@@ -183,8 +158,7 @@ export default {
   /* width: max-content; */
 }
 .display {
-  height: 50vh;
-  /* width: 100vw; */
+  height: 55vh;
   background-color: rgb(56, 52, 52);
 }
 button.editmodal.mt-4.btn.btn-outline-secondary {
@@ -211,8 +185,7 @@ h4.user.mt-3.text-light {
 
 
 .profilepicture {
-  width: 100px;
-  height: 100px;
+  width: 20%;
   border: solid 2px white;
   border-radius: 10px;
 }
@@ -282,13 +255,10 @@ h4 {
   padding-left: 5%;
 }
 .info {
-  height: auto;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
   border: solid 1px grey;
   background-color: white;
   width: 30%;
-  margin-top: 5%;
-  margin-left: 10%;
   margin-bottom: 5%;
 
 }
@@ -337,5 +307,14 @@ p.col-lg-6.mt-2.text-dark {
 h4 {
     font-weight: 600;
     font-size: 30px;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: 0;
+    margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 </style>

@@ -98,6 +98,7 @@
                 >Provide a bio:
                 <textarea
                   name="bio"
+                  v-model="about"
                   rows="3"
                   cols="30"
                   placeholder="I like writing on the beach..."
@@ -317,11 +318,14 @@ export default {
     },
   },
   data() {
+    const user_type = "user"
     return {
       username: "",
       email: "",
       password: "",
       avatar: "",
+      user_type: "",
+      about: "",
     };
   },
   methods: {
@@ -331,14 +335,11 @@ export default {
         email: this.email,
         password: this.password,
         avatar: this.avatar,
+        user_type: this.user_type,
+        about: this.about,
       });
     },
   },
-
-  // name: "SignUpForm",
-  // props: {
-  //   msg: String,
-  // },
 };
 </script>
 

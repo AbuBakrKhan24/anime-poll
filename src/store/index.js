@@ -77,10 +77,10 @@ export default createStore({
       const { email, password } = payload;
       const response = await fetch(
         // `http://localhost:3000/users?email=${email}&password=${password}`
-        `http://localhost:6969/users?email=${email}&password=${password}`
+        `http://localhost:6969/users/?email=${email}&password=${password}`
       );
       const userData = await response.json();
-      console.log(userData);
+      // console.log(userData);
       if (userData.length) {
         context.commit("setUser", userData[0]);
         // window.localStorage.setItem("user", JSON.stringify(userData[0]));
@@ -89,13 +89,9 @@ export default createStore({
     },
     // REGISTER USER
     register: async (context, user) => {
-      fetch("http://localhost:6969/users", {
+      fetch("http://localhost:6969/users/register", {
         method: "POST",
         body: JSON.stringify(user),
-
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
 
         headers: {
           "Content-type": "application/json; charset=UTF-8",
