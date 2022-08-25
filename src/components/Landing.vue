@@ -22,7 +22,7 @@
             class="buttons d-flex justify-content-center mt-5 mb-5"
             v-if="user"
           >
-            <router-link to="/library"
+            <router-link to="/vote"
               ><button
                 type="button"
                 class="read btn ms-5 text-light rounded-pill"
@@ -30,7 +30,7 @@
                 Start Reading
               </button></router-link
             >
-            <router-link to="/library">
+            <router-link to="/vote">
               <button
                 type="button"
                 class="write btn ms-5 text-light rounded-pill"

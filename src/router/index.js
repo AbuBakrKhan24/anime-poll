@@ -20,12 +20,12 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
   },
   {
-    path: "/library",
-    name: "library",
-    component: () => import("../views/Library.vue"),
+    path: "/vote",
+    name: "vote",
+    component: () => import("../views/vote.vue"),
   },
   {
-    path: "/library/:id",
+    path: "/vote/:id",
     name: "SingleBook",
     component: () => import("../views/SingleBook.vue"),
     props: true,

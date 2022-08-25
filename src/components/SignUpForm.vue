@@ -288,6 +288,7 @@
                     28
                   </option>
                 </select>
+                Some images may take longer to load than others so please be patient:)
               </label>
             </fieldset>
             <!-- Terms and conditions -->
