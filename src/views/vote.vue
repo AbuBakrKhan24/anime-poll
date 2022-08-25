@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-3">
+  <!-- <div class="container p-3">
     <div class="book-display row" v-if="filteredBooks">
       <div
         class="sort-options d-flex justify-content-center align-itens-center"
@@ -27,7 +27,7 @@
         </select>
       </div>
 
-      <!-- Modal -->
+      Modal
       <div
         class="modal fade"
         id="exampleModal"
@@ -168,7 +168,8 @@
       </div>
       <BookCard v-for="book of filteredBooks" :key="book.id" :book="book" />
     </div>
-  </div>
+  </div> -->
+  <div class="pic bg-dark"></div>
 </template>
 
 <script>
@@ -228,6 +229,13 @@ export default {
 };
 </script>
 <style>
+    .pic {
+        background-image: url(https://pbs.twimg.com/media/FPRQSh6akAAaM7b.png);
+           background-size: contain;                 
+    background-repeat:   no-repeat;
+    background-position: center center;       
+        min-height: 93vh;       
+    }
 .book-display {
   display: flex;
   flex-wrap: wrap;
