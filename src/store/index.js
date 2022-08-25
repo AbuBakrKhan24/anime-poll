@@ -1,10 +1,11 @@
 import { createStore } from "vuex";
-
+import router from "@/router";
 export default createStore({
   state: {
     // user: null || window.localStorage.getItem("user"),
     user: null,
     users: null,
+    Token: null,
     product: null,
     products: null,
     asc: true,
@@ -16,6 +17,9 @@ export default createStore({
     },
     setUsers: (state, users) => {
       state.users = users;
+    },
+    setToken: (state, Token) => {
+      state.Token = Token;
     },
     setBook: (state, book) => {
       state.book = book;
@@ -73,19 +77,52 @@ export default createStore({
     },
 
     // LOGIN USER
+    // login: async (context, payload) => {
+    //   const { email, password } = payload;
+    //   const response = await fetch(
+    //     // `http://localhost:3000/users?email=${email}&password=${password}`
+    //     `http://localhost:6969/users/?email=${email}&password=${password}`
+    //   );
+    //   const userData = await response.json();
+    //   // console.log(userData);
+    //   if (userData.length) {
+    //     context.commit("setUser", userData[0]);
+    //     window.localStorage.setItem("user", JSON.stringify(userData[0]));
+    //   }
+    //   if (!userData.length) return alert("No user found");
+    // },
     login: async (context, payload) => {
-      const { email, password } = payload;
-      const response = await fetch(
-        // `http://localhost:3000/users?email=${email}&password=${password}`
-        `http://localhost:6969/users/?email=${email}&password=${password}`
-      );
-      const userData = await response.json();
-      // console.log(userData);
-      if (userData.length) {
-        context.commit("setUser", userData[0]);
-        // window.localStorage.setItem("user", JSON.stringify(userData[0]));
+      let res = await fetch("http://localhost:6969/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: payload.email,
+          password: payload.password,
+        }),
+      });
+      let data = await res.json();
+      console.log(data);
+      if (data.token) {
+        context.commit("setToken", data.token);
+        // Verify token
+        //
+        fetch("http://localhost:6969/users/users/verify", {
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": data.token,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            context.commit("setUser", data);
+            // router.push("/users");
+            // console.log(data);
+          });
+      } else {
+        alert(data);
       }
-      if (!userData.length) return alert("No user found");
     },
     // REGISTER USER
     register: async (context, user) => {
@@ -177,7 +214,6 @@ export default createStore({
     },
 
     // PROFILE
-    // PROFILE
     // ADD READING LIST
     addReadingList: async (context, product) => {
       context.state.user.readingList.push(product);
@@ -201,28 +237,15 @@ export default createStore({
 
     // UPDATE A USER
     updateUserInfo: async (context, user) => {
-      const {
-        id,
-        email,
-        password,
-        username,
-        avatar,
-        readingList,
-        location,
-        about,
-        role,
-      } = user;
-      fetch("http://localhost:6969/users/" + id, {
+      const { username, email, password, avatar, about } = user;
+      fetch("http://localhost:6969/users/update-user/" + id, {
         method: "PUT",
         body: JSON.stringify({
           email: email,
           password: password,
           username: username,
           avatar: avatar,
-          readingList: readingList,
-          location: location,
           about: about,
-          role: role,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",

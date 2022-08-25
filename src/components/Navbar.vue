@@ -216,5 +216,7 @@ nav.navbar {
   right: 100px;
   position: absolute;
   border-radius: 50%;
+   height: 50px;
+    width: 50px;
 }
 </style>

@@ -1,19 +1,21 @@
 <template>
-
-
-  <div class="row display text-center">
-      <div class="col-lg-12">
+<!-- Image and user details -->
+<div class="display text-center">
+      <div class="users_PP">
         <img
-        class="profilepicture mt-5"
+        class="profilepicture"
         alt="profilepicture"
         :src="user.avatar"
       />
       </div>
-      <div class="col-lg-12">
-      <h4 class="user mt-3 text-light">{{ user.username }}</h4>
-      <p class="email mt-2 text-light">{{ user.email }}</p>
+      <div class="Users_details">
+      <h4 class="user  text-light">{{ user.username }}</h4>
+      <p class="email text-light">{{ user.email }}</p>
 </div>
   </div>
+  <!-- Image and user details Done -->
+
+<!-- Where about is divided -->
   <div class="topbar">
       <button
         type="button"
@@ -24,10 +26,10 @@
         <i class="fa-solid fa-gear"></i>
       </button>
       <h3>About</h3>
-    <div class="about-container ">
-      <!-- Button trigger modal -->
-
-      <!-- Modal -->
+      <!-- Where about is divided done -->
+      <!-- Where about is -->
+    <div class="about-topbar">
+      <!-- Modal to edit your profile details -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -38,7 +40,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit your bio</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Edit your Profile</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -47,32 +49,248 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form @submit.prevent="updateUserInfo">
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="floatingLocation"
-                    v-model="user.location"
-                  />
-                  <label for="floatingInput">Location</label>
-                </div>
-                <div class="form-floating">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="floatingABout"
-                    v-model="user.about"
-                  />
-                  <label for="floatingPassword">Describe Yourself</label>
-                </div>
-                <button
+              <div class="Form_Holder">
+      <div class="card" style="width: fit-content">
+        <div class="card-body">
+          <h1>Edit your profile</h1>
+          <p>Change your profile details here below</p>
+          <form @submit.prevent="updateUserInfo">
+            <!-- Form details -->
+            <fieldset>
+              <!-- Username -->
+              <label
+                >Change you username
+                <input v-model="username" type="text" name="user-name" required
+              /></label>
+              <!-- email -->
+              <label
+                >Change your email:
+                <input v-model="email" type="email" name="email" required
+              /></label>
+              <!-- password -->
+              <label
+                >Change your password:
+                <input
+                  v-model="password"
+                  type="password"
+                  name="password"
+                  pattern="[a-z0-5]{8,}"
+                  required
+              /></label>
+            </fieldset>
+            <!-- About -->
+            <fieldset>
+              <label
+                >Change your about:
+                <textarea
+                  name="bio"
+                  v-model="about"
+                  rows="3"
+                  cols="30"
+                  placeholder="I like writing on the beach..."
+                ></textarea>
+              </label>
+            </fieldset>
+            <!-- Avatar -->
+            <fieldset>
+              <div class="image_holder">
+                <img
+                  v-if="avatar"
+                  :src="avatar"
+                  class="shadow-4"
+                  style="width: 150px"
+                  alt="Avatar"
+                />
+              </div>
+              <label
+                >Choose your avatar:
+                <select v-model="avatar" multiple>
+                  <!-- 1 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Armin.png?raw=true"
+                  >
+                    1
+                  </option>
+                  <!-- 2 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Armin_2.png?raw=true"
+                  >
+                    2
+                  </option>
+                  <!-- 3 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Eren.png?raw=true"
+                  >
+                    3
+                  </option>
+                  <!-- 4 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Mikasa.png?raw=true"
+                  >
+                    4
+                  </option>
+                  <!-- 5 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Sasha.png?raw=true"
+                  >
+                    5
+                  </option>
+                  <!-- 6 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/levi.png?raw=true"
+                  >
+                    6
+                  </option>
+                  <!-- 7 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Bleach/Izuru%20Kira.png?raw=true"
+                  >
+                    7
+                  </option>
+                  <!-- 8 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Nezeko.jpg?raw=true"
+                  >
+                    8
+                  </option>
+                  <!-- 9 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro.jpg?raw=true"
+                  >
+                    9
+                  </option>
+                  <!-- 10 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro_2.jpg?raw=true"
+                  >
+                    10
+                  </option>
+                  <!-- 11 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Zenitsu.jpg?raw=true"
+                  >
+                    11
+                  </option>
+                  <!-- 12 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Android%2017%23.png?raw=true"
+                  >
+                    12
+                  </option>
+                  <!-- 13 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Baby.png?raw=true"
+                  >
+                    13
+                  </option>
+                  <!-- 14 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Vegete.png?raw=true"
+                  >
+                    14
+                  </option>
+                  <!-- 15 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/dragonball.png?raw=true"
+                  >
+                    15
+                  </option>
+                  <!-- 16 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/goku.png?raw=true"
+                  >
+                    16
+                  </option>
+                  <!-- 17 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/all%20might.png?raw=true"
+                  >
+                    17
+                  </option>
+                  <!-- 18 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/midoriya.png?raw=true"
+                  >
+                    18
+                  </option>
+                  <!-- 19 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/todoroki.png?raw=true"
+                  >
+                    19
+                  </option>
+                  <!-- 20 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/toga.png?raw=true"
+                  >
+                    20
+                  </option>
+                  <!-- 21 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/Sasuke.png?raw=true"
+                  >
+                    21
+                  </option>
+                  <!-- 22 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/gaara.png?raw=true"
+                  >
+                    22
+                  </option>
+                  <!-- 23 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/naruto_2.png?raw=true"
+                  >
+                    23
+                  </option>
+                  <!-- 24 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/One%20Punch%20Man/saitama.png?raw=true"
+                  >
+                    24
+                  </option>
+                  <!-- 25 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/jolteon.png?raw=true"
+                  >
+                    25
+                  </option>
+                  <!-- 26 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/pikachu.png?raw=true"
+                  >
+                    26
+                  </option>
+                  <!-- 27 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/umbreon.png?raw=true"
+                  >
+                    27
+                  </option>
+                  <!-- 28 -->
+                  <option
+                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/SOA/SOA.png?raw=true"
+                  >
+                    28
+                  </option>
+                </select>
+                <p>Some images may take longer to load than others so please be patient:)</p>
+              </label>
+            </fieldset>
+            <!-- Save button -->
+            <button
                   type="submit"
                   class="update mt-4 btn btn-outline-secondary"
                 >
                   Save
                 </button>
               </form>
+          <div v-if="user">
+            Changes you made was an success!
+          </div>
+        </div>
+      </div>
+    </div>
             </div>
             <div class="modal-footer">
               <button
@@ -86,11 +304,16 @@
           </div>
         </div>
       </div>
+      <!-- Modal to edit your profile details done -->
     </div>
   </div>
+<!-- Where about is divided done -->
 
-  <div class="row about_container">
-      <div class="col-lg-6 details">
+<!-- About Section -->
+<div class="about_container">
+  <div class="row ">
+    <!-- About informaiton -->
+      <div class="col-lg-6 col-sm-12 details">
         <div class="card">
   <div class="card-header">
     Your About
@@ -103,19 +326,22 @@
   </div>
 </div>
         </div>
-    <!-- READINGLIST -->
-    <div class="col-lg-6 col-md-4 row">
-      <div class="container row">
+    <!-- About informaiton done -->
+
+    <!-- Voting holder -->
+    <div class="col-lg-6 col-md-12 details">
         <h4 class="head">YOUR Votes</h4>
-        
         <ReadingBookCard
           v-for="book in readingList"
           :key="book.id"
           :book="book"
         />
-      </div>
     </div>
+    <!-- Voting holder done -->
     </div>
+</div>
+<!-- About Section done -->
+
 
 </template>
 <script>
@@ -143,55 +369,116 @@ export default {
 </script>
 <style scoped>
 
-.row.about_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-} 
-.card {
-    width: 100%;
+/* Form_Holder */
+.Form_Holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
 }
+/* Form_Holder done */
+
+/* Form styles */
+h1,
+p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
+fieldset {
+  border: none;
+  padding: 2rem 0;
+}
+
+fieldset:not(:last-of-type) {
+  border-bottom: 3px solid #3b3b4f;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+
+input,
+textarea {
+  background-color: #ffffff;
+  border: 1px solid #0a0a23;
+  color: #0a0a23;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  min-width: 300px;
+}
+
+input[type="submit"]:focus {
+  background-color: #0a0a23;
+  color: white;
+}
+
+input[type="file"] {
+  padding: 1px 2px;
+}
+
+a {
+  color: #0a0a23;
+}
+/* Form styles done */
+
+
 .card {
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  width: max-content;
+  }
 
-  /* width: max-content; */
-}
+/* Holder of users credentials and image */
 .display {
-  height: 55vh;
+  height: auto;
   background-color: rgb(56, 52, 52);
 }
-button.editmodal.mt-4.btn.btn-outline-secondary {
-    margin-right: 15px;
-}
-
-h4.user.mt-3.text-light {
-    MARGIN-BOTTOM: 0;
-}
-
-.bookcover{
-  height: 10rem;
-    
-    margin: 10px;
-    width: fit-content;
-   
- 
-    -object-fit: contain;
-    object-fit: contain;
-    display: flex;
-    align-items: center;
-   
-}
-
-
+/* User's image */
 .profilepicture {
-  width: 20%;
-  border: solid 2px white;
+  width: 25%;
   border-radius: 10px;
 }
+.users_PP {
+  padding-top: 50px;
+    padding-bottom: 10px;
+}
+  /* User's image done */
+  /* Holder of users credentials and image done */
+
+/* Where About divides screen */
 .topbar {
-    /* width: 100vw; */
-    display: flex;
+  display: flex;
     height: 80px;
     background-color: white;
     border-bottom: solid 2px black;
@@ -199,93 +486,41 @@ h4.user.mt-3.text-light {
     align-items: center;
 }
 h3 {
-    position: absolute;
+  position: absolute;
     left: 4%;
 }
+  /* Where About divides screen done */
 
+/* Modal edit Button */
 button.editmodal.btn.btn-outline-secondary {
-    margin-right: 10px;
+  margin-right: 10px;
 }
+  /* Modal edit Button Done */
 
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-}
-
-.row.about_container {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    /* margin-top: calc(-1 * var(--bs-gutter-y)); */
-    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
-    margin: 0;
-    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
-}
-.row.about_container {
-    padding-top: 2%;
-    margin-top: -2px;
-}
-
+/* Header for votes */
 h4.head {
-    margin-bottom: 5%;
-}
-h4 {
-    margin-bottom: 10%;
-}
+  margin-bottom: 5%;
+} 
+  /* Header for votes done*/
 
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 8%;
-}
-.about-container {
+.about-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 50px; */
   padding-left: 5%;
 }
-.info {
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  border: solid 1px grey;
-  background-color: white;
-  width: 30%;
-  margin-bottom: 5%;
 
-}
-.col-8 {
-  min-height: 285px;
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  border: solid 1px grey;
-  background-color: white;
-}
 a {
   text-decoration: none;
   color: black;
 }
-/* MQ */
-@media only screen and (max-width: 600px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-  }
-  .col-4 {
-    height: fit-content;
-    width: fit-content;
-    margin-bottom: 20px;
-  }
+.Users_details {
+    padding-bottom: 20px;
 }
+/* MQ */
+/* @media only screen and (max-width: 600px) {
+} */
 
 .col-8 {
   height: fit-content;
@@ -316,5 +551,15 @@ h4 {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: 0;
     margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.about_container {
+    min-height: 450px;
+}
+
+.details[data-v-ced23842] {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 </style>
