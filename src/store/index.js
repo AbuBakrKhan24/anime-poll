@@ -6,8 +6,8 @@ export default createStore({
     // user: null,
     users: null,
     Token: null,
-    product: null,
-    products: null,
+    category: null,
+    categories: null,
     asc: true,
   },
 
@@ -21,44 +21,44 @@ export default createStore({
     setToken: (state, Token) => {
       state.Token = Token;
     },
-    setBook: (state, book) => {
-      state.book = book;
+    setCategory: (state, category) => {
+      state.category = category;
     },
-    setBooks: (state, books) => {
-      state.books = books;
+    setCategories: (state, categories) => {
+      state.categories = categories;
     },
-    sortBooksByTitle: (state) => {
-      state.books = state.products.sort((a, b) => {
-        // return a.number - b.number;
-        if (a.title < b.title) {
-          return -1;
-        }
-        if (a.title > b.title) {
-          return 1;
-        }
-        return 0;
-      });
-      if (!state.asc) {
-        state.products.reverse();
-      }
-      state.asc = !state.asc;
-    },
-    sortUsersByUsername: (state) => {
-      state.users = state.users.sort((a, b) => {
-        // return a.number - b.number;
-        if (a.username < b.username) {
-          return -1;
-        }
-        if (a.username > b.username) {
-          return 1;
-        }
-        return 0;
-      });
-      if (!state.asc) {
-        state.users.reverse();
-      }
-      state.asc = !state.asc;
-    },
+    // sortBooksByTitle: (state) => {
+    //   state.books = state.products.sort((a, b) => {
+    //     // return a.number - b.number;
+    //     if (a.title < b.title) {
+    //       return -1;
+    //     }
+    //     if (a.title > b.title) {
+    //       return 1;
+    //     }
+    //     return 0;
+    //   });
+    //   if (!state.asc) {
+    //     state.products.reverse();
+    //   }
+    //   state.asc = !state.asc;
+    // },
+    // sortUsersByUsername: (state) => {
+    //   state.users = state.users.sort((a, b) => {
+    //     // return a.number - b.number;
+    //     if (a.username < b.username) {
+    //       return -1;
+    //     }
+    //     if (a.username > b.username) {
+    //       return 1;
+    //     }
+    //     return 0;
+    //   });
+    //   if (!state.asc) {
+    //     state.users.reverse();
+    //   }
+    //   state.asc = !state.asc;
+    // },
   },
   actions: {
     // USER
@@ -141,25 +141,25 @@ export default createStore({
         .then((json) => context.commit("setUser", json));
     },
 
-    // Products
-    // SHOW ALL OF Products
-    getBooks: async (context) => {
-      fetch("http://localhost:6969/products")
+    // Categories
+    // SHOW ALL OF Categories
+    getCategories: async (context) => {
+      fetch("http://localhost:6969/categories")
         .then((res) => res.json())
-        .then((data) => context.commit("setProducts", data))
+        .then((data) => context.commit("setCategories", data))
         .catch((err) => console.log(err.message));
     },
 
-    // SHOW ONE BOOK
-    getBook: async (context, id) => {
-      fetch("http://localhost:6969/products/" + id)
+    // SHOW ONE Category
+    getCategory: async (context, id) => {
+      fetch("http://localhost:6969/categories/" + id)
         .then((response) => response.json())
-        .then((json) => context.commit("setProduct", json));
+        .then((json) => context.commit("setCategory", json));
     },
 
-    // ADD A BOOK
+    // ADD A Category
     addBook: async (context, book) => {
-      fetch("http://localhost:6969/products", {
+      fetch("http://localhost:6969/categories", {
         method: "POST",
         body: JSON.stringify(book),
         headers: {

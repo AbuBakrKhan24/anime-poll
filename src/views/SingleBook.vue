@@ -1,6 +1,6 @@
 <template>
   <!-- <p>This is the id {{ $route.params.id }}</p> -->
-  <div v-if="book" class="div ">
+  <div v-if="category" class="div ">
     
 
     <!-- editModal -->
@@ -194,13 +194,13 @@
 </template>
 
 <script>
-import BookCard from "../components/BookCard.vue";
+// import BookCard from "../components/BookCard.vue";
 export default {
   props: ["id"],
   computed: {
-    book() {
-      console.log(this.$store.state.book);
-      return this.$store.state.book;
+    category() {
+      console.log(this.$store.state.category);
+      return this.$store.state.category;
     },
     user() {
       console.log(this.$store.state.user);

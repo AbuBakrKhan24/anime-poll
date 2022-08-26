@@ -36,16 +36,6 @@ const routes = [
     props: true,
   },
   {
-    path: "/Admin",
-    name: "Admin",
-    component: () => import("../views/AdminBooks.vue"),
-  },
-  {
-    path: "/adminuser",
-    name: "adminuser",
-    component: () => import("../views/AdminUsers.vue"),
-  },
-  {
     path: "/profile",
     name: "profile",
     component: () => import("../views/Profile.vue"),
