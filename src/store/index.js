@@ -63,14 +63,14 @@ export default createStore({
   actions: {
     // USER
     getUser: async (context, id) => {
-      fetch("http://localhost:6969/users" + id)
+      fetch("https://anime-poll-api.herokuapp.com/users" + id)
         .then((res) => res.json())
         .then((json) => context.commit("setUser", json))
         .catch((err) => console.log(err.message));
     },
     // USERS
     getUsers: async (context) => {
-      fetch("http://localhost:6969/users")
+      fetch("https://anime-poll-api.herokuapp.com/users")
         .then((res) => res.json())
         .then((data) => context.commit("setUsers", data))
         .catch((err) => console.log(err.message));
@@ -92,23 +92,26 @@ export default createStore({
     //   if (!userData.length) return alert("No user found");
     // },
     login: async (context, payload) => {
-      let res = await fetch("http://localhost:6969/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: payload.email,
-          password: payload.password,
-        }),
-      });
+      let res = await fetch(
+        "https://anime-poll-api.herokuapp.com/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: payload.email,
+            password: payload.password,
+          }),
+        }
+      );
       let data = await res.json();
       console.log(data);
       if (data.token) {
         context.commit("setToken", data.token);
         // Verify token
         //
-        fetch("http://localhost:6969/users/users/verify", {
+        fetch("https://anime-poll-api.herokuapp.com/users/users/verify", {
           headers: {
             "Content-Type": "application/json",
             "x-auth-token": data.token,
@@ -126,7 +129,7 @@ export default createStore({
     },
     // REGISTER USER
     register: async (context, user) => {
-      fetch("http://localhost:6969/users/register", {
+      fetch("https://anime-poll-api.herokuapp.com/users/register", {
         method: "POST",
         body: JSON.stringify(user),
 

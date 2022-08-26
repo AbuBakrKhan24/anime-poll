@@ -6,10 +6,10 @@
         <div class="col-lg-6 details">
           <!-- These are the Details on the home page -->
           <header>
-          <h1>Hello there and welcome to Fanime.</h1>
-          <h4>We are an online store that are here to make you happy</h4>
+          <h1>Hello there and welcome to Anime-Poll.</h1>
+          <h4>We are an online e-voting or as some call it an e-polling website</h4>
           <p class="text-light mt-2">
-            by selling you our anime merchandise that most peaople tend to look for but end up not finding any.
+            join our community with many users on our platform and cast your vote for your favourite Anime, Manga, Korean Manhwa and Chinese Manhua and lets see what is the highest voted for this year.
           </p>
           </header>
 <!-- These are the Details on the home page Done -->
@@ -22,7 +22,7 @@
             class="buttons d-flex justify-content-center mt-5 mb-5"
             v-if="user"
           >
-            <router-link to="/library"
+            <router-link to="/vote"
               ><button
                 type="button"
                 class="read btn ms-5 text-light rounded-pill"
@@ -30,7 +30,7 @@
                 Start Reading
               </button></router-link
             >
-            <router-link to="/library">
+            <router-link to="/vote">
               <button
                 type="button"
                 class="write btn ms-5 text-light rounded-pill"
