@@ -1,9 +1,9 @@
 import { createStore } from "vuex";
-import router from "@/router";
+// import router from "@/router";
 export default createStore({
   state: {
-    // user: null || window.localStorage.getItem("user"),
-    user: null,
+    user: null || window.localStorage.getItem("user"),
+    // user: null,
     users: null,
     Token: null,
     product: null,
@@ -87,7 +87,7 @@ export default createStore({
     //   // console.log(userData);
     //   if (userData.length) {
     //     context.commit("setUser", userData[0]);
-    //     window.localStorage.setItem("user", JSON.stringify(userData[0]));
+    // window.localStorage.setItem("user", JSON.stringify(userData[0]));
     //   }
     //   if (!userData.length) return alert("No user found");
     // },
@@ -121,7 +121,7 @@ export default createStore({
             // console.log(data);
           });
       } else {
-        alert(data);
+        alert("User not found");
       }
     },
     // REGISTER USER

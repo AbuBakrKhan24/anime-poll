@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg bg-light" id="nav">
     <div class="container-fluid ms-5">
       <!-- Book Icon -->
-
+<!-- Pokeball -->
       <svg
         width="60"
         height="60"
@@ -64,7 +64,9 @@
           stroke-width="2"
         />
       </svg>
-      <button
+<!-- Pokeball done -->
+
+<button
         class="book_create"
         title="Click here to create your book"
         data-bs-toggle="modal"
@@ -89,6 +91,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Home button done -->
           <div v-if="user" class="d-flex justify-content-center">
+              <!--Home Page-->
             <li class="nav-item ms-5">
               <router-link
                 class="nav-link active text-dark"
@@ -98,25 +101,40 @@
                 Home
               </router-link>
             </li>
+            <!--Home Page done-->
+            
+            <!-- Vote Page done-->
             <li>
               <router-link
                 class="nav-link active text-dark"
                 aria-current="page"
-                to="/library"
-                >Library</router-link
+                to="/vote"
+                >Vote</router-link
               >
             </li>
+            <!-- Vote Page done-->
+            <!-- Results Page-->
+            <li>
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/results"
+                >Results</router-link
+              >
+            </li>
+            <!-- Results Page done -->
+            
             <!-- Profile Page -->
-
             <li>
               <router-link
                 class="nav-link active text-dark"
                 aria-current="page"
                 to="/profile"
               >
-                Profile Page
+                Profile
               </router-link>
             </li>
+            <li>
             <img
               width="40"
               height="35"
@@ -124,6 +142,7 @@
               :alt="user.name"
               class="profileAvatar d-inline-block align-text-top"
             />
+            </li>
           </div>
           <div v-else class="d-flex">
             <li class="nav-item ms-2">
@@ -213,10 +232,17 @@ nav.navbar {
   background-color: #f8f9fa;
 }
 .profileAvatar[data-v-41458b80] {
-  right: 100px;
-  position: absolute;
-  border-radius: 50%;
    height: 50px;
     width: 50px;
+}
+
+ul.navbar-nav.me-auto.mb-2.mb-lg-0[data-v-41458b80] {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-fluid.ms-5 {
+    margin-right: 3rem;
 }
 </style>

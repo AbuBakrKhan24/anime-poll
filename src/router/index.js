@@ -20,12 +20,17 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
   },
   {
-    path: "/library",
-    name: "library",
-    component: () => import("../views/Library.vue"),
+    path: "/vote",
+    name: "vote",
+    component: () => import("../views/vote.vue"),
   },
   {
-    path: "/library/:id",
+    path: "/results",
+    name: "results",
+    component: () => import("../views/resultsView.vue"),
+  },
+  {
+    path: "/vote/:id",
     name: "SingleBook",
     component: () => import("../views/SingleBook.vue"),
     props: true,
@@ -44,6 +49,11 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../views/Profile.vue"),
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "404NotFound",
+    component: () => import("../views/404NotFound.vue"),
   },
 ];
 
