@@ -2,7 +2,6 @@
   <div class="box">
     <div class="Form_Holder">
       <div class="card" style="width: fit-content">
-    
         <form @submit.prevent="login">
           <p>Log in to Bookdom</p>
           <fieldset>
@@ -33,9 +32,14 @@
       </div>
     </div>
   </div>
+  <Footer></Footer>
 </template>
 <script>
+import Footer from "../components/Footer.vue";
 export default {
+  components: {
+    Footer,
+  },
   computed: {
     user() {
       return this.$store.state.user;
@@ -58,49 +62,52 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@keyframes load {
+  33% {
+    transform: rotate(10deg);
+  }
 
-
-
-      @keyframes load {
-        33% {
-          transform: rotate(10deg)
-        }
-
-        66% {
-          transform: rotate(-10deg)
-        }
-      }
+  66% {
+    transform: rotate(-10deg);
+  }
+}
 
 .box {
-      display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-height: 56rem;
   // max-height: 92vh;
- background-image: radial-gradient(circle, #3d2f67, #34255f, #2a1c56, #21124e, #170846);
+  background-image: radial-gradient(
+    circle,
+    #3d2f67,
+    #34255f,
+    #2a1c56,
+    #21124e,
+    #170846
+  );
 }
 // box done
- .pokeballAnimation {
-        transform-origin: center bottom;
-        animation: load 1s infinite alternate;
-      }
+.pokeballAnimation {
+  transform-origin: center bottom;
+  animation: load 1s infinite alternate;
+}
 
-      @keyframes load {
-        33% {
-          transform: rotate(10deg)
-        }
+@keyframes load {
+  33% {
+    transform: rotate(10deg);
+  }
 
-        66% {
-          transform: rotate(-10deg)
-        }
-      }
+  66% {
+    transform: rotate(-10deg);
+  }
+}
 // Form_Holder
 .Form_Holder {
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding-bottom: 5%;
-  padding-top: 5%;
 }
 // Form_Holder done
 
@@ -187,7 +194,10 @@ footer {
 
 @media only screen and (max-width: 376px) {
   .box {
-  min-height: 92vh;
+    min-height: 100vh;
+  }
+  div#footer[data-v-40ab164b][data-v-40ab164b] {
+    margin-top: -26%;
   }
 }
 </style>

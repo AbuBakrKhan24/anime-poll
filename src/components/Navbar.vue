@@ -1,11 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-light" id="nav">
-    <div class="container-fluid ms-5">
+    <div class="container-fluid">
       <!-- Book Icon -->
-<!-- Pokeball -->
+      <!-- Pokeball -->
       <svg
-        width="60"
-        height="60"
         viewBox="0 0 106 106"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -64,14 +62,7 @@
           stroke-width="2"
         />
       </svg>
-<!-- Pokeball done -->
-
-<button
-        class="book_create"
-        title="Click here to create your book"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      ></button>
+      <!-- Pokeball done -->
 
       <router-link to="/" class="navbar-brand nav-link active text-dark">
         Anime-Poll
@@ -90,29 +81,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Home button done -->
-          <div v-if="user" class="d-flex justify-content-center">
-              <!--Home Page-->
-            <li class="nav-item ms-5">
+          <div v-if="user" class="d-flex dropped_nav justify-content-center">
+            <!--Home Page-->
+            <li class="nav-item">
               <router-link
                 class="nav-link active text-dark"
                 aria-current="page"
-                to="/"
+                to="/home"
               >
                 Home
               </router-link>
             </li>
             <!--Home Page done-->
-            
-            <!-- Vote Page done-->
-            <li>
-              <router-link
-                class="nav-link active text-dark"
-                aria-current="page"
-                to="/vote"
-                >Vote</router-link
-              >
-            </li>
-            <!-- Vote Page done-->
             <!-- Results Page-->
             <li>
               <router-link
@@ -123,7 +103,7 @@
               >
             </li>
             <!-- Results Page done -->
-            
+
             <!-- Profile Page -->
             <li>
               <router-link
@@ -134,19 +114,19 @@
                 Profile
               </router-link>
             </li>
-            <li>
-            <img
-              width="40"
-              height="35"
-              :src="user.avatar"
-              :alt="user.name"
-              class="profileAvatar d-inline-block align-text-top"
-            />
+            <li class="profile-pic">
+              <img
+                width="40"
+                height="35"
+                :src="user.avatar"
+                :alt="user.name"
+                class="profileAvatar d-inline-block align-text-top"
+              />
             </li>
           </div>
           <div v-else class="d-flex">
+            <!-- Login -->
             <li class="nav-item ms-2">
-              <!-- Login -->
               <router-link
                 class="nav-link active text-dark"
                 aria-current="page"
@@ -155,7 +135,7 @@
                 Log in
               </router-link>
             </li>
-
+            <!-- Sign-Up -->
             <li class="nav-item ms-3">
               <!-- Sign up -->
               <router-link
@@ -169,9 +149,7 @@
           </div>
           <!-- Profile Page Done-->
         </ul>
-        <li>
-          <!-- Book Icon done -->
-        </li>
+        <li></li>
       </div>
     </div>
   </nav>
@@ -191,6 +169,11 @@ export default {
 //         cursor: url("https://cur.cursors-4u.net/anime/ani-12/oth1118.ani"), url("https://cur.cursors-4u.net/anime/ani-12/oth1118.png"), default;
 //     }
 
+svg.pokeballAnimation {
+  width: 60px;
+  height: 60px;
+  fill: none;
+}
 .pokeballAnimation {
   transform-origin: center bottom;
   animation: load 1s infinite alternate;
@@ -208,6 +191,7 @@ export default {
 
 .navbar-brand {
   font-size: 31px;
+  margin-left: var(--bs-navbar-brand-margin-end);
 }
 
 a {
@@ -232,17 +216,37 @@ nav.navbar {
   background-color: #f8f9fa;
 }
 .profileAvatar[data-v-41458b80] {
-   height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
 
 ul.navbar-nav.me-auto.mb-2.mb-lg-0[data-v-41458b80] {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .container-fluid.ms-5 {
-    margin-right: 3rem;
+  margin-right: 3rem;
+}
+
+.profile-pic {
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 376px) {
+  svg.pokeballAnimation {
+    width: 35px;
+    height: 35px;
+    fill: none;
+  }
+  .navbar-brand[data-v-41458b80] {
+    font-size: 30px;
+  }
+  .dropped_nav {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 </style>

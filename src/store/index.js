@@ -144,7 +144,8 @@ export default createStore({
     // Categories
     // SHOW ALL OF Categories
     getCategories: async (context) => {
-      fetch("http://localhost:6969/categories")
+      // fetch("http://localhost:6969/categories")
+      fetch("https://anime-poll-api.herokuapp.com/categories")
         .then((res) => res.json())
         .then((data) => context.commit("setCategories", data))
         .catch((err) => console.log(err.message));
@@ -153,6 +154,7 @@ export default createStore({
     // SHOW ONE Category
     getCategory: async (context, id) => {
       fetch("http://localhost:6969/categories/" + id)
+        // fetch("https://anime-poll-api.herokuapp.com/categories" + id)
         .then((response) => response.json())
         .then((json) => context.commit("setCategory", json));
     },

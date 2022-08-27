@@ -1,35 +1,124 @@
 <template>
- <div class="modal-footer">
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/AbuBakrKhan24/Personal_Portfolio.git"
-              target="_blank"
-              ><i class="fa-brands fa-github github-icon-project"></i
-            ></a>
-            <a
-              href="https://merry-sundae-6ab06d.netlify.app"
-              target="_blank"
-              class="btn btn-primary"
-            >
-    
-            </a>
-          </div>
+  <!-- Footer -->
+  <div id="footer">
+    <div class="container d-flex justify-content-between">
+      <p class="footer text-light">© 2022 Fanime</p>
+      <ul class="icons mt-4 d-flex">
+        <li class="ms-5 text-light">
+          <a href="#">
+            <i class="fa-brands fa-facebook-square FaceBook"></i>
+          </a>
+        </li>
 
+        <li class="ms-5 text-light">
+          <a href="#">
+            <i class="fa-brands fa-instagram Instagram"></i>
+          </a>
+        </li>
+
+        <li class="ms-5 text-light">
+          <a href="#">
+            <i class="fa-brands fa-twitter Twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Footer Done -->
 </template>
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 /* footer */
-.footer-area .container {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-.footer-area {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-/* footer done */
+/* #footer[data-v-98feeed2][data-v-98feeed2] {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.367);
+  margin-top: 8%;
+} */
 
+div#footer {
+  padding-top: 15px;
+  margin-top: -5%;
+  background-color: rgba(0, 0, 0, 0.367);
+  width: 100%;
+}
+
+p.footer.text-light {
+  margin-top: 2%;
+}
+
+ul.icons.mt-4.d-flex {
+  list-style-type: none;
+  padding: 0;
+  font-size: 25px;
+  align-items: center;
+}
+
+p.footer.text-light.mt-5 {
+  font-size: 19px;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: #f9fafb;
+  text-decoration: none;
+}
+
+/* Links */
+.FaceBook:hover {
+  /* color: #4867aa;
+  background-color: white; */
+  color: #3b5998;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 20%,
+    white 20%,
+    white 93%,
+    transparent 93%
+  );
+  background-size: 55%;
+  background-position: 70% 0;
+  background-repeat: no-repeat;
+}
+
+.Instagram:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: white;
+}
+
+.Twitter:hover {
+  color: #1da1f2;
+}
+/* Links done */
+
+a {
+  width: 35%;
+}
+
+@media only screen and (max-width: 376px) {
+  p.footer.text-light.mt-5[data-v-40ab164b] {
+    font-size: 12px;
+    margin-top: 31px;
+    margin-bottom: 0rem;
+  }
+  div#footer[data-v-40ab164b] {
+    margin-top: -23%;
+  }
+  .Form_Holder[data-v-5c6101e4] {
+    padding-bottom: 20%;
+  }
+}
 </style>
