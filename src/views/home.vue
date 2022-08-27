@@ -22,9 +22,9 @@ export default {
     Footer,
   },
 
-  mounted() {
-    this.$store.dispatch("getCategories");
-  },
+  // mounted() {
+  //   this.$store.dispatch("getCategories");
+  // },
 
   computed: {
     categories() {
