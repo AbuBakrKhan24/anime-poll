@@ -2,7 +2,7 @@
   <!-- Footer -->
   <div id="footer">
     <div class="container d-flex justify-content-between">
-      <p class="footer text-light">© 2022 Fanime</p>
+      <p class="footer text-light">© 2022 Anime-Poll</p>
       <ul class="icons mt-4 d-flex">
         <li class="ms-5 text-light">
           <a href="#">
@@ -30,16 +30,8 @@
 export default {};
 </script>
 <style scoped>
-/* footer */
-/* #footer[data-v-98feeed2][data-v-98feeed2] {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.367);
-  margin-top: 8%;
-} */
-
 div#footer {
-  padding-top: 15px;
-  margin-top: -5%;
+  margin-top: -78px;
   background-color: rgba(0, 0, 0, 0.367);
   width: 100%;
 }
@@ -68,8 +60,6 @@ a {
 
 /* Links */
 .FaceBook:hover {
-  /* color: #4867aa;
-  background-color: white; */
   color: #3b5998;
   background-image: linear-gradient(
     to bottom,

@@ -29,10 +29,16 @@ const routes = [
     name: "results",
     component: () => import("../views/resultsView.vue"),
   },
+  // {
+  //   path: "/home/:id",
+  //   name: "SingleBook",
+  //   component: () => import("../views/SingleBook.vue"),
+  //   props: true,
+  // },
   {
-    path: "/home/:id",
-    name: "SingleBook",
-    component: () => import("../views/SingleBook.vue"),
+    path: "/elections",
+    name: "Elections",
+    component: () => import("../views/Elections.vue"),
     props: true,
   },
   {

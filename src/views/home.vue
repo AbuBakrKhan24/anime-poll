@@ -1,25 +1,32 @@
 <template>
-  <div class="display text-center">
-    <div class="row">
-      <div class="col-lg-12">
-        <h2>Ongoing Elections</h2>
+  <div v-if="user">
+    <div class="display text-center bg-dark text-light">
+      <div class="row text-dark">
+        <div class="col-lg-12 text-light">
+          <h2>Ongoing Elections</h2>
+        </div>
+        <categoryCard
+          v-for="category in categories"
+          :key="category.categories_id"
+          :category="category"
+        />
       </div>
-      <categoryCard
-        v-for="category in categories"
-        :key="category.categories_id"
-        :category="category"
-      />
     </div>
-    <Footer></Footer>
   </div>
+  <div v-else>
+    <PageNotFound></PageNotFound>
+  </div>
+  <Footer></Footer>
 </template>
 <script>
 import Footer from "../components/Footer.vue";
 import categoryCard from "../components/categoryCard.vue";
+import PageNotFound from "../components/404PageNotFound.vue";
 export default {
   components: {
     categoryCard,
     Footer,
+    PageNotFound,
   },
 
   mounted() {
@@ -30,6 +37,10 @@ export default {
     categories() {
       // console.log(this.$store.state.category);
       return this.$store.state.categories;
+    },
+    user() {
+      console.log(this.$store.state.user);
+      return this.$store.state.user;
     },
   },
 };
@@ -62,7 +73,11 @@ export default {
 @media only screen and (max-width: 376px) {
   .display {
     height: 100%;
-    margin-bottom: 0;
+    padding-bottom: 125px;
+    margin-bottom: 9px;
+  }
+  .col-lg-12[data-v-7eb2bc79] {
+    padding-top: 20px;
   }
 }
 </style>

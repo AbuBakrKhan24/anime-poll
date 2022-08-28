@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-// import router from "@/router";
+import router from "@/router";
 export default createStore({
   state: {
     user: null || window.localStorage.getItem("user"),
@@ -8,6 +8,7 @@ export default createStore({
     Token: null,
     category: null,
     categories: null,
+    elections: null,
     asc: true,
   },
 
@@ -27,38 +28,9 @@ export default createStore({
     setCategories: (state, categories) => {
       state.categories = categories;
     },
-    // sortBooksByTitle: (state) => {
-    //   state.books = state.products.sort((a, b) => {
-    //     // return a.number - b.number;
-    //     if (a.title < b.title) {
-    //       return -1;
-    //     }
-    //     if (a.title > b.title) {
-    //       return 1;
-    //     }
-    //     return 0;
-    //   });
-    //   if (!state.asc) {
-    //     state.products.reverse();
-    //   }
-    //   state.asc = !state.asc;
-    // },
-    // sortUsersByUsername: (state) => {
-    //   state.users = state.users.sort((a, b) => {
-    //     // return a.number - b.number;
-    //     if (a.username < b.username) {
-    //       return -1;
-    //     }
-    //     if (a.username > b.username) {
-    //       return 1;
-    //     }
-    //     return 0;
-    //   });
-    //   if (!state.asc) {
-    //     state.users.reverse();
-    //   }
-    //   state.asc = !state.asc;
-    // },
+    setElections: (state, elections) => {
+      state.elections = elections;
+    },
   },
   actions: {
     // USER
@@ -109,6 +81,7 @@ export default createStore({
       console.log(data);
       if (data.token) {
         context.commit("setToken", data.token);
+
         // Verify token
         //
         fetch("https://anime-poll-api.herokuapp.com/users/users/verify", {
@@ -120,7 +93,9 @@ export default createStore({
           .then((res) => res.json())
           .then((data) => {
             context.commit("setUser", data);
-            // router.push("/users");
+
+            window.localStorage.setItem("data", JSON.stringify(data[0]));
+            router.push("/home");
             // console.log(data);
           });
       } else {
@@ -148,6 +123,14 @@ export default createStore({
       fetch("https://anime-poll-api.herokuapp.com/categories")
         .then((res) => res.json())
         .then((data) => context.commit("setCategories", data))
+        .catch((err) => console.log(err.message));
+    },
+    // SHOW ALL elections
+    getElections: async (context) => {
+      fetch("http://localhost:6969/elections/")
+        // fetch("https://anime-poll-api.herokuapp.com/categories")
+        .then((res) => res.json())
+        .then((data) => context.commit("setElections", data))
         .catch((err) => console.log(err.message));
     },
 

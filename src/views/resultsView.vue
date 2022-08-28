@@ -1,12 +1,25 @@
 <template lang="">
-  <div class="pic bg-dark"></div>
+  <div v-if="user">
+    <div class="pic bg-dark"></div>
+  </div>
+  <div v-else>
+    <PageNotFound></PageNotFound>
+  </div>
+
   <Footer></Footer>
 </template>
 <script>
 import Footer from "../components/Footer.vue";
+import PageNotFound from "../components/404PageNotFound.vue";
 export default {
   components: {
     Footer,
+    PageNotFound,
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
   },
 };
 </script>

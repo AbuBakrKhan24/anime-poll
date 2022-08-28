@@ -149,7 +149,6 @@
           </div>
           <!-- Profile Page Done-->
         </ul>
-        <li></li>
       </div>
     </div>
   </nav>
@@ -158,7 +157,6 @@
 export default {
   computed: {
     user() {
-      console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },
@@ -234,6 +232,9 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0[data-v-41458b80] {
   margin-left: 5px;
 }
 
+// li.nav-item {
+//   border-bottom: 0px solid;
+// }
 @media only screen and (max-width: 376px) {
   svg.pokeballAnimation {
     width: 35px;
@@ -247,6 +248,15 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0[data-v-41458b80] {
     display: flex !important;
     justify-content: center;
     flex-direction: column;
+  }
+  li {
+    border-bottom: 1px solid;
+  }
+  li:first-of-type {
+    border-top: 1px solid;
+  }
+  .profile-pic[data-v-41458b80] {
+    margin-left: 0px;
   }
 }
 </style>

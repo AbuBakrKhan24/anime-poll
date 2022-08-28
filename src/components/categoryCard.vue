@@ -5,7 +5,9 @@
         <h5 class="card-title">{{ category.category_name }}</h5>
         <p class="card-text">{{ category.categories_description }}</p>
         <div class="button_holder">
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <router-link to="/elections" class="btn btn-primary"
+            >Go to election</router-link
+          >
         </div>
       </div>
     </div>

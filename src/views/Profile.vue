@@ -362,7 +362,6 @@ export default {
       return this.$store.state.user.readingList;
     },
     user() {
-      console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },
@@ -526,9 +525,6 @@ a {
 .Users_details {
   padding-bottom: 20px;
 }
-/* MQ */
-/* @media only screen and (max-width: 600px) {
-} */
 
 .col-8 {
   height: fit-content;
@@ -569,5 +565,22 @@ h4 {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+/* MQ */
+@media only screen and (max-width: 376px) {
+  .col-lg-6.col-sm-12.details {
+    padding-left: 24px;
+  }
+  h3[data-v-ced23842] {
+    font-size: 25px;
+  }
+  h4[data-v-ced23842] {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  p[data-v-ced23842] {
+    font-size: 17px;
+  }
 }
 </style>

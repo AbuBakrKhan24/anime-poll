@@ -216,6 +216,7 @@ a {
 @media only screen and (max-width: 376px) {
   #hello[data-v-98feeed2] {
     padding-top: 10%;
+    padding-bottom: 28%;
   }
   h1[data-v-98feeed2] {
     font-size: 40px;

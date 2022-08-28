@@ -195,6 +195,7 @@ footer {
 @media only screen and (max-width: 376px) {
   .box {
     min-height: 100vh;
+    padding-bottom: 20%;
   }
   div#footer[data-v-40ab164b][data-v-40ab164b] {
     margin-top: -26%;
