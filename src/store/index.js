@@ -1,10 +1,11 @@
 import { createStore } from "vuex";
 import router from "@/router";
+import createPersistedState from "vuex-persistedstate";
+
 export default createStore({
   state: {
-    user: null || window.localStorage.getItem("user"),
-    // user: null,
-    users: null,
+    // user: window.localStorage.getItem("user"),
+    user: null,
     Token: null,
     category: null,
     categories: null,
@@ -30,6 +31,9 @@ export default createStore({
     },
     setElections: (state, elections) => {
       state.elections = elections;
+    },
+    Logout(state) {
+      (state.user = ""), (state.Token = "");
     },
   },
   actions: {
@@ -59,7 +63,7 @@ export default createStore({
     //   // console.log(userData);
     //   if (userData.length) {
     //     context.commit("setUser", userData[0]);
-    // window.localStorage.setItem("user", JSON.stringify(userData[0]));
+    //     window.localStorage.setItem("user", JSON.stringify(userData[0]));
     //   }
     //   if (!userData.length) return alert("No user found");
     // },
@@ -91,9 +95,9 @@ export default createStore({
           },
         })
           .then((res) => res.json())
-          .then((data) => {
-            context.commit("setUser", data);
-            window.localStorage.setItem("data", JSON.stringify(data[0]));
+          .then((user) => {
+            context.commit("setUser", user);
+            // window.localStorage.setItem("user", JSON.stringify(user));
 
             router.push("/home");
             // console.log(data);
@@ -102,6 +106,7 @@ export default createStore({
         alert("User not found");
       }
     },
+
     // REGISTER USER
     register: async (context, user) => {
       fetch("https://anime-poll-api.herokuapp.com/users/register", {
@@ -244,4 +249,5 @@ export default createStore({
     },
   },
   modules: {},
+  plugins: [createPersistedState()],
 });

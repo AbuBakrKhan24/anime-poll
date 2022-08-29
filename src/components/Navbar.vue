@@ -123,6 +123,10 @@
                 class="profileAvatar d-inline-block align-text-top"
               />
             </li>
+            <!-- Logout -->
+            <li>
+              <button @click="Logout()">Logout</button>
+            </li>
           </div>
           <div v-else class="d-flex">
             <!-- Login -->
@@ -158,6 +162,15 @@ export default {
   computed: {
     user() {
       return this.$store.state.user;
+    },
+  },
+  methods: {
+    Logout() {
+      this.$store.commit("Logout");
+      this.$router.push("/");
+
+      // localStorage.clear();
+      // this.$router.go();
     },
   },
 };

@@ -58,171 +58,231 @@
                 <select v-model="avatar" multiple>
                   <!-- 1 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Armin.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Armin.webp"
                   >
-                    1
+                    Armin
                   </option>
                   <!-- 2 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Armin_2.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Armin_2.webp"
                   >
-                    2
+                    Armin(2)
                   </option>
                   <!-- 3 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Eren.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Eren-Jaeger.webp"
                   >
-                    3
+                    ErenS4
                   </option>
                   <!-- 4 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Mikasa.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Eren.webp"
                   >
-                    4
+                    ErenS4(2)
                   </option>
                   <!-- 5 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/Sasha.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Mikasa.webp"
                   >
-                    5
+                    Mikasa
                   </option>
-                  <!-- 6 -->
+                  <!-- Sasha -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Aot/levi.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Sasha.webp"
                   >
-                    6
+                    Sasha
                   </option>
-                  <!-- 7 -->
+                  <!-- Levi -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Bleach/Izuru%20Kira.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/levi.webp"
                   >
-                    7
+                    Levi
                   </option>
-                  <!-- 8 -->
+                  <!-- Aizen Sousuke -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Nezeko.jpg?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/Aizen%20Sousuke%20Chibi!.webp"
                   >
-                    8
+                    Aizen Sousuke
                   </option>
-                  <!-- 9 -->
+                  <!-- Byakuya -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro.jpg?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/Bleach%20Anime%20Fan%20Art_%20Chibi%20Byakuya.webp"
                   >
-                    9
+                    Byakuya
                   </option>
-                  <!-- 10 -->
+                  <!-- Grimmjow -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro_2.jpg?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/Bleach%20Anime%20Fan%20Art_%20Chibi%20Grimmjow.webp"
                   >
-                    10
+                    Grimmjow
                   </option>
-                  <!-- 11 -->
+                  <!-- Gin -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Zenitsu.jpg?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/Gin%20at%20peak%20fashion!.webp"
                   >
-                    11
+                    Gin
                   </option>
-                  <!-- 12 -->
+                  <!-- Kurosaki Ichigo -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Android%2017%23.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/Kurosaki%20Ichigo%20Photo_%20Ichigo.webp"
                   >
-                    12
+                    Kurosaki Ichigo
                   </option>
-                  <!-- 13 -->
+                  <!-- Rukia -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Baby.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Bleach/rukia.webp"
                   >
-                    13
+                    Rukia
                   </option>
-                  <!-- 14 -->
+                  <!-- Nezuko -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/Vegete.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Nezeko.webp"
                   >
-                    14
+                    Nezuko
                   </option>
-                  <!-- 15 -->
+                  <!-- Tanjiro -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/dragonball.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro.webp"
                   >
-                    15
+                    Tanjiro
                   </option>
-                  <!-- 16 -->
+                  <!-- Tanjiro_2 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/DragonBall/goku.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Tanjiro_2.webp"
                   >
-                    16
+                    Tanjiro_2
                   </option>
-                  <!-- 17 -->
+                  <!-- Zenitsu -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/all%20might.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Demon%20Slayer/Zenitsu.webp"
                   >
-                    17
+                    Zenitsu
                   </option>
-                  <!-- 18 -->
+                  <!-- Baby Vegeta -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/midoriya.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/Baby.webp"
                   >
-                    18
+                    Baby Vegeta
                   </option>
-                  <!-- 19 -->
+                  <!-- Chibi Gohan -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/todoroki.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/Chibi%20Gohan.webp"
                   >
-                    19
+                    Chibi Gohan
                   </option>
-                  <!-- 20 -->
+                  <!-- Gogeta SSJ4 -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/MHA/toga.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/Gogeta%20SSayanjin4.webp"
                   >
-                    20
+                    Gogeta SSJ4
                   </option>
-                  <!-- 21 -->
+                  <!-- Margin Vegeta -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/Sasuke.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/Vegeta.webp"
                   >
-                    21
+                    Margin Vegeta
                   </option>
-                  <!-- 22 -->
+                  <!-- DragonBall -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/gaara.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/dragonball.webp"
                   >
-                    22
+                    DragonBall
                   </option>
-                  <!-- 23 -->
+                  <!-- Gogeta SSJB -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Naruto/naruto_2.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/gogeta%20ssjb.webp"
                   >
-                    23
+                    Gogeta SSJB
                   </option>
-                  <!-- 24 -->
+                  <!-- Kid Goku SSJB  -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/One%20Punch%20Man/saitama.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/DragonBall/goku.webp"
                   >
-                    24
+                    Kid Goku SSJB
                   </option>
-                  <!-- 25 -->
+                  <!-- Chibi Itadori -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/jolteon.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Jujutsu%20Kaisen/Chibi%20Jujutsu%20Kaisen%20Itadori.webp"
                   >
-                    25
+                    Chibi Itadori
                   </option>
-                  <!-- 26 -->
+                  <!-- Megumi -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/pikachu.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Jujutsu%20Kaisen/Jujutsu%20Kaisen%20-%20Megumi%20Eating%20(5_14)%20Sticker%20by%20Suncelia.webp"
                   >
-                    26
+                    Megumi
                   </option>
-                  <!-- 27 -->
+                  <!-- Nanami And Gojo -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/Pokemon/umbreon.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Jujutsu%20Kaisen/Jujutsu%20Kaisen%20-%20Nanami%20and%20Gojo%20(6_14)%20Sticker%20by%20Suncelia.webp"
                   >
-                    27
+                    Nanami And Gojo
                   </option>
-                  <!-- 28 -->
+                  <!-- Gojo -->
                   <option
-                    value="https://github.com/AbuBakrKhan24/Database/blob/main/Images/Anime-Poll/Avatar%20images/SOA/SOA.png?raw=true"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Jujutsu%20Kaisen/gojo.webp"
                   >
-                    28
+                    Gojo
+                  </option>
+                  <!-- All Might -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/MHA/all%20might.webp"
+                  >
+                    All Might
+                  </option>
+                  <!-- Todoroki -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/MHA/todoroki.webp"
+                  >
+                    Todoroki
+                  </option>
+                  <!-- Toga -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/MHA/toga.webp"
+                  >
+                    Toga
+                  </option>
+                  <!-- Itachi Dressed -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/Anime%20and%20Anime%20Art%20News_%20Content%20and%20Giveaways.webp"
+                  >
+                    Itachi Dressed
+                  </option>
+                  <!-- Itachi -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/Chibi%20Uchiha%20Itachi%20by%20Ento-Lee%20on%20DeviantArt.webp"
+                  >
+                    Itachi
+                  </option>
+                  <!-- Sasuke -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/Sasuke.webp"
+                  >
+                    Sasuke
+                  </option>
+                  <!-- Garaa -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/gaara.webp"
+                  >
+                    Garaa
+                  </option>
+                  <!-- Naruto -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/naruto.webp"
+                  >
+                    Itachi
+                  </option>
+                  <!-- Naruto_2 -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/naruto_2.webp"
+                  >
+                    Naruto_2
+                  </option>
+                  <!-- Itachi -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/Chibi%20Uchiha%20Itachi%20by%20Ento-Lee%20on%20DeviantArt.webp"
+                  >
+                    Itachi
                   </option>
                 </select>
                 Some images may take longer to load than others so please be
