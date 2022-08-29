@@ -93,8 +93,8 @@ export default createStore({
           .then((res) => res.json())
           .then((data) => {
             context.commit("setUser", data);
-
             window.localStorage.setItem("data", JSON.stringify(data[0]));
+
             router.push("/home");
             // console.log(data);
           });
@@ -127,8 +127,8 @@ export default createStore({
     },
     // SHOW ALL elections
     getElections: async (context) => {
-      fetch("http://localhost:6969/elections/")
-        // fetch("https://anime-poll-api.herokuapp.com/categories")
+      // fetch("http://localhost:6969/elections/")
+      fetch("https://anime-poll-api.herokuapp.com/elections")
         .then((res) => res.json())
         .then((data) => context.commit("setElections", data))
         .catch((err) => console.log(err.message));
