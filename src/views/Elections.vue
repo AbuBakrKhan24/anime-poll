@@ -3,7 +3,7 @@
     <div class="display text-center bg-dark text-light">
       <div class="row text-dark">
         <election
-          v-for="election in elections"
+          v-for="election in categorysection"
           :key="election.category_ID"
           :election="election"
         />
@@ -31,9 +31,9 @@ export default {
     this.$store.dispatch("getElections");
   },
   computed: {
-    elections() {
+    categorysection() {
       // console.log(this.$store.state.category);
-      return this.$store.state.elections;
+      return this.$store.state.categorysection;
     },
     user() {
       // console.log(this.$store.state.user);

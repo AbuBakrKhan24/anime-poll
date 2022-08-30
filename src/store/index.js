@@ -11,6 +11,8 @@ export default createStore({
     categories: null,
     elections: null,
     asc: true,
+    categorysection: null,
+    polls: null,
   },
 
   mutations: {
@@ -29,8 +31,14 @@ export default createStore({
     setCategories: (state, categories) => {
       state.categories = categories;
     },
+    setPolls: (state, polls) => {
+      state.polls = polls;
+    },
     setElections: (state, elections) => {
       state.elections = elections;
+    },
+    setCategorySection: (state, categorysection) => {
+      state.categorysection = categorysection;
     },
     Logout(state) {
       (state.user = ""), (state.Token = "");
@@ -146,6 +154,16 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("setCategory", json));
     },
+    // SHOW ONE Category/section
+    getCategorySection: async (context, id) => {
+      fetch("https://anime-poll-api.herokuapp.com/elections/category/" + id)
+        // fetch("https://anime-poll-api.herokuapp.com/categories" + id)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          context.commit("setCategorySection", json);
+        });
+    },
 
     // ADD A Category
     addBook: async (context, book) => {
@@ -246,6 +264,30 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
+    },
+    AddPoll: async (context, poll) => {
+      // const { category_ID, user_ID, election_ID } = poll;
+      console.log(poll);
+      const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
+        method: "POST",
+        body: JSON.stringify({ poll }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((polls) => {
+          console.log(polls);
+        });
+      // console.log(res);
+    },
+    getPoll: async (context, id) => {
+      fetch("http://localhost:6969/pollscategory")
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          context.commit("setPolls", json);
+        });
     },
   },
   modules: {},

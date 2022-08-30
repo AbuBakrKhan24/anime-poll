@@ -14,8 +14,16 @@
             <!-- Password -->
             <label
               >Enter Password
-              <input type="text" name="user-name" required v-model="password"
-            /></label>
+              <input
+                id="myInput"
+                type="password"
+                name="password"
+                required
+                v-model="password"
+              />
+              <input type="checkbox" @click="myFunction()" />Show Password
+              <!-- An element to toggle between password visibility -->
+            </label>
             <!-- Password done -->
           </fieldset>
           <!-- Button to submit  -->
@@ -57,6 +65,14 @@ export default {
         email: this.email,
         password: this.password,
       });
+    },
+    myFunction() {
+      let show = document.getElementById("myInput");
+      if (show.type === "password") {
+        show.type = "text";
+      } else {
+        show.type = "password";
+      }
     },
   },
 };

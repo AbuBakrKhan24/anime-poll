@@ -5,7 +5,10 @@
         <h5 class="card-title">{{ category.category_name }}</h5>
         <p class="card-text">{{ category.categories_description }}</p>
         <div class="button_holder">
-          <router-link to="/elections" class="btn btn-primary"
+          <router-link
+            :to="{ name: 'elections', params: { id: category.categories_id } }"
+            @click="categorySection(category.categories_id)"
+            class="btn btn-primary"
             >Go to election</router-link
           >
         </div>
@@ -16,6 +19,11 @@
 <script>
 export default {
   props: ["category"],
+  methods: {
+    categorySection(id) {
+      this.$store.dispatch("getCategorySection", id);
+    },
+  },
 };
 </script>
 <style scoped>

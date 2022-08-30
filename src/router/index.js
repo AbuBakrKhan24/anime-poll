@@ -42,6 +42,12 @@ const routes = [
     props: true,
   },
   {
+    path: "/elections/:id",
+    name: "elections",
+    component: () => import("../views/Elections.vue"),
+    props: true,
+  },
+  {
     path: "/profile",
     name: "profile",
     component: () => import("../views/Profile.vue"),

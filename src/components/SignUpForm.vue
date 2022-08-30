@@ -18,16 +18,20 @@
                 >Enter Your Email:
                 <input v-model="email" type="email" name="email" required
               /></label>
-              <!-- password -->
+              <!-- Password -->
               <label
-                >Create a New Password:
+                >Enter Password
                 <input
-                  v-model="password"
+                  id="myInput"
                   type="password"
                   name="password"
-                  pattern="[a-z0-5]{8,}"
                   required
-              /></label>
+                  v-model="password"
+                />
+                <input type="checkbox" @click="myFunction()" />Show Password
+                <!-- An element to toggle between password visibility -->
+              </label>
+              <!-- Password done -->
             </fieldset>
             <!-- Bio -->
             <fieldset>
@@ -278,11 +282,47 @@
                   >
                     Naruto_2
                   </option>
-                  <!-- Itachi -->
+                  <!-- Chibi Garou -->
                   <option
-                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Naruto/Chibi%20Uchiha%20Itachi%20by%20Ento-Lee%20on%20DeviantArt.webp"
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/One%20Punch%20Man/Chibi%20Garou%20_%20_r_OnePunchMan%20_%20One-Punch%20Man.webp"
                   >
-                    Itachi
+                    Chibi Garou
+                  </option>
+                  <!--  Sonic -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/One%20Punch%20Man/One%20Punch%20Man%20-%20Sonic.webp"
+                  >
+                    Chibi Sound o Sonic
+                  </option>
+                  <!-- Pikachu -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Pokemon/pikachu.webp"
+                  >
+                    Pikachu
+                  </option>
+                  <!-- Asuna -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/SOA/asuna.webp"
+                  >
+                    Asuna
+                  </option>
+                  <!-- Kirito -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/SOA/chibi%20Kirito%20from%20sword%20art%20online.webp"
+                  >
+                    Kirito
+                  </option>
+                  <!-- Kirito_2 -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/SOA/kkirito.webp"
+                  >
+                    Kirito_2
+                  </option>
+                  <!-- Solo-Leveling -->
+                  <option
+                    value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Solo%20Leveling/The%20author%20of%20SL%2C%20we%20need%20more%20chibi!.webp"
+                  >
+                    Sung JinWoo
                   </option>
                 </select>
                 Some images may take longer to load than others so please be
@@ -342,6 +382,14 @@ export default {
         user_type: this.user_type,
         about: this.about,
       });
+    },
+    myFunction() {
+      let show = document.getElementById("myInput");
+      if (show.type === "password") {
+        show.type = "text";
+      } else {
+        show.type = "password";
+      }
     },
   },
 };
