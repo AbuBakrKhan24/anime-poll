@@ -1,6 +1,61 @@
 <template>
   <div v-if="user">
     <div class="display text-center bg-dark text-light">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="true"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active carasoul_btn"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            class="carasoul_btn"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            class="carasoul_btn"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <electionCarasoul
+            v-for="electionCarasoul in categorysection"
+            :key="electionCarasoul.category_ID"
+            :election="electionCarasoul"
+          />
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
       <div class="row text-dark">
         <election
           v-for="election in categorysection"
@@ -17,15 +72,19 @@
 </template>
 
 <script>
-import election from "../components/election.vue";
+import election from "../components/electionCard.vue";
+import electionCarasoul from "../components/electionCarasoul.vue";
 // import categoryCard from "../components/categoryCard.vue";
 import Footer from "../components/Footer.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
+import ElectionCarasoul from "../components/electionCarasoul.vue";
 export default {
   components: {
     election,
+    electionCarasoul,
     Footer,
     PageNotFound,
+    ElectionCarasoul,
   },
   mounted() {
     this.$store.dispatch("getElections");
@@ -44,7 +103,7 @@ export default {
 </script>
 <style scoped>
 .display[data-v-580e69b0] {
-  height: fit-content;
+  height: 100vh;
   padding: 10% 0 10% 0;
 }
 
@@ -63,4 +122,11 @@ export default {
     padding-bottom: 170px;
   }
 }
+
+/* Carasoul styles */
+button.active.carasoul_btn {
+  /* color: black; */
+  background-color: black;
+}
+/* Carasoul styles done*/
 </style>
