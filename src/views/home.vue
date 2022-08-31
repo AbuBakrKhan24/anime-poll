@@ -1,21 +1,21 @@
 <template>
-  <!-- <div v-if="user"> -->
-  <div class="display text-center bg-dark text-light">
-    <div class="row text-dark">
-      <div class="col-lg-12 text-light">
-        <h2>Ongoing Elections</h2>
+  <div v-if="user">
+    <div class="display text-center bg-dark text-light">
+      <div class="row text-dark">
+        <div class="col-lg-12 text-light">
+          <h2>Ongoing Elections</h2>
+        </div>
+        <categoryCard
+          v-for="category in categories"
+          :key="category.categories_id"
+          :category="category"
+        />
       </div>
-      <categoryCard
-        v-for="category in categories"
-        :key="category.categories_id"
-        :category="category"
-      />
     </div>
   </div>
-  <!-- </div> -->
-  <!-- <div v-else>
+  <div v-else>
     <PageNotFound></PageNotFound>
-  </div> -->
+  </div>
   <Footer></Footer>
 </template>
 <script>

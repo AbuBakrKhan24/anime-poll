@@ -56,21 +56,22 @@ export default {
   },
   methods: {
     AddVote(category_id, election_id, user_id) {
-      console.log(category_id, election_id, user_id),
-        this.$store.dispatch("AddPoll", {
-          category_id: category_id,
-          election_id: election_id,
-          user_id: user_id,
-        });
+      // console.log(category_id, election_id, user_id),
+      this.$store.dispatch("AddPoll", {
+        category_id: category_id,
+        election_id: election_id,
+        user_id: user_id,
+      });
     },
     Vote(id, vote) {
-      console.log(id, vote),
-        (this.num = ++vote),
+      // console.log(id, vote),
+      (this.num = ++vote),
         this.$store.dispatch("Vote", {
           id: id,
           vote: this.num,
         });
-      window.location.reload();
+      document.getElementById("vote_count").reload(true);
+      // window.location.reload();
     },
   },
 };

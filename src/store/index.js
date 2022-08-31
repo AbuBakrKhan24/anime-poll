@@ -265,26 +265,36 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
     },
+    // Profile done
+
+    // Add an election
     AddPoll: async (context, poll) => {
       // const { category_ID, user_ID, election_ID } = poll;
-      console.log(poll);
-      const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
-        method: "POST",
-        body: JSON.stringify({ poll }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
+      // console.log(poll);
+      // const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
+      const res = await fetch(
+        "https://anime-poll-api.herokuapp.com/pollscategory/add_polls",
+        {
+          method: "POST",
+          body: JSON.stringify({ poll }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((polls) => {
           console.log(polls);
         });
       // console.log(res);
     },
+    // Voting
     Vote: async (context, payload) => {
-      console.log(payload);
+      // console.log(payload);
       const res = await fetch(
-        "http://localhost:6969/elections/vote_count/" + payload.id,
+        // "http://localhost:6969/elections/vote_count/" + payload.id,
+        "https://anime-poll-api.herokuapp.com/elections/vote_count/" +
+          payload.id,
         {
           method: "PUT",
           body: JSON.stringify({
@@ -297,12 +307,14 @@ export default createStore({
       )
         .then((res) => res.json())
         .then((vote) => {
-          console.log(vote);
+          // console.log(vote);
         });
       console.log(res);
     },
+    // Getting the poll
     getPoll: async (context, id) => {
-      fetch("http://localhost:6969/pollscategory")
+      // fetch("http://localhost:6969/pollscategory")
+      fetch("https://anime-poll-api.herokuapp.com/pollscategory")
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
