@@ -231,7 +231,7 @@ nav.navbar {
   width: 50px;
 }
 
-ul.navbar-nav.me-auto.mb-2.mb-lg-0[data-v-41458b80] {
+ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
   width: 100%;
   display: flex;
   justify-content: flex-end;

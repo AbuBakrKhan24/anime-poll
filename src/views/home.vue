@@ -49,7 +49,12 @@ export default {
 .display {
   height: 100vh;
   /* margin-bottom: 118px; */
+  padding: 0;
 }
+/* 
+.display.text-center.bg-dark.text-light {
+  min-height: 100vh;
+} */
 
 .col-lg-12 {
   display: flex;

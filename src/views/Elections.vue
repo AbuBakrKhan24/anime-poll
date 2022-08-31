@@ -128,7 +128,12 @@ export default {
 };
 </script>
 <style scoped>
-.display[data-v-580e69b0] {
+/* .display[data-v-580e69b0] {
+  min-height: 100vh;
+  padding: 5% 0 10% 0;
+} */
+
+.display.text-center.bg-dark.text-light {
   min-height: 100vh;
   padding: 5% 0 10% 0;
 }
