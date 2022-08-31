@@ -226,7 +226,7 @@ nav.navbar {
   border: none;
   background-color: #f8f9fa;
 }
-.profileAvatar[data-v-41458b80] {
+.profileAvatar {
   height: 50px;
   width: 50px;
 }
@@ -254,7 +254,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
     height: 35px;
     fill: none;
   }
-  .navbar-brand[data-v-41458b80] {
+  .navbar-brand {
     font-size: 30px;
   }
   .dropped_nav {
@@ -268,7 +268,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
   li:first-of-type {
     border-top: 1px solid;
   }
-  .profile-pic[data-v-41458b80] {
+  .profile-pic {
     margin-left: 0px;
   }
 }

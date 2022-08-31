@@ -561,7 +561,7 @@ h4 {
   min-height: 450px;
 }
 
-.details[data-v-ced23842] {
+.details {
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -572,14 +572,14 @@ h4 {
   .col-lg-6.col-sm-12.details {
     padding-left: 24px;
   }
-  h3[data-v-ced23842] {
+  h3 {
     font-size: 25px;
   }
-  h4[data-v-ced23842] {
+  h4 {
     font-weight: 600;
     font-size: 20px;
   }
-  p[data-v-ced23842] {
+  p {
     font-size: 17px;
   }
 }

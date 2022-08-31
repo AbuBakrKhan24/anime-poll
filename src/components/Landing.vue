@@ -100,7 +100,7 @@ h1 {
   color: white;
 }
 
-h4[data-v-98feeed2] {
+h4 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin-top: 27px;
@@ -191,11 +191,11 @@ a {
 
 /* Media Queries */
 @media only screen and (max-width: 376px) {
-  #hello[data-v-98feeed2] {
+  #hello {
     padding-top: 10%;
     padding-bottom: 28%;
   }
-  h1[data-v-98feeed2] {
+  h1 {
     font-size: 40px;
   }
   .buttons {

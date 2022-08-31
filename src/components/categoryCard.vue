@@ -68,13 +68,13 @@ export default {
 }
 
 @media only screen and (max-width: 376px) {
-  .card-title[data-v-6895f384] {
+  .card-title {
     font-size: x-large;
   }
-  .card-text[data-v-6895f384] {
+  .card-text {
     font-size: small;
   }
-  .btn[data-v-6895f384] {
+  .btn {
     font-size: small;
   }
 }

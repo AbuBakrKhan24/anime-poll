@@ -81,7 +81,7 @@ export default {
     padding-bottom: 125px;
     margin-bottom: 9px;
   }
-  .col-lg-12[data-v-7eb2bc79] {
+  .col-lg-12 {
     padding-top: 20px;
   }
 }

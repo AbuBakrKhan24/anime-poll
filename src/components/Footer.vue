@@ -99,15 +99,15 @@ a {
 }
 
 @media only screen and (max-width: 376px) {
-  p.footer.text-light.mt-5[data-v-40ab164b] {
+  p.footer.text-light.mt-5 {
     font-size: 12px;
     margin-top: 31px;
     margin-bottom: 0rem;
   }
-  div#footer[data-v-40ab164b] {
+  div#footer {
     margin-top: -23%;
   }
-  .Form_Holder[data-v-5c6101e4] {
+  .Form_Holder {
     padding-bottom: 20%;
   }
 }

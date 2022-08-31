@@ -213,7 +213,7 @@ footer {
     min-height: 100vh;
     padding-bottom: 20%;
   }
-  div#footer[data-v-40ab164b][data-v-40ab164b] {
+  div#footer {
     margin-top: -26%;
   }
 }

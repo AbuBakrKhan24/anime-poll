@@ -506,11 +506,11 @@ a {
     padding-top: 20%;
     padding-bottom: 50%;
   }
-  .Form_Holder[data-v-2cb23e4c] {
+  .Form_Holder {
     padding-right: 5%;
     padding-left: 5%;
   }
-  div#footer[data-v-40ab164b][data-v-40ab164b] {
+  div#footer {
     margin-top: -23%;
   }
 }

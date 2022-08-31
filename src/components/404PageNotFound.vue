@@ -31,7 +31,7 @@ img {
   img {
     width: 100%;
   }
-  div#footer[data-v-40ab164b] {
+  div#footer {
     margin-top: -39%;
   }
   .page {
