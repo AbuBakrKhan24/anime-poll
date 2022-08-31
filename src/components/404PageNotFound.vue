@@ -38,4 +38,4 @@ img {
     padding-bottom: 150px;
   }
 }
-</style
+</style>
