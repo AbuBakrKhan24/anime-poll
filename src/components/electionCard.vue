@@ -70,6 +70,7 @@ export default {
           id: id,
           vote: this.num,
         });
+      window.location.reload();
     },
   },
 };

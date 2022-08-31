@@ -150,9 +150,41 @@ export default {
 }
 
 /* Carasoul styles */
+button.carasoul_btn {
+  background-color: cornflowerblue;
+}
+
 button.active.carasoul_btn {
   /* color: black; */
   background-color: black;
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: 0 0;
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
 /* Carasoul styles done*/
+
+@media only screen and (max-width: 1670px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 9%;
+    padding: 0;
+    color: #fff;
+  }
+}
 </style>

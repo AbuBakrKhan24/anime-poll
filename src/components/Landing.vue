@@ -29,29 +29,7 @@
 
           <!-- These are the buttons on the home page -->
           <buttons>
-            <!-- This works if its a user logged in -->
-            <div class="buttons mt-5 mb-5" v-if="user">
-              <router-link to="/login"
-                ><button
-                  type="button"
-                  class="read btn ms-5 text-light rounded-pill"
-                >
-                  Login
-                </button></router-link
-              >
-              <router-link to="/signup">
-                <button
-                  type="button"
-                  class="write btn ms-5 text-light rounded-pill"
-                >
-                  Sign Up
-                </button>
-              </router-link>
-            </div>
-            <!-- This works if its a user logged in Done -->
-
-            <!-- This will push the user to login page if they not a user -->
-            <div class="buttons mt-5 mb-5" v-else>
+            <div class="buttons mt-5 mb-5">
               <router-link to="/login"
                 ><button
                   type="button"
@@ -69,7 +47,6 @@
                 </button>
               </router-link>
             </div>
-            <!-- This will push the user to login page if they not a user Doen -->
           </buttons>
           <!-- These are the buttons on the home page Done -->
         </div>
