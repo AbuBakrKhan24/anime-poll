@@ -1,6 +1,11 @@
 <template>
   <div v-if="user">
     <div class="display text-center bg-dark text-light">
+      <!-- <div
+      class="display text-center bg-dark text-light"
+      v-on:load="addElement()"
+    > -->
+      <!-- <button @click="addElement()">addElement</button> -->
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -79,6 +84,11 @@ import Footer from "../components/Footer.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
 import ElectionCarasoul from "../components/electionCarasoul.vue";
 export default {
+  data() {
+    return {
+      active: false,
+    };
+  },
   components: {
     election,
     electionCarasoul,
@@ -87,24 +97,40 @@ export default {
     ElectionCarasoul,
   },
   mounted() {
-    this.$store.dispatch("getElections");
+    this.$store.dispatch("getCategorySection", this.$route.params.id);
+    this.addElement();
+    this.ButtonClick();
   },
   computed: {
     categorysection() {
-      // console.log(this.$store.state.category);
       return this.$store.state.categorysection;
+      // console.log(this.$store.state.categorysection)
     },
     user() {
       // console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },
+  methods: {
+    addElement() {
+      var myElement = document.querySelector(".carousel-item");
+      // example for addding some-class to the element
+      myElement.classList.add("active");
+      console.log("It worked");
+    },
+    ButtonClick() {
+      !this.active;
+      if (this.active === true) {
+        document.getElementsByClassName("next").click();
+      }
+    },
+  },
 };
 </script>
 <style scoped>
 .display[data-v-580e69b0] {
-  height: 100vh;
-  padding: 10% 0 10% 0;
+  min-height: 100vh;
+  padding: 5% 0 10% 0;
 }
 
 .row {

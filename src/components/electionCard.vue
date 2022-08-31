@@ -13,16 +13,27 @@
           {{ election.creator }}
         </p> -->
         <div class="button_holder">
-          <a href="#" class="btn btn-primary">View</a>
+          <!-- <a href="#" class="btn btn-primary">View</a> -->
+          <a
+            href="#"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="{{election.elections_id}}"
+            class="active carasoul_btn btn btn-primary"
+            aria-current="true"
+            aria-label="Slide 1"
+            >View</a
+          >
           <div v-if="user">
             <a
-              href="#"
               class="btn btn-primary"
               @click="
-                AddVote(election.category_ID, election.elections_id, user.id)
+                AddVote(election.category_ID, election.elections_id, user.id),
+                  Vote(election.elections_id, election.vote_count)
               "
-              >Vote</a
-            >
+              >Vote
+              {{ election.vote_count }}
+            </a>
           </div>
         </div>
       </div>
@@ -32,6 +43,12 @@
 <script>
 export default {
   props: ["election"],
+  data() {
+    return {
+      num: null,
+    };
+  },
+
   computed: {
     user() {
       return this.$store.state.user;
@@ -46,6 +63,14 @@ export default {
           user_id: user_id,
         });
     },
+    Vote(id, vote) {
+      console.log(id, vote),
+        (this.num = ++vote),
+        this.$store.dispatch("Vote", {
+          id: id,
+          vote: this.num,
+        });
+    },
   },
 };
 </script>
@@ -54,7 +79,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 5%;
 }
 
 .card {

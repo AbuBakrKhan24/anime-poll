@@ -132,16 +132,16 @@ export default createStore({
     // Categories
     // SHOW ALL OF Categories
     getCategories: async (context) => {
-      // fetch("http://localhost:6969/categories")
-      fetch("https://anime-poll-api.herokuapp.com/categories")
+      fetch("http://localhost:6969/categories")
+        // fetch("https://anime-poll-api.herokuapp.com/categories")
         .then((res) => res.json())
         .then((data) => context.commit("setCategories", data))
         .catch((err) => console.log(err.message));
     },
     // SHOW ALL elections
     getElections: async (context) => {
-      // fetch("http://localhost:6969/elections/")
-      fetch("https://anime-poll-api.herokuapp.com/elections")
+      fetch("http://localhost:6969/elections/")
+        // fetch("https://anime-poll-api.herokuapp.com/elections")
         .then((res) => res.json())
         .then((data) => context.commit("setElections", data))
         .catch((err) => console.log(err.message));
@@ -156,8 +156,8 @@ export default createStore({
     },
     // SHOW ONE Category/section
     getCategorySection: async (context, id) => {
-      fetch("https://anime-poll-api.herokuapp.com/elections/category/" + id)
-        // fetch("https://anime-poll-api.herokuapp.com/categories" + id)
+      // fetch("https://anime-poll-api.herokuapp.com/elections/category/" + id)
+      fetch("http://localhost:6969/elections/category/" + id)
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
@@ -280,6 +280,26 @@ export default createStore({
           console.log(polls);
         });
       // console.log(res);
+    },
+    Vote: async (context, payload) => {
+      console.log(payload);
+      const res = await fetch(
+        "http://localhost:6969/elections/vote_count/" + payload.id,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            vote_count: payload.vote,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((vote) => {
+          console.log(vote);
+        });
+      console.log(res);
     },
     getPoll: async (context, id) => {
       fetch("http://localhost:6969/pollscategory")

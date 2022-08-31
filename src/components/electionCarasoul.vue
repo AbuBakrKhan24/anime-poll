@@ -1,9 +1,20 @@
 <template>
   <!-- new -->
-  <div class="carousel-item active">
+  <div class="carousel-item">
     <div class="container">
       <div class="box_holder">
-        <img :src="election.Cover_img" class="d-block" :alt="election.title" />
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              :src="election.Cover_img"
+              class="d-block"
+              :alt="election.title"
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="details">her</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,5 +39,17 @@ export default {
   display: block !important;
   height: 337px;
   width: 238px;
+  /* box-shadow: black 3px 3px 12px 0px; */
+  box-shadow: grey 4px 4px 11px 3px;
+}
+.details {
+  background-color: whitesmoke;
+  /* box-shadow: black 3px 3px 12px 0px; */
+  box-shadow: grey 4px 4px 11px 3px;
+}
+
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 65%;
 }
 </style>
