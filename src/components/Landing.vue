@@ -207,4 +207,9 @@ a {
     margin-left: -40px;
   }
 }
+@media only screen and (max-width: 340px) {
+  img {
+    height: 35vh;
+  }
+}
 </style>
