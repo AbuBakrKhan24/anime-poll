@@ -148,9 +148,15 @@ export default {
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
+@media only screen and (max-width: 992px) {
+  .display.text-center.bg-dark.text-light {
+    padding-bottom: 25%;
+  }
+}
 @media only screen and (max-width: 376px) {
   .display.text-center.bg-dark.text-light {
     padding-bottom: 170px;
+    padding-bottom: 25%;
   }
 }
 

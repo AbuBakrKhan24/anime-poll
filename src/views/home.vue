@@ -50,6 +50,7 @@ export default {
   min-height: 100vh;
   /* margin-bottom: 118px; */
   padding: 5%;
+  padding-bottom: 10%;
 }
 /* 
 .display.text-center.bg-dark.text-light {

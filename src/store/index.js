@@ -128,6 +128,28 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
     },
+    // UPDATE A USER
+    updateUserInfo: async (context, user) => {
+      const { username, email, password, avatar, about } = user;
+      fetch(
+        "https://anime-poll-api.herokuapp.com/users/update-user/" + user.id,
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            username: username,
+            avatar: avatar,
+            about: about,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((json) => context.commit("setUser", json));
+    },
 
     // Categories
     // SHOW ALL OF Categories
@@ -246,25 +268,6 @@ export default createStore({
         .then((json) => context.commit("setUser", json));
     },
 
-    // UPDATE A USER
-    updateUserInfo: async (context, user) => {
-      const { username, email, password, avatar, about } = user;
-      fetch("https://anime-poll-api.herokuapp.com/users/update-user/" + id, {
-        method: "PUT",
-        body: JSON.stringify({
-          email: email,
-          password: password,
-          username: username,
-          avatar: avatar,
-          about: about,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => context.commit("setUser", json));
-    },
     // Profile done
 
     // Add an election

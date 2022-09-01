@@ -11,7 +11,7 @@
               :alt="election.title"
             />
           </div>
-          <div class="col-md-6 col-sm-12">
+          <div class="col-md-6 col-sm-4">
             <div class="details text-dark">
               <h3>{{ election.title }}</h3>
               <p>{{ election.election_description }}</p>
@@ -98,6 +98,9 @@ export default {
   .details {
     overflow: scroll;
     height: 400px;
+  }
+  p {
+    font-size: small;
   }
 }
 </style>
