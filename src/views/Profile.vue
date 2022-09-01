@@ -401,7 +401,7 @@
                           >
                         </label>
                         <!-- Submit button -->
-                        <input type="submit" value="Sign Up" />
+                        <!-- <input type="submit" value="Sign Up" /> -->
                       </form>
                     </div>
                   </div>
