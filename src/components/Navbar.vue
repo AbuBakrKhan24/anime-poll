@@ -272,6 +272,11 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
     margin-left: 0px;
   }
 }
+@media only screen and (max-width: 992px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
 @media only screen and (max-width: 320px) {
   .navbar-brand {
     font-size: 31px;

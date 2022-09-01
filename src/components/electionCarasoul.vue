@@ -95,5 +95,9 @@ export default {
     width: 100%;
     margin-bottom: 10%;
   }
+  .details {
+    overflow: scroll;
+    height: 400px;
+  }
 }
 </style>
