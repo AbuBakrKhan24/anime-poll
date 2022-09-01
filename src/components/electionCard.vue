@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-4 col-sm-4">
+  <div class="col-lg-4 col-sm-12">
     <div class="card">
       <img
         v-bind:src="election.Cover_img"

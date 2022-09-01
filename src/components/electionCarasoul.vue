@@ -4,14 +4,14 @@
     <div class="container">
       <div class="box_holder">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <img
               :src="election.Cover_img"
               class="d-block"
               :alt="election.title"
             />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12">
             <div class="details text-dark">
               <h3>{{ election.title }}</h3>
               <p>{{ election.election_description }}</p>
@@ -69,5 +69,31 @@ export default {
 
 .bold {
   font-weight: 600;
+}
+
+@media only screen and (max-width: 992px) {
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .d-block {
+    margin-bottom: 10%;
+  }
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .d-block {
+    width: 100%;
+    margin-bottom: 10%;
+  }
 }
 </style>
