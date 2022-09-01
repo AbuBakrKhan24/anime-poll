@@ -276,6 +276,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
   .navbar-brand {
     font-size: 31px;
     margin-left: 0;
+    margin-right: 0;
   }
   .display {
     height: 100%;
