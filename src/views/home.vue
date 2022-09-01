@@ -49,7 +49,7 @@ export default {
 .display {
   min-height: 100vh;
   /* margin-bottom: 118px; */
-  padding: 0;
+  padding: 5%;
 }
 /* 
 .display.text-center.bg-dark.text-light {
