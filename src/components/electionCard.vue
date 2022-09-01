@@ -58,9 +58,9 @@ export default {
     AddVote(category_id, election_id, user_id) {
       // console.log(category_id, election_id, user_id),
       this.$store.dispatch("AddPoll", {
-        category_id: category_id,
-        election_id: election_id,
-        user_id: user_id,
+        category_ID: category_id,
+        election_ID: election_id,
+        user_ID: user_id,
       });
     },
     Vote(id, vote) {
@@ -70,9 +70,9 @@ export default {
           id: id,
           vote: this.num,
         });
-      if (this.Vote) {
-        window.location.reload();
-      }
+      // if (this.Vote) {
+      //   window.location.reload();
+      // }
     },
   },
 };

@@ -270,18 +270,17 @@ export default createStore({
     // Add an election
     AddPoll: async (context, poll) => {
       // const { category_ID, user_ID, election_ID } = poll;
-      // console.log(poll);
-      // const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
-      const res = await fetch(
-        "https://anime-poll-api.herokuapp.com/pollscategory/add_polls",
-        {
-          method: "POST",
-          body: JSON.stringify({ poll }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        }
-      )
+      console.log(poll);
+      const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
+        // const res = await fetch(
+        //   "https://anime-poll-api.herokuapp.com/pollscategory/add_polls",
+        //   {
+        method: "POST",
+        body: JSON.stringify(poll),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
         .then((res) => res.json())
         .then((polls) => {
           console.log(polls);
@@ -292,9 +291,9 @@ export default createStore({
     Vote: async (context, payload) => {
       // console.log(payload);
       const res = await fetch(
-        // "http://localhost:6969/elections/vote_count/" + payload.id,
-        "https://anime-poll-api.herokuapp.com/elections/vote_count/" +
-          payload.id,
+        "http://localhost:6969/elections/vote_count/" + payload.id,
+        // "https://anime-poll-api.herokuapp.com/elections/vote_count/" +
+        //   payload.id,
         {
           method: "PUT",
           body: JSON.stringify({
