@@ -47,7 +47,7 @@ export default {
 </script>
 <style scoped>
 .display {
-  height: 100vh;
+  min-height: 100vh;
   /* margin-bottom: 118px; */
   padding: 0;
 }
@@ -75,6 +75,12 @@ export default {
 }
 /* The cards fo each category done */
 
+@media only screen and (max-width: 991px) {
+  .display {
+    padding-bottom: 125px;
+    margin-bottom: 9px;
+  }
+}
 @media only screen and (max-width: 376px) {
   .display {
     height: 100%;

@@ -111,4 +111,11 @@ a {
     padding-bottom: 20%;
   }
 }
+@media only screen and (max-width: 322px) {
+  div#footer {
+    margin-top: -93px;
+    background-color: rgba(0, 0, 0, 0.367);
+    width: 100%;
+  }
+}
 </style>
