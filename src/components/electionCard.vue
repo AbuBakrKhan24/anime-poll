@@ -26,7 +26,7 @@
           >
           <div v-if="user">
             <a
-              class="btn btn-primary"
+              class="btn btn-primary vote_count"
               @click="
                 AddVote(election.category_ID, election.elections_id, user.id),
                   Vote(election.elections_id, election.vote_count)
@@ -70,8 +70,9 @@ export default {
           id: id,
           vote: this.num,
         });
-      document.getElementById("vote_count").reload(true);
-      // window.location.reload();
+      if (this.Vote) {
+        window.location.reload();
+      }
     },
   },
 };

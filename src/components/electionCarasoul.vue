@@ -41,6 +41,7 @@ export default {
   methods: {},
 };
 </script>
+
 <style scoped>
 .box_holder {
   background-color: whitesmoke;
