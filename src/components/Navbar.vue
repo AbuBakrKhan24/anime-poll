@@ -125,7 +125,7 @@
               <ul class="dropdown-menu">
                 <li>
                   <router-link
-                    class="dropdown-item text-dark"
+                    class="dropdown-item text-dark space_between"
                     aria-current="page"
                     to="/profile"
                     >Profile Page</router-link
@@ -134,7 +134,9 @@
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <!-- Logout -->
-                  <a @click="Logout()" class="dropdown-item">Logout</a>
+                  <a @click="Logout()" class="dropdown-item space_between"
+                    >Logout</a
+                  >
                 </li>
               </ul>
             </li>
@@ -205,6 +207,10 @@ export default {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+}
+
+.space_between {
+  height: 30px;
 }
 
 a {
@@ -297,13 +303,14 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
     display: flex !important;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
   }
-  li {
-    border-bottom: 1px solid;
-  }
-  li:first-of-type {
-    border-top: 1px solid;
-  }
+  // li {
+  //   border-bottom: 1px solid;
+  // }
+  // li:first-of-type {
+  //   border-top: 1px solid;
+  // }
   .profile-pic {
     margin-left: 0px;
   }

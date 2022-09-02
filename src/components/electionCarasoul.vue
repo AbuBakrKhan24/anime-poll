@@ -103,7 +103,9 @@ p {
   }
   .details {
     overflow: scroll;
+    margin-top: 10%;
     height: 400px;
+    justify-content: flex-start;
   }
   p {
     font-size: small;

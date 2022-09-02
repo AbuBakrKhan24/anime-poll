@@ -63,9 +63,6 @@ export default {
   align-items: center;
   padding-top: 10px;
 }
-.col-lg-6:last-of-type {
-  padding-bottom: 10px;
-}
 
 @media only screen and (max-width: 376px) {
   .card-title {
@@ -76,6 +73,9 @@ export default {
   }
   .btn {
     font-size: small;
+  }
+  .col-lg-6:last-of-type {
+    padding-bottom: 10px;
   }
 }
 </style>
