@@ -9,6 +9,7 @@
   >
     <h1>Welcome Your Adminess</h1>
     <h3>This is the results page</h3>
+    <div class="pic bg-dark"></div>
   </div>
   <div v-else>
     <PageNotFound></PageNotFound>
