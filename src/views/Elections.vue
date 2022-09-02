@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user">
+  <div v-if="user.user_type === user">
     <div class="display text-center bg-dark text-light">
       <!-- <div
       class="display text-center bg-dark text-light"
@@ -136,6 +136,12 @@ export default {
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
   padding: 5% 0 10% 0;
+}
+.admin_box {
+  min-height: 100vh;
+  /* margin-bottom: 118px; */
+  padding: 5%;
+  padding-bottom: 10%;
 }
 
 .row {

@@ -105,16 +105,41 @@
             <!-- Results Page done -->
 
             <!-- Profile Page -->
-            <li>
-              <router-link
-                class="nav-link active text-dark"
-                aria-current="page"
-                to="/profile"
+            <li class="nav-item dropdown text-dark">
+              <a
+                class="nav-link dropdown-toggle text-dark"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 Profile
-              </router-link>
+                <img
+                  width="40"
+                  height="35"
+                  :src="user.avatar"
+                  :alt="user.name"
+                  class="profileAvatar d-inline-block align-text-top"
+                />
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <router-link
+                    class="dropdown-item text-dark"
+                    aria-current="page"
+                    to="/profile"
+                    >Profile Page</router-link
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <!-- Logout -->
+                  <a @click="Logout()" class="dropdown-item">Logout</a>
+                </li>
+              </ul>
             </li>
-            <li class="profile-pic">
+
+            <!-- <li class="profile-pic">
               <img
                 width="40"
                 height="35"
@@ -122,11 +147,7 @@
                 :alt="user.name"
                 class="profileAvatar d-inline-block align-text-top"
               />
-            </li>
-            <!-- Logout -->
-            <li>
-              <button @click="Logout()">Logout</button>
-            </li>
+            </li> -->
           </div>
           <div v-else class="d-flex">
             <!-- Login -->
@@ -176,6 +197,21 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.container-fluid {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 1.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a {
+  height: 67px;
+  display: flex;
+  align-items: center;
+}
 // nav{
 //         cursor: url("https://cur.cursors-4u.net/anime/ani-12/oth1118.ani"), url("https://cur.cursors-4u.net/anime/ani-12/oth1118.png"), default;
 //     }

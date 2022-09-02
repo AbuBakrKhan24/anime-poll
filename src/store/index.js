@@ -127,6 +127,7 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
+      console.log(`User ${(user.username, user.email)} created successfully`);
     },
     // UPDATE A USER
     updateUserInfo: async (context, user) => {

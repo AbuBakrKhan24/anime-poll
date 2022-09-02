@@ -1,5 +1,5 @@
 <template>
-  <div class="profile_page" v-if="user">
+  <div class="profile_page" v-if="user.user_type === user">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -462,6 +462,13 @@
     </div>
   </div>
   <!-- About Section done -->
+  <div
+    v-else-if="user.user_type === admin"
+    class="admin_box bg-dark text-light"
+  >
+    <h1>Welcome Your Adminess</h1>
+    <h3>This is the profile page</h3>
+  </div>
   <div class="Go" v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -497,6 +504,12 @@ export default {
 };
 </script>
 <style scoped>
+.admin_box {
+  min-height: 100vh;
+  /* margin-bottom: 118px; */
+  padding: 5%;
+  padding-bottom: 10%;
+}
 /* Form_Holder */
 .Form_Holder {
   display: flex;

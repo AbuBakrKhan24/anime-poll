@@ -43,18 +43,24 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-size: smaller;
+}
 .box_holder {
   background-color: whitesmoke;
   padding: 50px;
 }
 .d-block {
   display: block !important;
-  height: 337px;
-  width: 238px;
+  height: 100%;
+  width: 90%;
   /* box-shadow: black 3px 3px 12px 0px; */
   box-shadow: grey 4px 4px 11px 3px;
 }
 .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   background-color: whitesmoke;
   box-shadow: grey 4px 4px 11px 3px;
