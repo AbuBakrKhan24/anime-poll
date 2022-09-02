@@ -1,5 +1,5 @@
 <template>
-  <div class="profile_page" v-if="user.user_type === user">
+  <div class="profile_page" v-if="user.user_type === 'admin'">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -463,7 +463,7 @@
   </div>
   <!-- About Section done -->
   <div
-    v-else-if="user.user_type === admin"
+    v-else-if="user.user_type === 'user'"
     class="profile_page bg-dark text-light"
   >
     <h1>Welcome Your Adminess</h1>

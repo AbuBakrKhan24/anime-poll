@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.user_type === user">
+  <div v-if="user.user_type === 'admin'">
     <div class="display text-center bg-dark text-light">
       <!-- <div
       class="display text-center bg-dark text-light"
@@ -70,7 +70,7 @@
       </div>
     </div>
   </div>
-  <div v-if="user.user_type === admin">
+  <div v-if="user.user_type === 'user'">
     <div class="display text-center bg-dark text-light">
       <!-- <div
       class="display text-center bg-dark text-light"
