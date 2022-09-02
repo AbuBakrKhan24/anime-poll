@@ -1,10 +1,10 @@
 <template>
-  <div v-if="user.user_type === user">
+  <div v-if="user.user_type === 'user'">
     <div class="pic bg-dark"></div>
     <!-- <ColorSetter></ColorSetter> -->
   </div>
   <div
-    v-else-if="user.user_type === admin"
+    v-else-if="user.user_type === 'admin'"
     class="admin_box bg-dark text-light"
   >
     <h1>Welcome Your Adminess</h1>
