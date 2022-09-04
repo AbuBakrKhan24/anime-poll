@@ -1,16 +1,13 @@
 <template>
-  <div v-if="user.user_type === admin">
+  <div v-if="user">
     <div class="pic bg-dark"></div>
     <!-- <ColorSetter></ColorSetter> -->
   </div>
-  <div
-    v-else-if="user.user_type === user"
-    class="admin_box bg-dark text-light"
-  >
+  <!-- <div v-else-if="user.user_type === user" class="admin_box bg-dark text-light">
     <h1>Welcome Your Adminess</h1>
     <h3>This is the results page</h3>
     <div class="pic bg-dark"></div>
-  </div>
+  </div> -->
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>

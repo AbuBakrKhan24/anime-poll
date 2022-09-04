@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.user_type === admin">
+  <div v-if="user">
     <div class="display text-center bg-dark text-light">
       <!-- <div
       class="display text-center bg-dark text-light"
@@ -70,13 +70,13 @@
       </div>
     </div>
   </div>
-  <div v-if="user.user_type === user">
+  <!-- <div v-if="user.user_type === user">
     <div class="display text-center bg-dark text-light">
-      <!-- <div
-      class="display text-center bg-dark text-light"
-      v-on:load="addElement()"
-    > -->
-      <!-- <button @click="addElement()">addElement</button> -->
+      <div
+        class="display text-center bg-dark text-light"
+        v-on:load="addElement()"
+      ></div>
+      <button @click="addElement()">addElement</button>
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -140,7 +140,7 @@
         />
       </div>
     </div>
-  </div>
+  </div> -->
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>

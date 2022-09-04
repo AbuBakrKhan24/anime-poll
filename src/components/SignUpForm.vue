@@ -339,10 +339,10 @@
             </label>
             <!-- Submit button -->
             <input type="submit" value="Sign Up" />
+            <div class="bg-dark text-light" v-if="user">
+              Welcome {{ user.username }}
+            </div>
           </form>
-          <div v-if="user">
-            Welcome {{ user.username }} Your Sign Up was an success!
-          </div>
         </div>
       </div>
     </div>
@@ -352,23 +352,19 @@
 
 <script>
 import Footer from "../components/Footer.vue";
+import router from "@/router";
 export default {
   components: {
     Footer,
   },
-  computed: {
-    user() {
-      return this.$store.state.user;
-    },
-  },
+
   data() {
-    const user_type = "user";
     return {
       username: "",
       email: "",
       password: "",
       avatar: "",
-      user_type: "",
+      user_type: "user",
       about: "",
     };
   },
@@ -382,6 +378,12 @@ export default {
         user_type: this.user_type,
         about: this.about,
       });
+    },
+    computed: {
+      user() {
+        console.log(this.$store.state.user);
+        return this.$store.state.user;
+      },
     },
     myFunction() {
       let show = document.getElementById("myInput");

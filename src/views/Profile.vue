@@ -1,5 +1,5 @@
 <template>
-  <div class="profile_page" v-if="user.user_type === admin">
+  <div class="profile_page" v-if="user.user_type === 50">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -463,7 +463,7 @@
   </div>
   <!-- About Section done -->
   <div
-    v-else-if="user.user_type === user"
+    v-else-if="user.user_type === 'admin'"
     class="profile_page bg-dark text-light"
   >
     <h1>Welcome Your Adminess</h1>
@@ -944,6 +944,7 @@ export default {
       return this.$store.state.user.readingList;
     },
     user() {
+      console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },

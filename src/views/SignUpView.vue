@@ -9,6 +9,11 @@
 import SignUpForm from "@/components/SignUpForm.vue";
 
 export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
   data() {
     return {
       avatar: "",

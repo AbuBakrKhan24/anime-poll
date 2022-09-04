@@ -59,22 +59,21 @@ export default createStore({
         .then((data) => context.commit("setUsers", data))
         .catch((err) => console.log(err.message));
     },
+    // REGISTER USER
+    register: async (context, user) => {
+      fetch("https://anime-poll-api.herokuapp.com/users/register", {
+        method: "POST",
+        body: JSON.stringify(user),
 
-    // LOGIN USER
-    // login: async (context, payload) => {
-    //   const { email, password } = payload;
-    //   const response = await fetch(
-    //     // `http://localhost:3000/users?email=${email}&password=${password}`
-    //     `http://localhost:6969/users/?email=${email}&password=${password}`
-    //   );
-    //   const userData = await response.json();
-    //   // console.log(userData);
-    //   if (userData.length) {
-    //     context.commit("setUser", userData[0]);
-    //     window.localStorage.setItem("user", JSON.stringify(userData[0]));
-    //   }
-    //   if (!userData.length) return alert("No user found");
-    // },
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => context.commit("setUser", json));
+      console.log(`User ${(user.username, user.email)} created successfully`);
+    },
+    // Login
     login: async (context, payload) => {
       let res = await fetch(
         "https://anime-poll-api.herokuapp.com/users/login",
@@ -115,20 +114,6 @@ export default createStore({
       }
     },
 
-    // REGISTER USER
-    register: async (context, user) => {
-      fetch("https://anime-poll-api.herokuapp.com/users/register", {
-        method: "POST",
-        body: JSON.stringify(user),
-
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => context.commit("setUser", json));
-      console.log(`User ${(user.username, user.email)} created successfully`);
-    },
     // UPDATE A USER
     updateUserInfo: async (context, user) => {
       const { username, email, password, avatar, about } = user;
@@ -150,6 +135,7 @@ export default createStore({
       )
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
+      router.push("/home");
     },
 
     // Categories
