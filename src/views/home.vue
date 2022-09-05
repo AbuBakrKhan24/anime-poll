@@ -1,5 +1,5 @@
 <template>
-  <div id="content" v-if="user.user_type === 'user'">
+  <div id="content" v-if="user.user_type === 'admin'">
     <div class="display text-center bg-dark text-light">
       <div class="row text-dark">
         <div class="col-lg-12 text-light">
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div v-else-if="user.user_type === 'admin'" class="admin_box bg-dark">
+  <!-- <div v-else-if="user.user_type === 'user'" class="admin_box bg-dark">
     <h3>Welcome Your Adminess</h3>
     <div class="display text-center bg-dark text-light">
       <div class="row text-dark">
@@ -27,7 +27,7 @@
         />
       </div>
     </div>
-  </div>
+  </div> -->
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -68,12 +68,6 @@ export default {
   padding-bottom: 10%;
 }
 
-.admin_box {
-  min-height: 100vh;
-  /* margin-bottom: 118px; */
-  padding: 5%;
-  padding-bottom: 10%;
-}
 /*
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
