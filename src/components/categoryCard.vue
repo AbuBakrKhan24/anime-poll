@@ -62,6 +62,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 376px) {

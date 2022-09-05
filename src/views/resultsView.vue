@@ -1,13 +1,7 @@
 <template>
   <div v-if="user">
     <div class="pic bg-dark"></div>
-    <!-- <ColorSetter></ColorSetter> -->
   </div>
-  <!-- <div v-else-if="user.user_type === user" class="admin_box bg-dark text-light">
-    <h1>Welcome Your Adminess</h1>
-    <h3>This is the results page</h3>
-    <div class="pic bg-dark"></div>
-  </div> -->
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -16,11 +10,9 @@
 </template>
 <script>
 import Footer from "../components/Footer.vue";
-// import ColorSetter from "../components/colorSetter.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
 export default {
   components: {
-    // ColorSetter,
     Footer,
     PageNotFound,
   },

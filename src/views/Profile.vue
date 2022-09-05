@@ -1,5 +1,5 @@
 <template>
-  <div class="profile_page" v-if="user.user_type === 50">
+  <div class="profile_page" v-if="user.user_type === 'user'">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
