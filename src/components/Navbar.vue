@@ -318,18 +318,31 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
 @media only screen and (max-width: 992px) {
   .d-flex {
     flex-direction: column;
+    align-items: center;
   }
 }
 @media only screen and (max-width: 320px) {
   .navbar-brand {
-    font-size: 31px;
-    margin-left: 0;
-    margin-right: 0;
+    font-size: 25px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
   .display {
     height: 100%;
     padding-bottom: 144px;
     margin-bottom: -20px;
+  }
+  button.navbar-toggler {
+    font-size: 16px;
+  }
+  .container-fluid[data-v-41458b80] {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 </style>
