@@ -2,7 +2,13 @@
   <div class="col-lg-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ category.category_name }}</h5>
+        <div class="header">
+          <h5 class="card-title">{{ category.category_name }}</h5>
+          <div class="button_admin">
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
         <p class="card-text">{{ category.categories_description }}</p>
         <div class="button_holder">
           <router-link
@@ -28,6 +34,15 @@ export default {
 </script>
 <style scoped>
 /* Card Styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.button_admin {
+  display: flex;
+  align-items: center;
+} 
 .card {
   height: fit-content;
   width: 40rem;

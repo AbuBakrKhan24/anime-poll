@@ -13,8 +13,12 @@
       </div>
     </div>
   </div>
-  <div v-else-if="user.user_type === 'admin'" class="admin_box bg-dark">
+  <div
+    v-else-if="user.user_type === 'admin'"
+    class="admin_box bg-dark text-light"
+  >
     <h3>Welcome Your Adminess</h3>
+    <button>Add category</button>
     <div class="display text-center bg-dark text-light">
       <div class="row text-dark">
         <div class="col-lg-12 text-light">
