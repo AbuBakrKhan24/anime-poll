@@ -1,11 +1,7 @@
 <template>
-  <div v-if="user.user_type === 'user'">
+  <div v-if="user.user_type === 'admin'">
     <div class="display text-center bg-dark text-light">
-      <!-- <div
-      class="display text-center bg-dark text-light"
-      v-on:load="addElement()"
-    > -->
-      <!-- <button @click="addElement()">addElement</button> -->
+      <button @click="addElement()">addElement</button>
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -70,13 +66,13 @@
       </div>
     </div>
   </div>
-  <div v-if="user.user_type === 'admin'">
+  <div v-else-if="user.user_type === 'user'">
     <div class="display text-center bg-dark text-light">
-      <div
-        class="display text-center bg-dark text-light"
-        v-on:load="addElement()"
-      ></div>
-      <button @click="addElement()">addElement</button>
+      <!-- <div
+      class="display text-center bg-dark text-light"
+      v-on:load="addElement()"
+    > -->
+      <!-- <button @click="addElement()">addElement</button> -->
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
