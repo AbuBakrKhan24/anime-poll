@@ -20,7 +20,7 @@
     <h3>Welcome Your Adminess</h3>
     <button>Add category</button>
     <div class="display text-center bg-dark text-light">
-      <div class="row text-dark">
+      <div v-if="categories" class="row text-dark">
         <div class="col-lg-12 text-light">
           <h2>Ongoing Elections</h2>
         </div>
@@ -30,11 +30,12 @@
           :category="category"
         />
       </div>
+      <div v-if="!categories">
+        <loader></loader>
+      </div>
     </div>
   </div>
-  <div v-if="!categories">
-    <loader></loader>
-  </div>
+
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
