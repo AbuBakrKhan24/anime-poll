@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div v-else-if="categories">
+  <div v-if="!categories">
     <loader></loader>
   </div>
   <div v-else>
@@ -76,8 +76,6 @@ export default {
   padding: 5%;
   padding-bottom: 10%;
 }
-
-
 
 /*
 .display.text-center.bg-dark.text-light {
@@ -124,17 +122,6 @@ h2 {
 }
 
 /* new */
-
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  overflow: visible;
-  background: #fff;
-  background-image: url("https://i.pinimg.com/originals/bb/5f/48/bb5f48c52c7bba38f729d482368a8c29.gif");
-  background-size: cover;
-}
 
 h1 {
   position: absolute;

@@ -199,6 +199,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+nav#nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
 .container-fluid {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;

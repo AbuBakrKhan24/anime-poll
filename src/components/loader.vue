@@ -1,8 +1,10 @@
 <template>
-  <div class="loader">
-    <div id="first">
-      <div id="second">
-        <div id="third"></div>
+  <div class="my_loader">
+    <div class="loader">
+      <div id="first">
+        <div id="second">
+          <div id="third"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -11,12 +13,17 @@
 export default {};
 </script>
 <style scoped>
+.my_loader {
+  height: 100vh;
+}
 /* From uiverse.io by @Navarog21 */
 .loader {
   background-color: black;
   position: relative;
   width: 2.5em;
   height: 2.5em;
+  left: 50%;
+  top: 50%;
   transform-origin: center;
   transition: 1s;
   border-radius: 50px;
