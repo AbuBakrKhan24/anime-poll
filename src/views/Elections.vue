@@ -58,6 +58,7 @@
         </button>
       </div>
       <div class="row text-dark">
+        <button @click="showOptions">Toggle</button>
         <election
           v-for="election in categorysection"
           :key="election.category_ID"
@@ -190,6 +191,21 @@ export default {
       if (this.active === true) {
         document.getElementsByClassName("next").click();
       }
+    },
+    showOptions() {
+      let normalOptions = document.getElementById("normal_options");
+      let adminOptions = document.getElementById("admin_options");
+      if (
+        (normalOptions.style.display === "none",
+        adminOptions.style.display === "block")
+      ) {
+        normalOptions.style.display = "block";
+        adminOptions.style.display = "none";
+      } else {
+        adminOptions.style.display = "block";
+        normalOptions.style.display = "none";
+      }
+      console.log("Options switched");
     },
   },
 };

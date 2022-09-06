@@ -8,23 +8,19 @@
       />
       <div class="card-body">
         <h5 class="card-title">{{ election.title }}</h5>
-        <!-- <p class="card-text">
-          Creator:
-          {{ election.creator }}
-        </p> -->
-        <div class="button_holder">
-          <!-- <a href="#" class="btn btn-primary">View</a> -->
-          <a
-            href="#"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="{{election.elections_id}}"
-            class="active carasoul_btn btn btn-primary"
-            aria-current="true"
-            aria-label="Slide 1"
-            >View</a
-          >
-          <div v-if="user">
+        <div v-if="user.user_type === 'user'">
+          <div id="normal_options" class="button_holder">
+            <!-- View -->
+            <a
+              href="#"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="{{election.elections_id}}"
+              class="active carasoul_btn btn btn-primary"
+              aria-current="true"
+              aria-label="Slide 1"
+              >View</a
+            >
             <a
               class="btn btn-primary vote_count"
               @click="
@@ -35,6 +31,48 @@
               {{ election.vote_count }}
             </a>
           </div>
+        </div>
+        <!-- Admin optins -->
+        <div
+          id="admin_options"
+          class="button_holder"
+          v-if="user.user_type === 'admin'"
+        >
+          <!-- Edit -->
+          <a
+            href="#"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="{{election.elections_id}}"
+            class="active carasoul_btn btn btn-primary"
+            aria-current="true"
+            aria-label="Slide 1"
+            >Edit</a
+          >
+          <!-- Delete -->
+          <a class="btn btn-primary delete">Delete </a>
+        </div>
+        <div id="normal_options" class="button_holder">
+          <!-- View -->
+          <a
+            href="#"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="{{election.elections_id}}"
+            class="active carasoul_btn btn btn-primary"
+            aria-current="true"
+            aria-label="Slide 1"
+            >View</a
+          >
+          <a
+            class="btn btn-primary vote_count"
+            @click="
+              AddVote(election.category_ID, election.elections_id, user.id),
+                Vote(election.elections_id, election.vote_count)
+            "
+            >Vote
+            {{ election.vote_count }}
+          </a>
         </div>
       </div>
     </div>
