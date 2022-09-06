@@ -2,6 +2,9 @@
   <div v-if="user">
     <div class="pic bg-dark"></div>
   </div>
+  <div v-else-if="categories">
+    <loader></loader>
+  </div>
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>

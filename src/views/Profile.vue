@@ -928,17 +928,21 @@
       </div>
     </div>
   </div>
+  <div v-else-if="categories">
+    <loader></loader>
+  </div>
   <div class="Go" v-else>
     <PageNotFound></PageNotFound>
   </div>
-  <Footer></Footer>
+  <Footer></Footer> 
 </template>
 <script>
 import Footer from "../components/Footer.vue";
 import VotingBox from "../components/VotingBox.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
+import loader from "../components/loader.vue";
 export default {
-  components: { VotingBox, Footer, PageNotFound },
+  components: { VotingBox, Footer, PageNotFound, loader },
   computed: {
     readingList() {
       return this.$store.state.user.readingList;

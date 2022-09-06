@@ -58,7 +58,6 @@
         </button>
       </div>
       <div class="row text-dark">
-        <button @click="showOptions">Toggle</button>
         <election
           v-for="election in categorysection"
           :key="election.category_ID"
@@ -69,11 +68,6 @@
   </div>
   <div v-else-if="user.user_type === 'user'">
     <div class="display text-center bg-dark text-light">
-      <!-- <div
-      class="display text-center bg-dark text-light"
-      v-on:load="addElement()"
-    > -->
-      <!-- <button @click="addElement()">addElement</button> -->
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -138,6 +132,9 @@
       </div>
     </div>
   </div>
+  <div v-else-if="categorysection">
+    <loader></loader>
+  </div>
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -192,21 +189,6 @@ export default {
         document.getElementsByClassName("next").click();
       }
     },
-    showOptions() {
-      let normalOptions = document.getElementById("normal_options");
-      let adminOptions = document.getElementById("admin_options");
-      if (
-        (normalOptions.style.display === "none",
-        adminOptions.style.display === "block")
-      ) {
-        normalOptions.style.display = "block";
-        adminOptions.style.display = "none";
-      } else {
-        adminOptions.style.display = "block";
-        normalOptions.style.display = "none";
-      }
-      console.log("Options switched");
-    },
   },
 };
 </script>
@@ -230,6 +212,9 @@ export default {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(0 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.admin_controls {
 }
 
 @media only screen and (max-width: 992px) {

@@ -32,6 +32,9 @@
       </div>
     </div>
   </div>
+  <div v-else-if="categories">
+    <loader></loader>
+  </div>
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -41,11 +44,13 @@
 import Footer from "../components/Footer.vue";
 import categoryCard from "../components/categoryCard.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
+import loader from "../components/loader.vue";
 export default {
   components: {
     categoryCard,
     Footer,
     PageNotFound,
+    loader,
   },
 
   mounted() {
@@ -71,6 +76,8 @@ export default {
   padding: 5%;
   padding-bottom: 10%;
 }
+
+
 
 /*
 .display.text-center.bg-dark.text-light {
