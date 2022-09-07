@@ -934,7 +934,7 @@
   <div class="Go" v-else>
     <PageNotFound></PageNotFound>
   </div>
-  <Footer></Footer> 
+  <Footer></Footer>
 </template>
 <script>
 import Footer from "../components/Footer.vue";
@@ -1071,7 +1071,10 @@ a {
   height: auto;
   margin-bottom: 0;
   background-color: rgb(56, 52, 52);
+  /* padding-top: 7%;
+  padding-bottom: 2%; */
 }
+
 /* User's image */
 .profilepicture {
   width: 25%;

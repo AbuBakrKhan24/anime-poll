@@ -8,6 +8,7 @@
       />
       <div class="card-body">
         <h5 class="card-title">{{ election.title }}</h5>
+
         <div id="normal_options" class="button_holder">
           <!-- View -->
           <a
@@ -29,46 +30,6 @@
             >Vote
             {{ election.vote_count }}
           </a>
-        </div>
-        <!-- Admin optins -->
-        <div class="admin" v-if="user.user_type === 'admin'">
-          <div id="admin_options" class="button_holder">
-            <!-- Edit -->
-            <a
-              href="#"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="{{election.elections_id}}"
-              class="active carasoul_btn btn btn-primary"
-              aria-current="true"
-              aria-label="Slide 1"
-              >Edit</a
-            >
-            <!-- Delete -->
-            <a class="btn btn-primary delete">Delete </a>
-          </div>
-          <div id="normal_options" class="button_holder">
-            <!-- View -->
-            <a
-              href="#"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="{{election.elections_id}}"
-              class="active carasoul_btn btn btn-primary"
-              aria-current="true"
-              aria-label="Slide 1"
-              >View</a
-            >
-            <a
-              class="btn btn-primary vote_count"
-              @click="
-                AddVote(election.category_ID, election.elections_id, user.id),
-                  Vote(election.elections_id, election.vote_count)
-              "
-              >Vote
-              {{ election.vote_count }}
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -143,7 +104,10 @@
 export default {
   props: ["election"],
   mounted() {
-    this.showOptions(this.election.elections_id);
+    if (user.user_type === "admin") {
+      this.showOptions(this.election.elections_id);
+    }
+    // this.showOptions(this.election.elections_id);
   },
   data() {
     return {
@@ -153,6 +117,7 @@ export default {
 
   computed: {
     user() {
+      // console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },

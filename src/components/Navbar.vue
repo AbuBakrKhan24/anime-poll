@@ -199,17 +199,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-nav#nav {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-}
+// nav#nav {
+//   position: fixed;
+//   width: 100%;
+//   z-index: 1;
+// }
 
 .container-fluid {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 1.5);
+  padding-right: calc(var(--bs-gutter-x) * 0);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;

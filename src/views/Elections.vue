@@ -67,6 +67,7 @@
     </div>
   </div>
   <div v-else-if="user.user_type === 'user'">
+    <!-- <button @click="addElement()">addElement</button> -->
     <div class="display text-center bg-dark text-light">
       <div
         id="carouselExampleIndicators"
@@ -132,9 +133,6 @@
       </div>
     </div>
   </div>
-  <div v-else-if="categorysection">
-    <loader></loader>
-  </div>
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -144,7 +142,6 @@
 <script>
 import election from "../components/electionCard.vue";
 import electionCarasoul from "../components/electionCarasoul.vue";
-// import categoryCard from "../components/categoryCard.vue";
 import Footer from "../components/Footer.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
 import ElectionCarasoul from "../components/electionCarasoul.vue";
@@ -196,6 +193,7 @@ export default {
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
   padding: 5% 0 10% 0;
+  /* padding-top: 15%; */
 }
 .admin_box {
   min-height: 100vh;
@@ -212,9 +210,6 @@ export default {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(0 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
-
-.admin_controls {
 }
 
 @media only screen and (max-width: 992px) {

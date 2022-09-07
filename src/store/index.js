@@ -110,7 +110,7 @@ export default createStore({
             // console.log(data);
           });
       } else {
-        alert("User not found");
+        console.log("email not found please register");
       }
     },
 
