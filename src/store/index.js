@@ -4,13 +4,11 @@ import createPersistedState from "vuex-persistedstate";
 
 export default createStore({
   state: {
-    // user: window.localStorage.getItem("user"),
     user: null,
     Token: null,
     category: null,
     categories: null,
     elections: null,
-    asc: true,
     categorysection: null,
     polls: null,
   },
@@ -19,9 +17,9 @@ export default createStore({
     setUser: (state, user) => {
       state.user = user;
     },
-    setUsers: (state, users) => {
-      state.users = users;
-    },
+    // setUsers: (state, users) => {
+    //   state.users = users;
+    // },
     setToken: (state, Token) => {
       state.Token = Token;
     },
@@ -42,6 +40,12 @@ export default createStore({
     },
     Logout(state) {
       (state.user = ""), (state.Token = "");
+    },
+    adminMode(state) {
+      state.user.user_type = "admin";
+    },
+    userMode(state) {
+      state.user.user_type = "user2";
     },
   },
   actions: {
@@ -116,18 +120,12 @@ export default createStore({
 
     // UPDATE A USER
     updateUserInfo: async (context, user) => {
-      const { username, email, password, avatar, about } = user;
       fetch(
-        "https://anime-poll-api.herokuapp.com/users/update-user/" + user.id,
+        // "https://anime-poll-api.herokuapp.com/users/update-user/" + user.id,
+        "http://localhost:6969/users/update-user/" + user.id,
         {
           method: "PUT",
-          body: JSON.stringify({
-            email: email,
-            password: password,
-            username: username,
-            avatar: avatar,
-            about: about,
-          }),
+          body: JSON.stringify(user),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
@@ -135,7 +133,9 @@ export default createStore({
       )
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
-      router.push("/home");
+      console.log(
+        `User ${(user.username, user.email)} was updated successfully`
+      );
     },
 
     // Categories

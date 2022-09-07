@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user.user_type === 'admin'">
+  <div class="holder" v-if="user.user_type === 'admin'">
     <div class="display text-center bg-dark text-light">
       <button @click="addElement()">addElement</button>
       <div
@@ -160,8 +160,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getCategorySection", this.$route.params.id);
-    this.addElement();
     this.ButtonClick();
+    this.addElement();
   },
   computed: {
     categorysection() {
@@ -190,6 +190,14 @@ export default {
 };
 </script>
 <style scoped>
+.holder {
+  padding-top: 83px;
+}
+
+button.carousel-control-next {
+  z-index: 0;
+}
+
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
   padding: 5% 0 10% 0;

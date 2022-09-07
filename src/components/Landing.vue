@@ -107,9 +107,12 @@ h4 {
   color: white;
 }
 
+
+
 #hello {
-  padding-top: 155px;
-  padding-bottom: 14%;
+  height: 100%;
+  /* padding-top: 155px; */
+  /* padding-bottom: 14%; */
   background-image: radial-gradient(
     circle,
     #3d2f67,

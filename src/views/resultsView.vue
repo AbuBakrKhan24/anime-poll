@@ -1,5 +1,5 @@
 <template>
-  <div v-if="user">
+  <div class="holder" v-if="user">
     <div class="pic bg-dark"></div>
   </div>
   <div v-else-if="categories">
@@ -27,6 +27,10 @@ export default {
 };
 </script>
 <style scoped>
+.holder {
+  padding-top: 83px;
+}
+
 .pic {
   background-image: url(https://i.pinimg.com/originals/29/7c/85/297c85a99967cfcb4eecc062c0be4c17.gif);
   background-size: contain;

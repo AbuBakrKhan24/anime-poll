@@ -21,6 +21,7 @@
             aria-label="Slide 1"
             >View</a
           >
+          <!-- Vote -->
           <a
             class="btn btn-primary vote_count"
             @click="
@@ -69,9 +70,10 @@
             <!-- Delete -->
             <a class="btn btn-primary delete">Delete </a>
           </div>
+          <!-- Normal Options -->
           <div
             :id="`normal_options${election.elections_id}`"
-            class="button_holder normal_options"
+            class="button_holder_normal_options"
           >
             <!-- View -->
             <a
@@ -84,6 +86,7 @@
               aria-label="Slide 1"
               >View</a
             >
+            <!-- Vote -->
             <a
               class="btn btn-primary vote_count"
               @click="
@@ -104,9 +107,6 @@
 export default {
   props: ["election"],
   mounted() {
-    if (user.user_type === "admin") {
-      this.showOptions(this.election.elections_id);
-    }
     // this.showOptions(this.election.elections_id);
   },
   data() {
@@ -152,8 +152,8 @@ export default {
           normalOptions.style.display = "block";
           adminOptions.style.display = "none";
         } else {
-          adminOptions.style.display = "block";
           normalOptions.style.display = "none";
+          adminOptions.style.display = "block";
         }
         console.log("Options switched");
       }
@@ -162,6 +162,10 @@ export default {
 };
 </script>
 <style scoped>
+.button_holder_normal_options {
+  display: none;
+}
+
 .col-lg-4 {
   display: flex;
   align-items: center;

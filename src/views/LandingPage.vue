@@ -16,3 +16,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.home {
+  padding-top: 83px;
+  height: 100vh;
+}
+</style>

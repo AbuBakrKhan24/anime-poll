@@ -5,8 +5,8 @@
         <div class="header">
           <h5 class="card-title">{{ category.category_name }}</h5>
           <div class="button_admin">
-            <button>Edit</button>
-            <button>Delete</button>
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i>
           </div>
         </div>
         <p class="card-text">{{ category.categories_description }}</p>
@@ -42,7 +42,19 @@ export default {
 .button_admin {
   display: flex;
   align-items: center;
-} 
+  font-size: x-large;
+  width: 80px;
+  justify-content: space-evenly;
+}
+
+i.fa-solid.fa-pen-to-square:hover {
+  color: #ffc107;
+}
+
+i.fa-solid.fa-trash:hover {
+  color: #dc3545;
+}
+
 .card {
   height: fit-content;
   width: 40rem;

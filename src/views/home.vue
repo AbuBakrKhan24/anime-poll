@@ -78,6 +78,9 @@ export default {
   padding-bottom: 10%;
 }
 
+.admin_box.bg-dark.text-light {
+  padding-top: 83px;
+}
 /*
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;

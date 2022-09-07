@@ -191,19 +191,16 @@ export default {
     Logout() {
       this.$store.commit("Logout");
       this.$router.push("/");
-
-      // localStorage.clear();
-      // this.$router.go();
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-// nav#nav {
-//   position: fixed;
-//   width: 100%;
-//   z-index: 1;
-// }
+nav#nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
 
 .container-fluid {
   --bs-gutter-x: 1.5rem;
@@ -283,6 +280,7 @@ ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  padding-right: 16px;
 }
 
 .container-fluid.ms-5 {
