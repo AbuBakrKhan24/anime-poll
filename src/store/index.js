@@ -100,8 +100,8 @@ export default createStore({
     // Login
     login: async (context, payload) => {
       let res = await fetch(
-        // "https://anime-poll-api.herokuapp.com/users/login",
-        "http://localhost:6969/users/login",
+        "https://anime-poll-api.herokuapp.com/users/login",
+        // "http://localhost:6969/users/login",
         {
           method: "POST",
           headers: {
@@ -147,12 +147,12 @@ export default createStore({
           .then((res) => res.json())
           .then((user) => {
             context.commit("setUser", user);
-            // window.localStorage.setItem("user", JSON.stringify(user));
-
             router.push("/home");
+            // window.localStorage.setItem("user", JSON.stringify(user));
 
             // console.log(data);
           });
+        
       }
     },
 
@@ -160,10 +160,10 @@ export default createStore({
     updateUserInfo: async (context, payload) => {
       console.log(payload);
       fetch(
-        // "https://anime-poll-api.herokuapp.com/users/update-user/" + user.id,
+        // "https://anime-poll-api.herokuapp.com/users/update-user/" + payload.id,
         "http://localhost:6969/users/update-user/" + payload.id,
         {
-          method: "PUT",
+          method: "PATCH",
           body: JSON.stringify(payload),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -175,6 +175,7 @@ export default createStore({
       console.log(
         `User ${(payload.username, payload.email)} was updated successfully`
       );
+      
     },
 
     // Categories

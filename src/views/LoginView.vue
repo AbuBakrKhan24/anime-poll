@@ -93,7 +93,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   min-height: 56rem;
-  // max-height: 92vh;
+  height: 100vh;
   background-image: radial-gradient(
     circle,
     #3d2f67,

@@ -389,22 +389,8 @@
                             please be patient:)
                           </label>
                         </fieldset>
-                        <!-- Terms and conditions -->
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="terms"
-                            class="inline"
-                            required
-                          />
-                          I accept the
-                          <a
-                            href="https://www.freecodecamp.org/news/terms-of-service/"
-                            >terms and conditions</a
-                          >
-                        </label>
                         <!-- Submit button -->
-                        <!-- <input type="submit" value="Sign Up" /> -->
+                        <input type="submit" value="Update info" />
                       </form>
                     </div>
                   </div>
@@ -1422,15 +1408,15 @@ export default {
       return this.$store.state.user;
     },
   },
-  data() {
-    return {
-      username: "",
-      email: "",
-      password: "",
-      avatar: "",
-      about: "",
-    };
-  },
+  // data() {
+  //   return {
+  //     username: "",
+  //     email: "",
+  //     password: "",
+  //     avatar: "",
+  //     about: "",
+  //   };
+  // },
   methods: {
     updateUserInfo() {
       this.$store.dispatch("updateUserInfo", {
@@ -1440,6 +1426,12 @@ export default {
         avatar: this.avatar,
         about: this.about,
         id: this.user.id,
+      });
+    },
+    login() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password,
       });
     },
     myFunction() {
