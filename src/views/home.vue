@@ -35,7 +35,20 @@
       </div>
     </div>
   </div>
-
+  <div id="content" v-else-if="user.user_type === 'user2'">
+    <div class="display text-center bg-dark text-light">
+      <div class="row text-dark">
+        <div class="col-lg-12 text-light">
+          <h2>Ongoing Elections</h2>
+        </div>
+        <categoryCard
+          v-for="category in categories"
+          :key="category.categories_id"
+          :category="category"
+        />
+      </div>
+    </div>
+  </div>
   <div v-else>
     <PageNotFound></PageNotFound>
   </div>
@@ -79,6 +92,10 @@ export default {
 }
 
 .admin_box.bg-dark.text-light {
+  padding-top: 83px;
+}
+
+div#content {
   padding-top: 83px;
 }
 /*

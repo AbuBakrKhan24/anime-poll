@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import router from "@/router";
 import createPersistedState from "vuex-persistedstate";
+import swal from "sweetalert";
 
 export default createStore({
   state: {
@@ -75,12 +76,20 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
+      router.push("/login");
       console.log(`User ${(user.username, user.email)} created successfully`);
+      swal(
+        "Good Job!",
+        "Your Sign Up Was A Success,",
+        "Now lets get you familiar with logging you into our website.",
+        "success"
+      );
     },
     // Login
     login: async (context, payload) => {
       let res = await fetch(
         "https://anime-poll-api.herokuapp.com/users/login",
+        // "http://localhost:6969/users/login",
         {
           method: "POST",
           headers: {
@@ -94,12 +103,30 @@ export default createStore({
       );
       let data = await res.json();
       console.log(data);
-      if (data.token) {
-        context.commit("setToken", data.token);
 
+      context.commit("setToken", data.token);
+      if (data.msg === "Password incorrect") {
+        swal(
+          "Oh no!",
+          "The password you entered is either incorrect or does not exixst. ",
+          "error"
+        );
+      } else if (data.msg === "email not found please register") {
+        swal(
+          "Oh No!",
+          "The Email you entered is either incorrect or does not exist.",
+          "error"
+        );
+      } else {
+        swal(
+          "Welcome Back!",
+          "Hope you are well, lets start votingg!!!",
+          "success"
+        );
         // Verify token
         //
         fetch("https://anime-poll-api.herokuapp.com/users/users/verify", {
+          // fetch("http://localhost:6969/users/users/verify", {
           headers: {
             "Content-Type": "application/json",
             "x-auth-token": data.token,
@@ -111,10 +138,9 @@ export default createStore({
             // window.localStorage.setItem("user", JSON.stringify(user));
 
             router.push("/home");
+
             // console.log(data);
           });
-      } else {
-        console.log("email not found please register");
       }
     },
 

@@ -1,5 +1,8 @@
 <template>
-  <div class="profile_page" v-if="user.user_type === 'user'">
+  <div v-if="categories">
+    <loader></loader>
+  </div>
+  <div class="profile_page" v-else-if="user.user_type === 'user'">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -464,7 +467,7 @@
   <!-- About Section done -->
 
   <!-- Admin_User2 -->
-  <div class="profile_page" v-if="user.user_type === 'user2'">
+  <div class="profile_page" v-else-if="user.user_type === 'user2'">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -1400,9 +1403,7 @@
       </div>
     </div>
   </div>
-  <div v-else-if="categories">
-    <loader></loader>
-  </div>
+
   <div class="Go" v-else>
     <PageNotFound></PageNotFound>
   </div>

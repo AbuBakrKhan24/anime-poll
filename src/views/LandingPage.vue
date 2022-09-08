@@ -19,7 +19,7 @@ export default {
 
 <style>
 .home {
-  padding-top: 83px;
+  /* padding-top: 83px; */
   height: 100vh;
 }
 </style>

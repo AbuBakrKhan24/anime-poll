@@ -101,6 +101,42 @@
       </div>
     </div>
   </div>
+  <div v-if="user.user_type === 'user2'" class="col-lg-4 col-sm-12">
+    <div class="card">
+      <img
+        v-bind:src="election.Cover_img"
+        class="card-img-top"
+        v-bind:alt="election.title"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ election.title }}</h5>
+
+        <div id="normal_options" class="button_holder">
+          <!-- View -->
+          <a
+            href="#"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="{{election.elections_id}}"
+            class="active carasoul_btn btn btn-primary"
+            aria-current="true"
+            aria-label="Slide 1"
+            >View</a
+          >
+          <!-- Vote -->
+          <a
+            class="btn btn-primary vote_count"
+            @click="
+              AddVote(election.category_ID, election.elections_id, user.id),
+                Vote(election.elections_id, election.vote_count)
+            "
+            >Vote
+            {{ election.vote_count }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div v-else>Nothing here</div>
 </template>
 <script>
