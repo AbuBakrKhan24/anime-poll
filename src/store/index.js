@@ -48,6 +48,18 @@ export default createStore({
     userMode(state) {
       state.user.user_type = "user2";
     },
+    setVote(state, value, id) {
+      // state.elections?.filter((election) => {
+      //   const isMatch = true;
+      //   if(!election?.vote_count === value)
+      //   isMatch = false
+      // });
+      state.elections = state.elections.find((election) => {
+        if ((election.elections_id = id)) {
+          election.vote_count = value;
+        }
+      });
+    },
   },
   actions: {
     // USER
@@ -88,8 +100,8 @@ export default createStore({
     // Login
     login: async (context, payload) => {
       let res = await fetch(
-        "https://anime-poll-api.herokuapp.com/users/login",
-        // "http://localhost:6969/users/login",
+        // "https://anime-poll-api.herokuapp.com/users/login",
+        "http://localhost:6969/users/login",
         {
           method: "POST",
           headers: {
@@ -145,13 +157,14 @@ export default createStore({
     },
 
     // UPDATE A USER
-    updateUserInfo: async (context, user) => {
+    updateUserInfo: async (context, payload) => {
+      console.log(payload);
       fetch(
         // "https://anime-poll-api.herokuapp.com/users/update-user/" + user.id,
-        "http://localhost:6969/users/update-user/" + user.id,
+        "http://localhost:6969/users/update-user/" + payload.id,
         {
           method: "PUT",
-          body: JSON.stringify(user),
+          body: JSON.stringify(payload),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
@@ -160,7 +173,7 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
       console.log(
-        `User ${(user.username, user.email)} was updated successfully`
+        `User ${(payload.username, payload.email)} was updated successfully`
       );
     },
 
@@ -323,8 +336,10 @@ export default createStore({
       )
         .then((res) => res.json())
         .then((vote) => {
-          // console.log(vote);
+          console.log(vote);
         });
+      context.commit("setVote", payload.vote);
+
       console.log(res);
     },
     // Getting the poll

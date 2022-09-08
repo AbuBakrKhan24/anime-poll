@@ -1433,12 +1433,13 @@ export default {
   },
   methods: {
     updateUserInfo() {
-      this.$store.dispatch("updateUserInfo", this.user, {
+      this.$store.dispatch("updateUserInfo", {
         username: this.username,
         email: this.email,
         password: this.password,
         avatar: this.avatar,
         about: this.about,
+        id: this.user.id,
       });
     },
     myFunction() {
@@ -1466,6 +1467,10 @@ export default {
   /* margin-bottom: 118px; */
   padding: 5%;
   padding-bottom: 10%;
+}
+
+.modes {
+  padding-bottom: 50px;
 }
 
 .profile_page {

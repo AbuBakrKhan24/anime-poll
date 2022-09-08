@@ -173,9 +173,9 @@ export default {
           id: id,
           vote: this.num,
         });
-      if (this.Vote) {
-        window.location.reload();
-      }
+      // if (this.Vote) {
+      //   window.location.reload();
+      // }
     },
     showOptions(id) {
       if (id) {
