@@ -35,72 +35,6 @@
       </div>
     </div>
   </div>
-  <div v-else-if="user.user_type === 'admin'" class="col-lg-4 col-sm-12">
-    <div class="card">
-      <img
-        v-bind:src="election.Cover_img"
-        class="card-img-top"
-        v-bind:alt="election.title"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ election.title }}</h5>
-        <!-- Admin optins -->
-        <div class="admin" v-if="user.user_type === 'admin'">
-          <button
-            class="admin_controls"
-            @click="showOptions(election.elections_id)"
-          >
-            Toggle
-          </button>
-          <div
-            :id="`admin_options${election.elections_id}`"
-            class="button_holder admin_options"
-          >
-            <!-- Edit -->
-            <a
-              href="#"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="{{election.elections_id}}"
-              class="active carasoul_btn btn btn-primary"
-              aria-current="true"
-              aria-label="Slide 1"
-              >Edit</a
-            >
-            <!-- Delete -->
-            <a class="btn btn-primary delete">Delete </a>
-          </div>
-          <!-- Normal Options -->
-          <div
-            :id="`normal_options${election.elections_id}`"
-            class="button_holder_normal_options"
-          >
-            <!-- View -->
-            <a
-              href="#"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="{{election.elections_id}}"
-              class="active carasoul_btn btn btn-primary"
-              aria-current="true"
-              aria-label="Slide 1"
-              >View</a
-            >
-            <!-- Vote -->
-            <a
-              class="btn btn-primary vote_count"
-              @click="
-                AddVote(election.category_ID, election.elections_id, user.id),
-                  Vote(election.elections_id, election.vote_count)
-              "
-              >Vote
-              {{ election.vote_count }}
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div v-if="user.user_type === 'user2'" class="col-lg-4 col-sm-12">
     <div class="card">
       <img
@@ -137,7 +71,6 @@
       </div>
     </div>
   </div>
-  <div v-else>Nothing here</div>
 </template>
 <script>
 export default {
@@ -173,35 +106,14 @@ export default {
           id: id,
           vote: this.num,
         });
-      // if (this.Vote) {
-      //   window.location.reload();
-      // }
-    },
-    showOptions(id) {
-      if (id) {
-        let normalOptions = document.getElementById(`normal_options${id}`);
-        let adminOptions = document.getElementById(`admin_options${id}`);
-        if (
-          (normalOptions.style.display === "none",
-          adminOptions.style.display === "block")
-        ) {
-          normalOptions.style.display = "block";
-          adminOptions.style.display = "none";
-        } else {
-          normalOptions.style.display = "none";
-          adminOptions.style.display = "block";
-        }
-        console.log("Options switched");
+      if (this.Vote) {
+        window.location.reload();
       }
     },
   },
 };
 </script>
 <style scoped>
-.button_holder_normal_options {
-  display: none;
-}
-
 .col-lg-4 {
   display: flex;
   align-items: center;

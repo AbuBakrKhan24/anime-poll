@@ -19,7 +19,12 @@ export default {
 
 <style>
 .home {
-  /* padding-top: 83px; */
   height: 100vh;
+}
+
+@media only screen and (max-width: 376px) {
+  .home {
+    height: 100%;
+  }
 }
 </style>

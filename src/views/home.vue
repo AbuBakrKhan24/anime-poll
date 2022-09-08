@@ -13,28 +13,6 @@
       </div>
     </div>
   </div>
-  <div
-    v-else-if="user.user_type === 'admin'"
-    class="admin_box bg-dark text-light"
-  >
-    <h3>Welcome Your Adminess</h3>
-    <button>Add category</button>
-    <div class="display text-center bg-dark text-light">
-      <div v-if="categories" class="row text-dark">
-        <div class="col-lg-12 text-light">
-          <h2>Ongoing Elections</h2>
-        </div>
-        <categoryCard
-          v-for="category in categories"
-          :key="category.categories_id"
-          :category="category"
-        />
-      </div>
-      <div v-if="!categories">
-        <loader></loader>
-      </div>
-    </div>
-  </div>
   <div id="content" v-else-if="user.user_type === 'user2'">
     <div class="display text-center bg-dark text-light">
       <div class="row text-dark">

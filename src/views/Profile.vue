@@ -918,10 +918,9 @@
       </div>
     </div>
   </div>
-  <!-- Admin -->
   <div
-    v-else-if="user.user_type === 'admin'"
     class="profile_page bg-dark text-light"
+    v-else-if="user.user_type === 'admin'"
   >
     <h1>Welcome Your Adminess</h1>
     <!-- Image and user details -->
@@ -1314,20 +1313,6 @@
                             please be patient:)
                           </label>
                         </fieldset>
-                        <!-- Terms and conditions -->
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="terms"
-                            class="inline"
-                            required
-                          />
-                          I accept the
-                          <a
-                            href="https://www.freecodecamp.org/news/terms-of-service/"
-                            >terms and conditions</a
-                          >
-                        </label>
                         <!-- Submit button -->
                         <input type="submit" value="UpdateInfomation" />
                       </form>
@@ -1397,26 +1382,16 @@
 </template>
 <script>
 import Footer from "../components/Footer.vue";
-import VotingBox from "../components/VotingBox.vue";
 import PageNotFound from "../components/404PageNotFound.vue";
 import loader from "../components/loader.vue";
 export default {
-  components: { VotingBox, Footer, PageNotFound, loader },
+  components: { Footer, PageNotFound, loader },
   computed: {
     user() {
       console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },
-  // data() {
-  //   return {
-  //     username: "",
-  //     email: "",
-  //     password: "",
-  //     avatar: "",
-  //     about: "",
-  //   };
-  // },
   methods: {
     updateUserInfo() {
       this.$store.dispatch("updateUserInfo", {
@@ -1459,6 +1434,13 @@ export default {
   /* margin-bottom: 118px; */
   padding: 5%;
   padding-bottom: 10%;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-left: 24px;
 }
 
 .modes {

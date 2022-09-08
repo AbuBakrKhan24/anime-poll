@@ -18,9 +18,9 @@ export default createStore({
     setUser: (state, user) => {
       state.user = user;
     },
-    // setUsers: (state, users) => {
-    //   state.users = users;
-    // },
+    setUsers: (state, users) => {
+      state.users = users;
+    },
     setToken: (state, Token) => {
       state.Token = Token;
     },
@@ -47,18 +47,6 @@ export default createStore({
     },
     userMode(state) {
       state.user.user_type = "user2";
-    },
-    setVote(state, value, id) {
-      // state.elections?.filter((election) => {
-      //   const isMatch = true;
-      //   if(!election?.vote_count === value)
-      //   isMatch = false
-      // });
-      state.elections = state.elections.find((election) => {
-        if ((election.elections_id = id)) {
-          election.vote_count = value;
-        }
-      });
     },
   },
   actions: {
@@ -152,7 +140,6 @@ export default createStore({
 
             // console.log(data);
           });
-        
       }
     },
 
@@ -175,7 +162,6 @@ export default createStore({
       console.log(
         `User ${(payload.username, payload.email)} was updated successfully`
       );
-      
     },
 
     // Categories
@@ -339,7 +325,7 @@ export default createStore({
         .then((vote) => {
           console.log(vote);
         });
-      context.commit("setVote", payload.vote);
+      // context.commit("setVote", payload.vote);
 
       console.log(res);
     },

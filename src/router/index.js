@@ -29,12 +29,6 @@ const routes = [
     name: "results",
     component: () => import("../views/resultsView.vue"),
   },
-  // {
-  //   path: "/home/:id",
-  //   name: "SingleBook",
-  //   component: () => import("../views/SingleBook.vue"),
-  //   props: true,
-  // },
   {
     path: "/elections",
     name: "Elections",
@@ -51,6 +45,16 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: () => import("../views/Profile.vue"),
+  },
+  {
+    path: "/adminUsers",
+    name: "adminUsers",
+    component: () => import("../views/adminUsersTable.vue"),
+  },
+  {
+    path: "/adminElections",
+    name: "adminElections",
+    component: () => import("../views/adminElectionsTable.vue"),
   },
   {
     path: "/:catchAll(.*)",

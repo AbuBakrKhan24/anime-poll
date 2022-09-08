@@ -81,7 +81,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Home button done -->
-          <div v-if="user" class="d-flex dropped_nav justify-content-center">
+          <!-- User -->
+          <div
+            v-if="user.user_type === 'user'"
+            class="d-flex dropped_nav justify-content-center"
+          >
             <!--Home Page-->
             <li class="nav-item">
               <router-link
@@ -140,16 +144,134 @@
                 </li>
               </ul>
             </li>
+          </div>
+          <!-- User2 -->
+          <div
+            v-if="user.user_type === 'user2'"
+            class="d-flex dropped_nav justify-content-center"
+          >
+            <!--Home Page-->
+            <li class="nav-item">
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/home"
+              >
+                Home
+              </router-link>
+            </li>
+            <!--Home Page done-->
+            <!-- Results Page-->
+            <li>
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/results"
+                >Results</router-link
+              >
+            </li>
+            <!-- Results Page done -->
 
-            <!-- <li class="profile-pic">
-              <img
-                width="40"
-                height="35"
-                :src="user.avatar"
-                :alt="user.name"
-                class="profileAvatar d-inline-block align-text-top"
-              />
-            </li> -->
+            <!-- Profile Page -->
+            <li class="nav-item dropdown text-dark">
+              <a
+                class="nav-link dropdown-toggle text-dark"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profile
+                <img
+                  width="40"
+                  height="35"
+                  :src="user.avatar"
+                  :alt="user.name"
+                  class="profileAvatar d-inline-block align-text-top"
+                />
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <router-link
+                    class="dropdown-item text-dark space_between"
+                    aria-current="page"
+                    to="/profile"
+                    >Profile Page</router-link
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <!-- Logout -->
+                  <a @click="Logout()" class="dropdown-item space_between"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </div>
+          <!-- Admin -->
+          <div
+            v-else-if="user.user_type === 'admin'"
+            class="d-flex dropped_nav justify-content-center"
+          >
+            <!--Home Page-->
+            <li class="nav-item">
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/adminUsers"
+              >
+                Users
+              </router-link>
+            </li>
+            <!--Home Page done-->
+            <!-- Results Page-->
+            <li>
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/adminElections"
+                >Elections</router-link
+              >
+            </li>
+            <!-- Results Page done -->
+
+            <!-- Profile Page -->
+            <li class="nav-item dropdown text-dark">
+              <a
+                class="nav-link dropdown-toggle text-dark"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profile
+                <img
+                  width="40"
+                  height="35"
+                  :src="user.avatar"
+                  :alt="user.name"
+                  class="profileAvatar d-inline-block align-text-top"
+                />
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <router-link
+                    class="dropdown-item text-dark space_between"
+                    aria-current="page"
+                    to="/profile"
+                    >Profile Page</router-link
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <!-- Logout -->
+                  <a @click="Logout()" class="dropdown-item space_between"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
           </div>
           <div v-else class="d-flex">
             <!-- Login -->

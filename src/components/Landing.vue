@@ -109,7 +109,7 @@ h4 {
 
 #hello {
   height: 100%;
-  padding-top: 168px;
+  padding-top: 15%;
   padding-bottom: 14%;
   background-image: radial-gradient(
     circle,
@@ -193,7 +193,7 @@ a {
 /* Media Queries */
 @media only screen and (max-width: 376px) {
   #hello {
-    padding-top: 10%;
+    padding-top: 36%;
     padding-bottom: 28%;
   }
   h1 {
@@ -206,6 +206,9 @@ a {
     align-items: center;
     margin: 10px;
     margin-left: -40px;
+  }
+  .home {
+    height: 100vh;
   }
 }
 @media only screen and (max-width: 340px) {
