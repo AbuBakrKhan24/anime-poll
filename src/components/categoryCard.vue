@@ -4,11 +4,13 @@
       <div class="card-body">
         <div class="header">
           <h5 class="card-title">{{ category.category_name }}</h5>
-          <div class="button_admin">
+
+          <div v-if="user.user_type === 'admin'" class="button_admin">
             <i class="fa-solid fa-pen-to-square"></i>
             <i class="fa-solid fa-trash"></i>
           </div>
         </div>
+
         <p class="card-text">{{ category.categories_description }}</p>
         <div class="button_holder">
           <router-link
@@ -28,6 +30,12 @@ export default {
   methods: {
     categorySection(id) {
       this.$store.dispatch("getCategorySection", id);
+    },
+  },
+  computed: {
+    user() {
+      console.log(this.$store.state.user);
+      return this.$store.state.user;
     },
   },
 };

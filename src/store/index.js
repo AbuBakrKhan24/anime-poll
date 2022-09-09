@@ -49,6 +49,14 @@ export default createStore({
     userMode(state) {
       state.user.user_type = "user2";
     },
+    setUserUpdate(state, user) {
+      console.log(user);
+      state.user.username = user.username;
+      state.user.email = user.email;
+      state.user.password = user.password;
+      state.user.avatar = user.avatar;
+      state.user.about = user.about;
+    },
     setVote(state, value, id) {
       state.elections = state.elections.find((election) => {
         if ((election.elections_id = id)) {
@@ -90,7 +98,7 @@ export default createStore({
         "Good Job!",
         "Your Sign Up Was A Success,",
         "Now lets get you familiar with logging you into our website.",
-        "success"
+        "https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/oh%20yeah.gif?raw=true"
       );
     },
     // Login
@@ -129,8 +137,10 @@ export default createStore({
         swal(
           "Welcome Back!",
           "Hope you are well, lets start votingg!!!",
+          // "success"
           "https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/oh%20yeah.gif?raw=true"
         );
+        router.push("/profile");
         // Verify token
         //
         fetch("https://anime-poll-api.herokuapp.com/users/users/verify", {
@@ -143,7 +153,6 @@ export default createStore({
           .then((res) => res.json())
           .then((user) => {
             context.commit("setUser", user);
-            router.push("/home");
             // window.localStorage.setItem("user", JSON.stringify(user));
 
             // console.log(data);
@@ -166,7 +175,13 @@ export default createStore({
         }
       )
         .then((response) => response.json())
-        .then((json) => context.commit("setUser", json));
+        .then((payload) => context.commit("setUserUpdate", payload));
+      swal(
+        "Your Update was successful!",
+        "Hope you happy about your changes.",
+        "success"
+      );
+
       console.log(
         `User ${(payload.username, payload.email)} was updated successfully`
       );

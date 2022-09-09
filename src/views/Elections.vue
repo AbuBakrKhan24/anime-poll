@@ -65,7 +65,7 @@
       </div>
     </div>
   </div>
-  <div v-if="user.user_type === 'user2'">
+  <div v-else-if="user.user_type === 'user2'">
     <div class="display text-center bg-dark text-light">
       <div
         id="carouselExampleIndicators"
@@ -198,7 +198,7 @@ button.carousel-control-next {
 
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
-  padding: 5% 0 10% 0;
+  padding: 10% 0 10% 0;
   /* padding-top: 15%; */
 }
 .admin_box {
@@ -225,8 +225,8 @@ button.carousel-control-next {
 }
 @media only screen and (max-width: 376px) {
   .display.text-center.bg-dark.text-light {
-    padding-bottom: 170px;
-    padding-bottom: 25%;
+    padding-top: 170px;
+    padding-bottom: 40%;
   }
 }
 

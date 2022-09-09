@@ -107,7 +107,7 @@ export default {
           vote: this.num,
         });
       if (this.Vote) {
-        window.location.reload();
+        // window.location.reload();
       }
     },
   },

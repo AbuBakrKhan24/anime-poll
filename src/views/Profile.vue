@@ -1,8 +1,5 @@
 <template>
-  <div v-if="categories">
-    <loader></loader>
-  </div>
-  <div class="profile_page" v-else-if="user.user_type === 'user'">
+  <div class="profile_page" v-if="user.user_type === 'user'">
     <!-- Image and user details -->
     <div class="display text-center">
       <div class="users_PP">
@@ -117,6 +114,7 @@
                               alt="Avatar"
                             />
                           </div>
+                          <div v-if="avatar">{{ avatar }}</div>
                           <label
                             >Choose your avatar:
                             <select v-model="avatar" multiple>
@@ -389,8 +387,24 @@
                             please be patient:)
                           </label>
                         </fieldset>
+                        <!-- Terms and conditions -->
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="terms"
+                            class="inline"
+                            required
+                          />
+                          I accept the
+                          <router-link to="/TLCs"
+                            >terms and conditions</router-link
+                          >
+                        </label>
                         <!-- Submit button -->
-                        <input type="submit" value="Update info" />
+                        <input type="submit" value="Sign Up" />
+                        <div class="bg-dark text-light" v-if="user">
+                          Welcome {{ user.username }}
+                        </div>
                       </form>
                     </div>
                   </div>
@@ -1391,6 +1405,18 @@ export default {
       console.log(this.$store.state.user);
       return this.$store.state.user;
     },
+    data() {
+    },
+    data() {
+      return {
+        username: "",
+        email: "",
+        password: "",
+        avatar: "",
+        user_type: "user",
+        about: "",
+      };
+    },
   },
   methods: {
     updateUserInfo() {
@@ -1402,6 +1428,7 @@ export default {
         about: this.about,
         id: this.user.id,
       });
+      this.login();
     },
     login() {
       this.$store.dispatch("login", {
@@ -1409,6 +1436,7 @@ export default {
         password: this.password,
       });
     },
+
     myFunction() {
       let show = document.getElementById("myInput");
       if (show.type === "password") {
