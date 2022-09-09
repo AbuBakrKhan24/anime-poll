@@ -459,8 +459,8 @@
         <p class="email text-light">{{ user.email }}</p>
       </div>
       <div class="modes">
-        <button @click="userMode()">User</button>
-        <button @click="adminMode()">Admin</button>
+        <button class="user_mode" @click="userMode()">User</button>
+        <button class="admin_mode" @click="adminMode()">Admin</button>
       </div>
       <!-- Image and user details Done -->
     </div>

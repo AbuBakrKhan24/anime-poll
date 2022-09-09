@@ -75,14 +75,14 @@ export default {
   min-height: 100vh;
 }
 
-button.edit {
+/* button.edit {
   height: 100%;
   width: 50%;
 }
 button.delete {
   height: 100%;
   width: 50%;
-}
+} */
 
 .card-footer.text-muted {
   display: flex;
