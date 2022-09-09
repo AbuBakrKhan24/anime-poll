@@ -98,7 +98,7 @@ export default createStore({
         "Good Job!",
         "Your Sign Up Was A Success,",
         "Now lets get you familiar with logging you into our website.",
-        "https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/oh%20yeah.gif?raw=true"
+        "success"
       );
     },
     // Login
@@ -297,7 +297,8 @@ export default createStore({
     },
     // DELETE A USER
     deleteUser: async (context, id) => {
-      fetch("http://localhost:6969/users/" + id, {
+      // fetch("http://localhost:6969/users/" + id, {
+      fetch("https://anime-poll-api.herokuapp.com/users/" + id, {
         method: "DELETE",
       })
         .then((response) => response.json())

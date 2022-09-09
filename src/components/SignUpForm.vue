@@ -412,12 +412,6 @@ export default {
   );
 }
 
-// .head {
-//   margin: 1em auto;
-//   text-align: center;
-//   font-size: 24px;
-//   font-weight: 700;
-// }
 // Form_Holder
 .Form_Holder {
   display: flex;
