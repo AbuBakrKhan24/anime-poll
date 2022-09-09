@@ -430,11 +430,14 @@
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
           <div class="card">
-            <div class="card-header">Your Controls</div>
+            <div class="card-header text-dark">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <div class="modes">
-                  <button class="delete" @click="deleteUser(user.id)">
+                <div class="modes2">
+                  <button
+                    class="delete btn btn-danger"
+                    @click="deleteUser(user.id)"
+                  >
                     Delete Account
                   </button>
                 </div>
