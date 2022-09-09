@@ -1,10 +1,13 @@
 <template>
   <div id="content" v-if="user.user_type === 'user'">
     <div class="display text-center bg-dark text-light">
+      <div class="head">
+        <h1 class="text-light">
+          Ongoing
+          <span class="text-success">Elections</span>
+        </h1>
+      </div>
       <div class="row text-dark">
-        <div class="col-lg-12 text-light">
-          <h2>Ongoing Elections</h2>
-        </div>
         <categoryCard
           v-for="category in categories"
           :key="category.categories_id"
@@ -15,6 +18,12 @@
   </div>
   <div id="content" v-else-if="user.user_type === 'user2'">
     <div class="display text-center bg-dark text-light">
+      <div class="head">
+        <h1 class="text-light">
+          Ongoing
+          <span class="text-success">Elections</span>
+        </h1>
+      </div>
       <div class="row text-dark">
         <div class="col-lg-12 text-light">
           <h2>Ongoing Elections</h2>
@@ -62,10 +71,13 @@ export default {
 };
 </script>
 <style scoped>
+.head {
+  padding-top: 4%;
+}
 .display {
   min-height: 100vh;
   /* margin-bottom: 118px; */
-  padding: 5%;
+  /* padding: 5%; */
   padding-bottom: 10%;
 }
 
@@ -121,13 +133,4 @@ h2 {
 }
 
 /* new */
-
-h1 {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: poppins;
-}
 </style>

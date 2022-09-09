@@ -1,19 +1,23 @@
 <template>
   <section id="Contact" class="bg-dark text-light">
-    <div class="header-contact">
-      <h2>
+    <div class="head">
+      <h1>
         Contact
         <span class="text-success">Me</span>
-      </h2>
+      </h1>
     </div>
     <div class="container contact_container">
-      <form action="https://formspree.io/f/mzbojdwq" method="POST">
+      <form
+        @submit.prevent
+        action="https://formspree.io/f/mzbojdwq"
+        method="POST"
+      >
         <div class="row">
           <div class="col-md-6">
             <div class="contact_input">
               <input
                 type="text"
-                class="form-control bg-dark text-light"
+                class="form-control bg-light text-dark"
                 id="formGroupExampleInput"
                 placeholder="Full Name"
               />
@@ -21,7 +25,7 @@
                 <div class="col mt-3">
                   <input
                     type="text"
-                    class="form-control bg-dark text-light"
+                    class="form-control bg-light text-dark"
                     placeholder="Email"
                     aria-label="Email"
                   />
@@ -29,7 +33,7 @@
                 <div class="col mt-3">
                   <input
                     type="text"
-                    class="form-control bg-dark text-light"
+                    class="form-control bg-light text-dark"
                     placeholder="Subject"
                     aria-label="Subject"
                   />
@@ -38,13 +42,18 @@
               <textarea
                 rows="5"
                 name="message"
-                class="form-control bg-dark text-light mt-3"
+                class="form-control bg-light text-dark mt-3"
                 placeholder="Your Message"
                 required="required"
               ></textarea>
             </div>
             <div class="sub-button mt-3">
-              <input type="submit" value="Send message" />
+              <input
+                @click="clicked"
+                id="submit"
+                type="submit"
+                value="Send message"
+              />
             </div>
           </div>
           <div class="col-md-6">
@@ -65,7 +74,7 @@
                       <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="details">
-                      <p>abubakrkhan224@gmail.com</p>
+                      <p>animepolladmin@gmail.com</p>
                     </div>
                   </div>
                   <div class="col contact_info">
@@ -74,20 +83,6 @@
                     </div>
                     <div class="details">
                       <p>(+27) 74 480 1770</p>
-                    </div>
-                    <div class="col links">
-                      <a
-                        target="_blank"
-                        href="https://www.linkedin.com/in/abu-bakr-khan-a58b23225/"
-                      >
-                        <i class="fa-brands fa-linkedin"></i>
-                      </a>
-                      <a
-                        target="_blank"
-                        href="https://github.com/AbuBakrKhan24"
-                      >
-                        <i class="fa-brands fa-github"></i>
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -98,6 +93,7 @@
       </form>
     </div>
   </section>
+  <Footer></Footer>
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
@@ -107,21 +103,28 @@ export default {
     Navbar,
     Footer,
   },
+  methods: {
+    clicked() {
+      swal("Great!", "Your message was sent successfully.", "success");
+    },
+  },
 };
 </script>
-<style>
+<style scoped>
 /* contact */
 section#Contact {
-  padding-top: 6%;
-  height: 92vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  padding-top: 83px;
+  height: 100vh;
+}
+
+.head {
+  padding-top: 4%;
 }
 .contact_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 75%;
 }
 .header-contact {
   display: flex;
@@ -212,5 +215,39 @@ i:hover {
 }
 i.fa-brands.fa-linkedin {
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 376px) {
+  section#Contact {
+    padding-top: 100px;
+    min-height: 150vh;
+    padding-bottom: 127px;
+  }
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .contact_details {
+    margin-left: 5px;
+  }
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+  }
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+  }
 }
 </style>

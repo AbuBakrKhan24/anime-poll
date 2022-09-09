@@ -5,19 +5,19 @@
       <p class="footer text-light">© 2022 Anime-Poll</p>
       <ul class="icons mt-4 d-flex">
         <li class="ms-5 text-light">
-          <a href="#">
+          <a target="_blank" href="https://www.facebook.com/animepollTester/">
             <i class="fa-brands fa-facebook-square FaceBook"></i>
           </a>
         </li>
 
         <li class="ms-5 text-light">
-          <a href="#">
+          <a target="_blank" href="https://www.instagram.com/animepolltester/">
             <i class="fa-brands fa-instagram Instagram"></i>
           </a>
         </li>
 
         <li class="ms-5 text-light">
-          <a href="#">
+          <a target="_blank" href="https://twitter.com/TesterAnime">
             <i class="fa-brands fa-twitter Twitter"></i>
           </a>
         </li>

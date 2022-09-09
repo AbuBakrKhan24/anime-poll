@@ -302,9 +302,9 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
-      if ("User successfully removed") {
-        swal("Done!", "The user has been successfully deleted. ", "success");
-      }
+      // if ("User successfully removed") {
+      //   swal("Done!", "The user has been successfully deleted. ", "success");
+      // }
     },
 
     // Profile done

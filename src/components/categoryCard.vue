@@ -16,7 +16,7 @@
           <router-link
             :to="{ name: 'elections', params: { id: category.categories_id } }"
             @click="categorySection(category.categories_id)"
-            class="btn btn-primary"
+            class="btn btn-success"
             >Go to election</router-link
           >
         </div>
@@ -113,6 +113,9 @@ i.fa-solid.fa-trash:hover {
   }
   .col-lg-6:last-of-type {
     padding-bottom: 10px;
+  }
+  .col-lg-6 {
+    padding-top: 25px;
   }
 }
 </style>

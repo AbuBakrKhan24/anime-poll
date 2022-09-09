@@ -54,23 +54,20 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      filteredPeople: null,
-      people: null,
-      id: "",
-      username: "",
-    };
-  },
   mounted() {
     this.$store.dispatch("getUsers");
   },
   methods: {
     deleteUser(id) {
-      console.log("user was deleted");
-      if (this.$store.dispatch("deleteUser", id)) {
-        alert("The user has been successfully deleted.");
-        window.location.reload();
+      let text = "Are you sure that you want to delete this user?";
+      if (confirm(text) === true) {
+        console.log("user was deleted");
+        if (this.$store.dispatch("deleteUser", id)) {
+          alert("The user has been successfully deleted.");
+          window.location.reload();
+        }
+      } else {
+        alert("You canceled");
       }
     },
   },
@@ -95,6 +92,15 @@ export default {
 .header {
   padding-top: 3%;
   padding-bottom: 3%;
+}
+
+button.edit {
+  height: 100%;
+  width: 50%;
+}
+button.delete {
+  height: 100%;
+  width: 50%;
 }
 
 .card {

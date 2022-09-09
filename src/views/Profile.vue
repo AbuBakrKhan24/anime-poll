@@ -1,7 +1,7 @@
 <template>
   <div class="profile_page" v-if="user.user_type === 'user'">
     <!-- Image and user details -->
-    <div class="display text-center">
+    <div class="display text-center bg-dark">
       <div class="users_PP">
         <img class="profilepicture" alt="profilepicture" :src="user.avatar" />
       </div>
@@ -430,13 +430,14 @@
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
           <div class="card">
-            <div class="card-header">Your About</div>
+            <div class="card-header">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>{{ user.about }}</p>
-                <footer class="blockquote-footer">
-                  From <cite title="Source Title">{{ user.username }}</cite>
-                </footer>
+                <div class="modes">
+                  <button class="delete" @click="deleteUser(user.id)">
+                    Delete Account
+                  </button>
+                </div>
               </blockquote>
             </div>
           </div>
@@ -450,7 +451,7 @@
   <!-- Admin_User2 -->
   <div class="profile_page" v-else-if="user.user_type === 'user2'">
     <!-- Image and user details -->
-    <div class="display text-center">
+    <div class="display text-center bg-dark">
       <div class="users_PP">
         <img class="profilepicture" alt="profilepicture" :src="user.avatar" />
       </div>
@@ -458,10 +459,7 @@
         <h4 class="user text-light">{{ user.username }}</h4>
         <p class="email text-light">{{ user.email }}</p>
       </div>
-      <div class="modes">
-        <button class="user_mode" @click="userMode()">User</button>
-        <button class="admin_mode" @click="adminMode()">Admin</button>
-      </div>
+
       <!-- Image and user details Done -->
     </div>
     <!-- Where about is divided -->
@@ -838,20 +836,6 @@
                             please be patient:)
                           </label>
                         </fieldset>
-                        <!-- Terms and conditions -->
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="terms"
-                            class="inline"
-                            required
-                          />
-                          I accept the
-                          <a
-                            href="https://www.freecodecamp.org/news/terms-of-service/"
-                            >terms and conditions</a
-                          >
-                        </label>
                         <!-- Submit button -->
                         <input type="submit" value="Sign Up" />
                       </form>
@@ -898,13 +882,16 @@
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
           <div class="card">
-            <div class="card-header">Your About</div>
+            <div class="card-header">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>{{ user.about }}</p>
-                <footer class="blockquote-footer">
-                  From <cite title="Source Title">{{ user.username }}</cite>
-                </footer>
+                <div class="modes">
+                  <button class="user_mode" @click="userMode()">User</button>
+                  <button class="admin_mode" @click="adminMode()">Admin</button>
+                  <button class="delete" @click="deleteUser(user.id)">
+                    Delete Account
+                  </button>
+                </div>
               </blockquote>
             </div>
           </div>
@@ -1353,14 +1340,17 @@
 
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
-          <div class="card text-dark">
-            <div class="card-header">Your About</div>
+          <div class="card">
+            <div class="card-header">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p>{{ user.about }}</p>
-                <footer class="blockquote-footer">
-                  From <cite title="Source Title">{{ user.username }}</cite>
-                </footer>
+                <div class="modes">
+                  <button class="user_mode" @click="userMode()">User</button>
+                  <button class="admin_mode" @click="adminMode()">Admin</button>
+                  <button class="delete" @click="deleteUser(user.id)">
+                    Delete Account
+                  </button>
+                </div>
               </blockquote>
             </div>
           </div>
@@ -1398,6 +1388,23 @@ export default {
     },
   },
   methods: {
+    deleteUser(id) {
+      let text = "Are you sure that you want to delete your account?";
+      if (confirm(text) === true) {
+        console.log("user was deleted");
+        if (this.$store.dispatch("deleteUser", id)) {
+          alert("Your account has been successfully deleted.");
+          this.Logout();
+          // window.location.reload();
+        }
+      } else {
+        alert("You canceled");
+      }
+    },
+    Logout() {
+      this.$store.commit("Logout");
+      this.$router.push("/");
+    },
     updateUserInfo() {
       this.$store.dispatch("updateUserInfo", {
         username: this.username,

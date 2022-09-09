@@ -67,6 +67,15 @@ export default {
       return this.$store.state.elections;
     },
   },
+  methods: {
+    deleteUser(id) {
+      console.log("user was deleted");
+      if (this.$store.dispatch("deleteUser", id)) {
+        alert("The user has been successfully deleted.");
+        window.location.reload();
+      }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -75,14 +84,14 @@ export default {
   min-height: 100vh;
 }
 
-/* button.edit {
+button.edit {
   height: 100%;
   width: 50%;
 }
 button.delete {
   height: 100%;
   width: 50%;
-} */
+}
 
 .card-footer.text-muted {
   display: flex;

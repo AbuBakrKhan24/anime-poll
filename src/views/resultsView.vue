@@ -1,9 +1,10 @@
 <template>
   <div class="holder" v-if="user">
-    <div class="pic bg-dark"></div>
-  </div>
-  <div v-else-if="categories">
-    <loader></loader>
+    <div class="pic bg-dark">
+      <h1 class="bg-dark text-light">
+        Final results will be available at 00:00 on the 30th of December 2022
+      </h1>
+    </div>
   </div>
   <div v-else>
     <PageNotFound></PageNotFound>

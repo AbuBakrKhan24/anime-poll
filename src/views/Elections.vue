@@ -1,6 +1,12 @@
 <template>
   <div v-if="user.user_type === 'user'">
     <div class="display text-center bg-dark text-light">
+      <div class="head">
+        <h1 class="text-light">
+          Vote
+          <span class="text-success">Here</span>
+        </h1>
+      </div>
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -67,6 +73,12 @@
   </div>
   <div v-else-if="user.user_type === 'user2'">
     <div class="display text-center bg-dark text-light">
+      <div class="head">
+        <h1 class="text-light">
+          Vote
+          <span class="text-success">Here</span>
+        </h1>
+      </div>
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -188,6 +200,9 @@ export default {
 };
 </script>
 <style scoped>
+.head {
+  padding-top: 4%;
+}
 .holder {
   padding-top: 83px;
 }
@@ -198,8 +213,7 @@ button.carousel-control-next {
 
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
-  padding: 10% 0 10% 0;
-  /* padding-top: 15%; */
+  padding-top: 83px;
 }
 .admin_box {
   min-height: 100vh;
