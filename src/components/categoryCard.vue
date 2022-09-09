@@ -96,8 +96,9 @@ i.fa-solid.fa-trash:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   padding-bottom: 10px;
+  padding-top: 70px;
 }
 
 @media only screen and (max-width: 376px) {

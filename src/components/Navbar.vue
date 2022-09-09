@@ -96,6 +96,16 @@
                 Home
               </router-link>
             </li>
+            <!--About Page-->
+            <li class="nav-item">
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/about"
+              >
+                About
+              </router-link>
+            </li>
             <!--Home Page done-->
             <!-- Results Page-->
             <li>
@@ -107,7 +117,16 @@
               >
             </li>
             <!-- Results Page done -->
-
+            <!--Contact Page-->
+            <li class="nav-item">
+              <router-link
+                class="nav-link active text-dark"
+                aria-current="page"
+                to="/contact"
+              >
+                Contact
+              </router-link>
+            </li>
             <!-- Profile Page -->
             <li class="nav-item dropdown text-dark">
               <a

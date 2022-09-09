@@ -53,7 +53,7 @@
                     <div class="card-body">
                       <h1>Edit your profile</h1>
                       <p>Change your profile details here below</p>
-                      <form @submit.prevent="updateUserInfo">
+                      <form @submit.prevent="updateUserInfo()">
                         <!-- Form details -->
                         <fieldset>
                           <!-- Username -->
@@ -114,7 +114,6 @@
                               alt="Avatar"
                             />
                           </div>
-                          <div v-if="avatar">{{ avatar }}</div>
                           <label
                             >Choose your avatar:
                             <select v-model="avatar" multiple>
@@ -383,28 +382,10 @@
                                 Sung JinWoo
                               </option>
                             </select>
-                            Some images may take longer to load than others so
-                            please be patient:)
                           </label>
                         </fieldset>
-                        <!-- Terms and conditions -->
-                        <label>
-                          <input
-                            type="checkbox"
-                            name="terms"
-                            class="inline"
-                            required
-                          />
-                          I accept the
-                          <router-link to="/TLCs"
-                            >terms and conditions</router-link
-                          >
-                        </label>
                         <!-- Submit button -->
-                        <input type="submit" value="Sign Up" />
-                        <div class="bg-dark text-light" v-if="user">
-                          Welcome {{ user.username }}
-                        </div>
+                        <input type="submit" value="Update Info" />
                       </form>
                     </div>
                   </div>
@@ -948,8 +929,8 @@
       </div>
 
       <div class="modes">
-        <button @click="userMode()">User</button>
-        <button @click="adminMode()">Admin</button>
+        <button class="user_mode" @click="userMode()">User</button>
+        <button class="admin_mode" @click="adminMode()">Admin</button>
       </div>
       <!-- Image and user details Done -->
     </div>
@@ -1406,8 +1387,6 @@ export default {
       return this.$store.state.user;
     },
     data() {
-    },
-    data() {
       return {
         username: "",
         email: "",
@@ -1473,6 +1452,33 @@ export default {
 
 .modes {
   padding-bottom: 50px;
+}
+.user_mode {
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+  padding: 6px 10px 6px 30px;
+}
+.user_mode:hover {
+  background-color: #212529;
+  color: #ffffff;
+}
+.user_mode:focus {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+.admin_mode {
+  border-bottom-right-radius: 100%;
+  border-top-right-radius: 100%;
+  padding: 6px 21px 6px 8px;
+}
+.admin_mode:hover {
+  background-color: #212529;
+  color: #ffffff;
+}
+.admin_mode:focus {
+  background-color: #212529;
+  color: #ffffff;
 }
 
 .profile_page {

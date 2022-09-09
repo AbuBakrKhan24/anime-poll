@@ -47,6 +47,10 @@
               </div>
             </div>
           </div>
+          <div class="card-footer text-muted">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +73,20 @@ export default {
 .box {
   padding-top: 83px;
   min-height: 100vh;
+}
+
+button.edit {
+  height: 100%;
+  width: 50%;
+}
+button.delete {
+  height: 100%;
+  width: 50%;
+}
+
+.card-footer.text-muted {
+  display: flex;
+  flex-direction: row;
 }
 
 .header {
