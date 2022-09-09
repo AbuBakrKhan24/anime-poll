@@ -20,6 +20,12 @@ const routes = [
     component: () => import("../views/LandingPage.vue"),
   },
   {
+    path: "/TLCs",
+    name: "terms&conditions",
+
+    component: () => import("../views/termsAndConditions.vue"),
+  },
+  {
     path: "/home",
     name: "home",
     component: () => import("../views/home.vue"),

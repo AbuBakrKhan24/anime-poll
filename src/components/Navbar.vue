@@ -147,7 +147,7 @@
           </div>
           <!-- User2 -->
           <div
-            v-if="user.user_type === 'user2'"
+            v-else-if="user.user_type === 'user2'"
             class="d-flex dropped_nav justify-content-center"
           >
             <!--Home Page-->

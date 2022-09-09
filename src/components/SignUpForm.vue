@@ -4,6 +4,10 @@
       <div class="card" style="width: fit-content">
         <div class="card-body">
           <h1>Sign Up Form</h1>
+          <img
+            class="img-fluid"
+            src="https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/join%20us.gif?raw=true"
+          />
           <p>Please fill out this form with the required information</p>
           <form @submit.prevent="register">
             <!-- Form details -->
@@ -333,9 +337,7 @@
             <label>
               <input type="checkbox" name="terms" class="inline" required /> I
               accept the
-              <a href="https://www.freecodecamp.org/news/terms-of-service/"
-                >terms and conditions</a
-              >
+              <router-link to="/TLCs">terms and conditions</router-link>
             </label>
             <!-- Submit button -->
             <input type="submit" value="Sign Up" />

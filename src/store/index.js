@@ -6,6 +6,7 @@ import swal from "sweetalert";
 export default createStore({
   state: {
     user: null,
+    users: null,
     Token: null,
     category: null,
     categories: null,
@@ -47,6 +48,13 @@ export default createStore({
     },
     userMode(state) {
       state.user.user_type = "user2";
+    },
+    setVote(state, value, id) {
+      state.elections = state.elections.find((election) => {
+        if ((election.elections_id = id)) {
+          election.vote_count = value;
+        }
+      });
     },
   },
   actions: {
@@ -121,7 +129,7 @@ export default createStore({
         swal(
           "Welcome Back!",
           "Hope you are well, lets start votingg!!!",
-          "success"
+          "https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/oh%20yeah.gif?raw=true"
         );
         // Verify token
         //
@@ -325,7 +333,7 @@ export default createStore({
         .then((vote) => {
           console.log(vote);
         });
-      // context.commit("setVote", payload.vote);
+      context.commit("setVote", payload.vote);
 
       console.log(res);
     },

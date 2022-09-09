@@ -3,7 +3,11 @@
     <div class="Form_Holder">
       <div class="card" style="width: fit-content">
         <form @submit.prevent="login">
-          <p>Log in to Bookdom</p>
+          <p class="head">Log in to Anime-Poll</p>
+          <img
+            class="img-fluid"
+            src="https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/da1dj4y-d6317c71-6968-4d1a-aca8-cbe1cc1b7048.gif?raw=true"
+          />
           <fieldset>
             <!-- Username -->
             <label
@@ -78,6 +82,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.head {
+  margin-top: 1rem;
+}
+
+.img-fluid {
+  max-width: 15%;
+  height: auto;
+}
 @keyframes load {
   33% {
     transform: rotate(10deg);
@@ -123,7 +135,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 5%;
+  // padding-bottom: 5%;
 }
 // Form_Holder done
 
@@ -210,7 +222,7 @@ footer {
 
 @media only screen and (max-width: 376px) {
   .box {
-    min-height: 100vh;
+    min-height: 160vh;
     padding-bottom: 20%;
   }
   div#footer {
