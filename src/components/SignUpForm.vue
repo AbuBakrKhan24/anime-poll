@@ -3,7 +3,7 @@
     <div class="Form_Holder">
       <div class="card" style="width: fit-content">
         <div class="card-body">
-          <h1>Sign Up Form</h1>
+          <h1 class="head">Sign Up Form</h1>
           <img
             class="img-fluid"
             src="https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/join%20us.gif?raw=true"
@@ -411,6 +411,13 @@ export default {
     #170846
   );
 }
+
+// .head {
+//   margin: 1em auto;
+//   text-align: center;
+//   font-size: 24px;
+//   font-weight: 700;
+// }
 // Form_Holder
 .Form_Holder {
   display: flex;

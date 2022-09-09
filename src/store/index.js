@@ -164,8 +164,8 @@ export default createStore({
     updateUserInfo: async (context, payload) => {
       console.log(payload);
       fetch(
-        // "https://anime-poll-api.herokuapp.com/users/update-user/" + payload.id,
-        "http://localhost:6969/users/update-user/" + payload.id,
+        "https://anime-poll-api.herokuapp.com/users/update-user/" + payload.id,
+        // "http://localhost:6969/users/update-user/" + payload.id,
         {
           method: "PATCH",
           body: JSON.stringify(payload),

@@ -3,7 +3,7 @@
     <div class="Form_Holder">
       <div class="card" style="width: fit-content">
         <form @submit.prevent="login">
-          <p class="head">Log in to Anime-Poll</p>
+          <h1 class="head">Log in to Anime-Poll</h1>
           <img
             class="img-fluid"
             src="https://github.com/AbuBakrKhan24/e-com-animeStore_front-end/blob/main/my%20resources/da1dj4y-d6317c71-6968-4d1a-aca8-cbe1cc1b7048.gif?raw=true"
