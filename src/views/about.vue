@@ -76,7 +76,7 @@ export default { components: { Footer } };
 <style scoped>
 .content {
   padding-top: 83px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -139,5 +139,17 @@ td {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(0 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+@media only screen and (max-width: 376px) {
+  .content[data-v-e7ab893a] {
+    padding-top: 83px;
+    padding-bottom: 35%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
 }
 </style>
