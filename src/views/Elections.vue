@@ -202,6 +202,7 @@ export default {
 <style scoped>
 .head {
   padding-top: 4%;
+  padding-bottom: 4%;
 }
 .holder {
   padding-top: 83px;
@@ -214,6 +215,7 @@ button.carousel-control-next {
 .display.text-center.bg-dark.text-light {
   min-height: 100vh;
   padding-top: 83px;
+  padding-bottom: 148px;
 }
 .admin_box {
   min-height: 100vh;
@@ -239,7 +241,7 @@ button.carousel-control-next {
 }
 @media only screen and (max-width: 376px) {
   .display.text-center.bg-dark.text-light {
-    padding-top: 170px;
+    padding-top: 83px;
     padding-bottom: 40%;
   }
 }

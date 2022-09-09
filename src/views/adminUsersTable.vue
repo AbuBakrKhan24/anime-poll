@@ -1,7 +1,10 @@
 <template>
   <div class="box bg-dark text-light">
-    <div class="header">
-      <h2>List of users</h2>
+    <div class="head">
+      <h1>
+        Users
+        <span class="text-success">Listings</span>
+      </h1>
     </div>
     <div class="row">
       <div
@@ -44,8 +47,10 @@
             </div>
           </div>
           <div class="card-footer text-muted">
-            <button class="edit">Edit</button>
-            <button @click="deleteUser(user.id)" class="delete">Delete</button>
+            <button class="btn btn-warning edit">Edit</button>
+            <button class="btn btn-danger delete" @click="deleteUser(user.id)">
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -94,9 +99,14 @@ export default {
   padding-bottom: 3%;
 }
 
+.head {
+  padding-top: 4%;
+}
+
 button.edit {
   height: 100%;
   width: 50%;
+  margin-right: 10px;
 }
 button.delete {
   height: 100%;
@@ -106,10 +116,12 @@ button.delete {
 .card {
   display: flex;
   width: 40%;
-  height: 350px;
+  height: 370px;
   margin-right: 4%;
   margin-left: 4%;
   margin-bottom: 4%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   flex-direction: column;
   justify-content: center;
 }

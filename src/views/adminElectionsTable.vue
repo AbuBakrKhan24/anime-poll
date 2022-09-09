@@ -1,7 +1,10 @@
 <template>
   <div class="box bg-dark text-light">
-    <div class="header">
-      <h2>List of elections</h2>
+    <div class="head">
+      <h1>
+        Elections
+        <span class="text-success">Listings</span>
+      </h1>
     </div>
     <div class="row">
       <div
@@ -48,8 +51,10 @@
             </div>
           </div>
           <div class="card-footer text-muted">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
+            <button class="btn btn-warning edit">Edit</button>
+            <button class="btn btn-danger delete" @click="deleteUser(user.id)">
+              Delete
+            </button>
           </div>
         </div>
       </div>
@@ -84,9 +89,15 @@ export default {
   min-height: 100vh;
 }
 
+.head {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
 button.edit {
   height: 100%;
   width: 50%;
+  margin-right: 10px;
 }
 button.delete {
   height: 100%;
@@ -110,12 +121,14 @@ img.img-fluid.rounded-start {
 .card {
   display: flex;
   width: 40%;
-  height: 350px;
+  height: 370px;
   margin-right: 4%;
-  margin-bottom: 4%;
   margin-left: 4%;
-  flex-direction: row;
-  align-items: center;
+  margin-bottom: 4%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-body {

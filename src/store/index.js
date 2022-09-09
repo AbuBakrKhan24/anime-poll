@@ -224,7 +224,8 @@ export default createStore({
 
     // ADD A Category
     addBook: async (context, book) => {
-      fetch("http://localhost:6969/categories", {
+      fetch("https://anime-poll-api.herokuapp.com/categories", {
+        // fetch("http://localhost:6969/categories", {
         method: "POST",
         body: JSON.stringify(book),
         headers: {
@@ -234,66 +235,6 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => context.commit("setProduct", json));
     },
-
-    // DELETE A Product
-    deleteBook: async (context, id) => {
-      fetch("http://localhost:6969/products/" + id, {
-        method: "DELETE",
-      })
-        .then((response) => response.json())
-        .then((json) => context.dispatch("getProducts"));
-    },
-
-    // UPDATE A Product
-    updateBook: async (context, book) => {
-      const {
-        id,
-        genre,
-        file,
-        cover,
-        title,
-        pages,
-        tags,
-        audience,
-        description,
-        createdBy,
-        year,
-      } = book;
-      fetch("http://localhost:6969/products/" + id, {
-        method: "PUT",
-        body: JSON.stringify({
-          genre: genre,
-          file: file,
-          cover: cover,
-          title: title,
-          pages: pages,
-          tags: tags,
-          audience: audience,
-          description: description,
-          year: year,
-          createdBy,
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => context.commit("setProduct", json));
-    },
-
-    // PROFILE
-    // ADD READING LIST
-    addReadingList: async (context, product) => {
-      context.state.user.readingList.push(product);
-      context.dispatch("updateUserInfo", context.state.user);
-    },
-    // DELETE READING LIST ITEM
-    removeReadingList: async (context, product) => {
-      context.state.user.readingList = context.state.user.readingList.filter(
-        (item) => item.id != product.id
-      );
-      context.dispatch("updateUserInfo", context.state.user);
-    },
     // DELETE A USER
     deleteUser: async (context, id) => {
       // fetch("http://localhost:6969/users/" + id, {
@@ -302,12 +243,7 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
-      // if ("User successfully removed") {
-      //   swal("Done!", "The user has been successfully deleted. ", "success");
-      // }
     },
-
-    // Profile done
 
     // Add an election
     AddPoll: async (context, poll) => {

@@ -108,7 +108,7 @@ h4 {
 }
 
 #hello {
-  height: 100%;
+  min-height: 100vh;
   padding-top: 15%;
   padding-bottom: 14%;
   background-image: radial-gradient(

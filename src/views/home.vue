@@ -25,9 +25,6 @@
         </h1>
       </div>
       <div class="row text-dark">
-        <div class="col-lg-12 text-light">
-          <h2>Ongoing Elections</h2>
-        </div>
         <categoryCard
           v-for="category in categories"
           :key="category.categories_id"

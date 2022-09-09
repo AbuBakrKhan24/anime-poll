@@ -882,13 +882,20 @@
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
           <div class="card">
-            <div class="card-header">Your Controls</div>
+            <div class="card-header text-dark">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <div class="modes">
-                  <button class="user_mode" @click="userMode()">User</button>
-                  <button class="admin_mode" @click="adminMode()">Admin</button>
-                  <button class="delete" @click="deleteUser(user.id)">
+                <div class="modes2">
+                  <button class="btn user_mode" @click="userMode()">
+                    User
+                  </button>
+                  <button class="btn admin_mode" @click="adminMode()">
+                    Admin
+                  </button>
+                  <button
+                    class="delete btn btn-danger"
+                    @click="deleteUser(user.id)"
+                  >
                     Delete Account
                   </button>
                 </div>
@@ -904,20 +911,14 @@
     class="profile_page bg-dark text-light"
     v-else-if="user.user_type === 'admin'"
   >
-    <h1>Welcome Your Adminess</h1>
     <!-- Image and user details -->
-    <div class="display text-center">
+    <div class="display text-center bg-dark">
       <div class="users_PP">
         <img class="profilepicture" alt="profilepicture" :src="user.avatar" />
       </div>
       <div class="Users_details">
         <h4 class="user text-light">{{ user.username }}</h4>
         <p class="email text-light">{{ user.email }}</p>
-      </div>
-
-      <div class="modes">
-        <button class="user_mode" @click="userMode()">User</button>
-        <button class="admin_mode" @click="adminMode()">Admin</button>
       </div>
       <!-- Image and user details Done -->
     </div>
@@ -1341,13 +1342,20 @@
         <!-- Voting holder -->
         <div class="col-lg-6 col-md-12 details">
           <div class="card">
-            <div class="card-header">Your Controls</div>
+            <div class="card-header text-dark">Your Controls</div>
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <div class="modes">
-                  <button class="user_mode" @click="userMode()">User</button>
-                  <button class="admin_mode" @click="adminMode()">Admin</button>
-                  <button class="delete" @click="deleteUser(user.id)">
+                <div class="modes2">
+                  <button class="btn user_mode" @click="userMode()">
+                    User
+                  </button>
+                  <button class="btn admin_mode" @click="adminMode()">
+                    Admin
+                  </button>
+                  <button
+                    class="delete btn btn-danger"
+                    @click="deleteUser(user.id)"
+                  >
                     Delete Account
                   </button>
                 </div>
@@ -1458,14 +1466,16 @@ export default {
   margin-top: 50px;
   padding-left: 24px;
 }
+.card {
+  width: 50%;
+}
 
 .modes {
   padding-bottom: 50px;
 }
-.user_mode {
-  border-bottom-left-radius: 100%;
-  border-top-left-radius: 100%;
-  padding: 6px 10px 6px 30px;
+.modes2 {
+  display: flex;
+  flex-direction: column;
 }
 .user_mode:hover {
   background-color: #212529;
@@ -1474,12 +1484,6 @@ export default {
 .user_mode:focus {
   background-color: #212529;
   color: #ffffff;
-}
-
-.admin_mode {
-  border-bottom-right-radius: 100%;
-  border-top-right-radius: 100%;
-  padding: 6px 21px 6px 8px;
 }
 .admin_mode:hover {
   background-color: #212529;
@@ -1582,7 +1586,7 @@ a {
 
 .card {
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-  width: max-content;
+  width: 60%;
 }
 
 /* Holder of users credentials and image */
