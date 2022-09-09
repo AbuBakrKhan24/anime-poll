@@ -1407,7 +1407,9 @@ export default {
         about: this.about,
         id: this.user.id,
       });
-      this.login();
+      if ({ msg: "Successfully Updated" }) {
+        this.login();
+      }
     },
     login() {
       this.$store.dispatch("login", {
