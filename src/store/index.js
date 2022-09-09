@@ -96,8 +96,7 @@ export default createStore({
       console.log(`User ${(user.username, user.email)} created successfully`);
       swal(
         "Good Job!",
-        "Your Sign Up Was A Success,",
-        "Now lets get you familiar with logging you into our website.",
+        "Your Sign Up Was A Success, Now lets get you familiar with logging you into our website.",
         "success"
       );
     },
@@ -303,6 +302,9 @@ export default createStore({
       })
         .then((response) => response.json())
         .then((json) => context.commit("setUser", json));
+      if ("User successfully removed") {
+        swal("Done!", "The user has been successfully deleted. ", "success");
+      }
     },
 
     // Profile done

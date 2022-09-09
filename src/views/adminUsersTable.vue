@@ -54,13 +54,24 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      filteredPeople: null,
+      people: null,
+      id: "",
+      username: "",
+    };
+  },
   mounted() {
     this.$store.dispatch("getUsers");
   },
   methods: {
     deleteUser(id) {
       console.log("user was deleted");
-      this.$store.dispatch("deleteUser", id);
+      if (this.$store.dispatch("deleteUser", id)) {
+        alert("The user has been successfully deleted.");
+        window.location.reload();
+      }
     },
   },
   computed: {

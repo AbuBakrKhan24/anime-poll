@@ -116,7 +116,7 @@
                           </div>
                           <label
                             >Choose your avatar:
-                            <select v-model="avatar" multiple>
+                            <select v-model="avatar" @change="avatar" multiple>
                               <!-- 1 -->
                               <option
                                 value="https://raw.githubusercontent.com/AbuBakrKhan24/Database/main/Images/Anime-Poll/Avatar%20images/Aot/Armin.webp"
