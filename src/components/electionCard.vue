@@ -16,14 +16,14 @@
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="{{election.elections_id}}"
-            class="active carasoul_btn btn btn-primary"
+            class="active carasoul_btn btn btn-success"
             aria-current="true"
             aria-label="Slide 1"
             >View</a
           >
           <!-- Vote -->
           <a
-            class="btn btn-primary vote_count"
+            class="btn btn-success vote_count"
             @click="
               AddVote(election.category_ID, election.elections_id, user.id),
                 Vote(election.elections_id, election.vote_count)
@@ -52,14 +52,14 @@
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="{{election.elections_id}}"
-            class="active carasoul_btn btn btn-primary"
+            class="active carasoul_btn btn btn-success"
             aria-current="true"
             aria-label="Slide 1"
             >View</a
           >
           <!-- Vote -->
           <a
-            class="btn btn-primary vote_count"
+            class="btn btn-success vote_count"
             @click="
               AddVote(election.category_ID, election.elections_id, user.id),
                 Vote(election.elections_id, election.vote_count)
