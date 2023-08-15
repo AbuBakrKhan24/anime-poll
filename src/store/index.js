@@ -68,21 +68,21 @@ export default createStore({
   actions: {
     // USER
     getUser: async (context, id) => {
-      fetch("https://anime-poll-api.herokuapp.com/users" + id)
+      fetch("https://anime-poll-info.onrender.com/users" + id)
         .then((res) => res.json())
         .then((json) => context.commit("setUser", json))
         .catch((err) => console.log(err.message));
     },
     // USERS
     getUsers: async (context) => {
-      fetch("https://anime-poll-api.herokuapp.com/users")
+      fetch("https://anime-poll-info.onrender.com/users")
         .then((res) => res.json())
         .then((data) => context.commit("setUsers", data))
         .catch((err) => console.log(err.message));
     },
     // REGISTER USER
     register: async (context, user) => {
-      fetch("https://anime-poll-api.herokuapp.com/users/register", {
+      fetch("https://anime-poll-info.onrender.com/users/register", {
         method: "POST",
         body: JSON.stringify(user),
 
@@ -103,7 +103,7 @@ export default createStore({
     // Login
     login: async (context, payload) => {
       let res = await fetch(
-        "https://anime-poll-api.herokuapp.com/users/login",
+        "https://anime-poll-info.onrender.com/users/login",
         // "http://localhost:6969/users/login",
         {
           method: "POST",
@@ -142,7 +142,7 @@ export default createStore({
         router.push("/profile");
         // Verify token
         //
-        fetch("https://anime-poll-api.herokuapp.com/users/users/verify", {
+        fetch("https://anime-poll-info.onrender.com/users/users/verify", {
           // fetch("http://localhost:6969/users/users/verify", {
           headers: {
             "Content-Type": "application/json",
@@ -163,7 +163,7 @@ export default createStore({
     updateUserInfo: async (context, payload) => {
       console.log(payload);
       fetch(
-        "https://anime-poll-api.herokuapp.com/users/update-user/" + payload.id,
+        "https://anime-poll-info.onrender.com/users/update-user/" + payload.id,
         // "http://localhost:6969/users/update-user/" + payload.id,
         {
           method: "PATCH",
@@ -190,7 +190,7 @@ export default createStore({
     // SHOW ALL OF Categories
     getCategories: async (context) => {
       // fetch("http://localhost:6969/categories")
-      fetch("https://anime-poll-api.herokuapp.com/categories")
+      fetch("https://anime-poll-info.onrender.com/categories")
         .then((res) => res.json())
         .then((data) => context.commit("setCategories", data))
         .catch((err) => console.log(err.message));
@@ -198,7 +198,7 @@ export default createStore({
     // SHOW ALL elections
     getElections: async (context) => {
       // fetch("http://localhost:6969/elections/")
-      fetch("https://anime-poll-api.herokuapp.com/elections")
+      fetch("https://anime-poll-info.onrender.com/elections")
         .then((res) => res.json())
         .then((data) => context.commit("setElections", data))
         .catch((err) => console.log(err.message));
@@ -207,13 +207,13 @@ export default createStore({
     // SHOW ONE Category
     getCategory: async (context, id) => {
       // fetch("http://localhost:6969/categories/" + id)
-      fetch("https://anime-poll-api.herokuapp.com/categories/" + id)
+      fetch("https://anime-poll-info.onrender.com/categories/" + id)
         .then((response) => response.json())
         .then((json) => context.commit("setCategory", json));
     },
     // SHOW ONE Category/section
     getCategorySection: async (context, id) => {
-      fetch("https://anime-poll-api.herokuapp.com/elections/category/" + id)
+      fetch("https://anime-poll-info.onrender.com/elections/category/" + id)
         // fetch("http://localhost:6969/elections/category/" + id)
         .then((response) => response.json())
         .then((json) => {
@@ -224,7 +224,7 @@ export default createStore({
 
     // ADD A Category
     addBook: async (context, book) => {
-      fetch("https://anime-poll-api.herokuapp.com/categories", {
+      fetch("https://anime-poll-info.onrender.com/categories", {
         // fetch("http://localhost:6969/categories", {
         method: "POST",
         body: JSON.stringify(book),
@@ -238,7 +238,7 @@ export default createStore({
     // DELETE A USER
     deleteUser: async (context, id) => {
       // fetch("http://localhost:6969/users/" + id, {
-      fetch("https://anime-poll-api.herokuapp.com/users/" + id, {
+      fetch("https://anime-poll-info.onrender.com/users/" + id, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -251,7 +251,7 @@ export default createStore({
       console.log(poll);
       // const res = await fetch("http://localhost:6969/pollscategory/add_polls", {
       const res = await fetch(
-        "https://anime-poll-api.herokuapp.com/pollscategory/add_polls",
+        "https://anime-poll-info.onrender.com/pollscategory/add_polls",
         {
           method: "POST",
           body: JSON.stringify(poll),
@@ -271,7 +271,7 @@ export default createStore({
       // console.log(payload);
       const res = await fetch(
         // "http://localhost:6969/elections/vote_count/" + payload.id,
-        "https://anime-poll-api.herokuapp.com/elections/vote_count/" +
+        "https://anime-poll-info.onrender.com/elections/vote_count/" +
           payload.id,
         {
           method: "PUT",
@@ -294,7 +294,7 @@ export default createStore({
     // Getting the poll
     getPoll: async (context, id) => {
       // fetch("http://localhost:6969/pollscategory")
-      fetch("https://anime-poll-api.herokuapp.com/pollscategory")
+      fetch("https://anime-poll-info.onrender.com/pollscategory")
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
